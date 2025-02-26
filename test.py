@@ -7,15 +7,15 @@ pygame.init()
 screen = pygame.display.set_mode((1400, 1050))
 
 ##Sets Font 
-font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 20)
+font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
 
 img = pygame.image.load("assets/images/gridIronLogo.PNG").convert()
 
 ##Renders Text
 textSurface = font.render("Start Game", True, (255, 255, 255))
 
-screen.blit(textSurface, (400, 300))
-screen.blit(img, (0, 0))
+screen.blit(textSurface, (600, 725))
+screen.blit(img, (350, 100))
 
 pygame.display.update()
 
