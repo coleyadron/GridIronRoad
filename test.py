@@ -14,8 +14,8 @@ img = pygame.image.load("assets/images/gridIronLogo.PNG").convert()
 ##Renders Text
 textSurface = font.render("Start Game", True, (255, 255, 255))
 
-screen.blit(textSurface, (600, 725))
-screen.blit(img, (350, 100))
+screen.blit(textSurface, (560, 725))
+screen.blit(img, (360, 100))
 
 pygame.display.update()
 
