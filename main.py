@@ -31,6 +31,8 @@ def kill_game():
     pygame.quit()
     sys.exit()
 
+mainScreen = True
+
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -41,8 +43,10 @@ while running:
                 print("Game has been closed")
                 kill_game()
 
-            if event.key == pygame.K_SPACE:
+            if event.key == pygame.K_SPACE and mainScreen:
+                mainScreen = False
                 print("SPACE action, next screen")
+                experienceSelection.selectExperience(screen)
                 
 
 pygame.quit()
