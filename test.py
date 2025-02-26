@@ -4,7 +4,7 @@ import pygame
 
 pygame.init()
 
-screen = pygame.display.set_mode((1000, 800))
+screen = pygame.display.set_mode((1400, 1050))
 
 ##Sets Font 
 font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 20)
