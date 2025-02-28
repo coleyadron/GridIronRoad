@@ -15,12 +15,12 @@ def selectTeam(screen):
     team2 = font.render("Team 2", True, (255, 255, 255))
     team3 = font.render("Team 3", True, (255, 255, 255))
 
-    screen.blit(team1, (500, 725))
-    screen.blit(team2, (500, 775))
-    screen.blit(team3, (500, 825))
+    screen.blit(team1, (0, 0))
+    screen.blit(team2, (0, 50))
+    screen.blit(team3, (0, 100))
 
     inputSelection = font.render("Select your team:", True, (255, 255, 255))
 
-    screen.blit(inputSelection, (500, 675))
+    screen.blit(inputSelection, (0, screen.get_height() - inputSelection.get_height() - 75))
 
     pygame.display.update()

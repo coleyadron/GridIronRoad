@@ -16,16 +16,20 @@ def selectExperience(screen):
     experience2 = font.render("Experience 2", True, (255, 255, 255))
     experience3 = font.render("Experience 3", True, (255, 255, 255))
 
-    screen.blit(experience1, (500, 725))
-    screen.blit(experience2, (500, 775))
-    screen.blit(experience3, (500, 825))
+    screen.blit(experience1, (0, 0))
+    screen.blit(experience2, (0, 50))
+    screen.blit(experience3, (0, 100))
 
-    inputSelection = font.render("Select your experience:", True, (255, 255, 255))
+    inputSelection = font.render("Select your experience:", True, (255, 255, 255))   
 
-    screen.blit(inputSelection, (500, 675))
+    screen.blit(inputSelection, (0, screen.get_height() - inputSelection.get_height() - 75))
 
     pygame.display.update()
 
+    start_Selection(screen)
+
+
+def start_Selection(screen):
     experienceOpen = True
     confirmSelection = False
     while experienceOpen:
@@ -33,19 +37,24 @@ def selectExperience(screen):
             if event.type == pygame.QUIT:
                 kill_game()
             if event.type == pygame.KEYDOWN and experienceOpen:
-                if event.key == pygame.K_1 and not confirmSelection:
+                if event.key == pygame.K_1 or event.key == pygame.K_KP1 and not confirmSelection:
                     print("Experience 1 selected")
                     confirmSelection = True
-                elif event.key == pygame.K_2 and not confirmSelection:
+                elif event.key == pygame.K_2  or event.key == pygame.K_KP2 and not confirmSelection:
                     print("Experience 2 selected")
                     confirmSelection = True
-                elif event.key == pygame.K_3 and not confirmSelection:
+                elif event.key == pygame.K_3 or event.key == pygame.K_KP3 and not confirmSelection:
                     print("Experience 3 selected")
                     confirmSelection = True
-                if event.key == pygame.K_RETURN and confirmSelection:
+                if event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER and confirmSelection:
                     experienceOpen = False
                     print("Enter action, next screen")
                     teamSelection.selectTeam(screen)
                 if event.key == pygame.K_ESCAPE:
                     print("Game has been closed")
                     kill_game()
+                if event.key == pygame.K_BACKSPACE and confirmSelection:
+                    confirmSelection = False
+                    print("Backspace action, reselect experience")
+
+                    
