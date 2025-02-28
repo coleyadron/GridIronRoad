@@ -3,7 +3,6 @@ import sys
 import teamSelection
 
 def kill_game():
-    running = False
     pygame.quit()
     sys.exit()
 
