@@ -33,7 +33,7 @@ def selectTeam(screen):
                 kill_game()
             if event.type == pygame.KEYDOWN and teamOpen:
                 if event.key == pygame.K_1 or event.key == pygame.K_KP1 and not confirmSelection:
-                    print("Team 1 selected")
+                    # print("Team 1 selected")
                     confirmSelection = True
 
                     inputSelection = font.render("Select your team: 1", True, (255, 255, 255))
@@ -45,7 +45,7 @@ def selectTeam(screen):
                     pygame.display.update()
                 
                 elif event.key == pygame.K_2  or event.key == pygame.K_KP2 and not confirmSelection:
-                    print("Team 2 selected")
+                    # print("Team 2 selected")
                     confirmSelection = True
 
                     inputSelection = font.render("Select your team: 2", True, (255, 255, 255))
@@ -57,7 +57,7 @@ def selectTeam(screen):
                     pygame.display.update()
 
                 elif event.key == pygame.K_3 or event.key == pygame.K_KP3 and not confirmSelection:
-                    print("Team 3 selected")
+                    # print("Team 3 selected")
                     confirmSelection = True
 
                     inputSelection = font.render("Select your team: 3", True, (255, 255, 255))
@@ -69,14 +69,14 @@ def selectTeam(screen):
                     pygame.display.update()
                 
                 if event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER and confirmSelection:
-                    print("Team selection confirmed")
+                    # print("Team selection confirmed")
                     teamOpen = False
                     coachingStaff.inputStaff(screen)
                 if event.key == pygame.K_ESCAPE:
                     print("Game has been closed")
                     kill_game()
                 if event.key == pygame.K_BACKSPACE and confirmSelection:
-                    print("Team selection cancelled")
+                    # print("Team selection cancelled")
                     confirmSelection = False
                     
                     inputSelection = font.render("Select your team:", True, (255, 255, 255))

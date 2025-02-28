@@ -45,7 +45,7 @@ while running:
 
             if event.key == pygame.K_SPACE and mainScreen:
                 mainScreen = False
-                print("SPACE action, next screen")
+                # print("SPACE action, next screen")
                 experienceSelection.selectExperience(screen)
                 
 
