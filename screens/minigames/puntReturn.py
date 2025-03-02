@@ -1,5 +1,4 @@
 import pygame, sys
-import random
 
 def kill_game():
     pygame.quit()
@@ -39,22 +38,22 @@ def puntReturn(screen):
 
                 if event.key == pygame.K_SPACE and not miniGame:
                     miniGame = True
-                    print("SPACE action")
                 if event.key == pygame.K_LEFT and miniGame and userX > 0:
                     userX -= userWidth
-                    print("LEFT action")
+                    # print("LEFT action")
                 elif event.key == pygame.K_RIGHT and miniGame and userX < screen.get_width() - userWidth:
                     userX += userWidth
-                    print("RIGHT action")
+                    # print("RIGHT action")
                 elif event.key == pygame.K_UP and miniGame and userY > 0:
                     userY -= userHeight
-                    print("UP action")
+                    # print("UP action")
                 elif event.key == pygame.K_DOWN and miniGame and userY < screen.get_height() - userHeight:
                     userY += userHeight
-                    print("DOWN action")
+                    # print("DOWN action")
         
         if miniGame:
             screen.fill((0, 0, 0))
+            #user
             pygame.draw.rect(screen, (255, 0, 0), (userX, userY, userWidth, userHeight))
             pygame.display.update()
 
