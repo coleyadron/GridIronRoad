@@ -14,23 +14,22 @@ screen = pygame.display.set_mode((1400, 1050))
 pygame.display.set_caption("GridIron Road")
 pygame.display.set_icon(pygame.image.load("assets/images/gridIronLogo.PNG"))
 
-##Sets Font 
 font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
 
-img = pygame.image.load("assets/images/gridIronLogo.PNG").convert()
+mainScreenImg = pygame.image.load("assets/images/gridIronLogo.PNG").convert()
+startText = font.render("Press SPACE to Start Game", True, (255, 255, 255))
 
-##Renders Text
-textSurface = font.render("Press SPACE to Start Game", True, (255, 255, 255))
+screen.blit(mainScreenImg, (screen.get_width() / 2 - mainScreenImg.get_width() / 2, 
+                            screen.get_height() / 3 - mainScreenImg.get_height() / 3))
 
-screen.blit(textSurface, (500, 725))
-screen.blit(img, (360, 100))
+screen.blit(startText, (screen.get_width() / 2 - startText.get_width() / 2, 
+                        screen.get_height() - startText.get_height() - 100))
 
 pygame.display.update()
 
 running = True
 
 def kill_game():
-    running = False
     pygame.quit()
     sys.exit()
 
@@ -52,7 +51,7 @@ while running:
                 experienceSelection.selectExperience(screen)
                 teamSelection.selectTeam(screen)
                 coachingStaff.inputStaff(screen)
-                draft.draftPlayers(screen)
+                draft.draft(screen)
                 
 
 pygame.quit()

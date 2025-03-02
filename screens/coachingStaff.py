@@ -55,12 +55,12 @@ def inputStaff(screen):
                     else:
                         print(confirmationText)
                         print(confirmationText.upper())
-                        if confirmationText.upper() == "YES":
+                        if confirmationText.upper() == 'YES':
                             print("YES CHECK")
                             staffOpen = False
                             return
                             # draft.draft(screen)
-                        elif confirmationText.upper() == "NO":
+                        elif confirmationText.upper() == 'NO':
                             print("NO CHECK")
                             return
                         else:
