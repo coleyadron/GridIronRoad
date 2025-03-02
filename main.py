@@ -1,5 +1,8 @@
 import pygame, sys
-import experienceSelection
+from screens import experienceSelection
+from screens import draft
+from screens import coachingStaff
+from screens import teamSelection
 
 if __name__ == "__main__":
     pygame.init()
@@ -47,6 +50,9 @@ while running:
                 mainScreen = False
                 # print("SPACE action, next screen")
                 experienceSelection.selectExperience(screen)
+                teamSelection.selectTeam(screen)
+                coachingStaff.inputStaff(screen)
+                draft.draftPlayers(screen)
                 
 
 pygame.quit()

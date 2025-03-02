@@ -1,5 +1,5 @@
 import pygame, sys
-import draft
+# import draft
 
 def kill_game():
     pygame.quit()
@@ -58,7 +58,8 @@ def inputStaff(screen):
                         if confirmationText.upper() == "YES":
                             print("YES CHECK")
                             staffOpen = False
-                            draft.draft(screen)
+                            return
+                            # draft.draft(screen)
                         elif confirmationText.upper() == "NO":
                             print("NO CHECK")
                             return

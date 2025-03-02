@@ -1,6 +1,6 @@
 import pygame
 import sys
-import teamSelection
+# import teamSelection
 
 def kill_game():
     pygame.quit()
@@ -71,7 +71,8 @@ def selectExperience(screen):
                 if event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER and confirmSelection:
                     experienceOpen = False
                     # print("Enter action, next screen")
-                    teamSelection.selectTeam(screen)
+                    # teamSelection.selectTeam(screen)
+                    return
                 if event.key == pygame.K_ESCAPE:
                     # print("Game has been closed")
                     kill_game()
