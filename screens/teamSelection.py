@@ -1,6 +1,5 @@
 import pygame
 import sys
-# import coachingStaff
 
 def kill_game():
     pygame.quit()
@@ -72,7 +71,6 @@ def selectTeam(screen):
                     # print("Team selection confirmed")
                     teamOpen = False
                     return
-                    # coachingStaff.inputStaff(screen)
                 if event.key == pygame.K_ESCAPE:
                     print("Game has been closed")
                     kill_game()
