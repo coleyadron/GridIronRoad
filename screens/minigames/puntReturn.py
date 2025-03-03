@@ -21,6 +21,7 @@ def puntReturn(screen):
 
     running = True
     miniGame = False
+    win = False
 
     userX = screen.get_width() / 2
     userY = screen.get_height() - 150
@@ -29,7 +30,7 @@ def puntReturn(screen):
     spriteHeight = 75
 
     defenseX = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
-    defenseY = [80, 80, 80, 80, 80, 80, 80, 80, 80, 80]
+    defenseY = [110, 110, 110, 110, 110, 110, 110, 110, 110, 110]
 
     endzoneY = 0
 
@@ -45,6 +46,14 @@ def puntReturn(screen):
 
                 if event.key == pygame.K_SPACE and not miniGame:
                     miniGame = True
+                elif event.key == pygame.K_SPACE and miniGame:
+                    if win:
+                        print("You won the mini game")
+                        return
+                    else:
+                        print("You lost the mini game")
+                        return
+
                 if event.key == pygame.K_LEFT and miniGame and userX > 0:
                     userX -= spriteWidth
                     # print("LEFT action")
@@ -74,7 +83,7 @@ def puntReturn(screen):
                 i += 1
 
             #endzone
-            pygame.draw.rect(screen, (0, 255, 0), (0, endzoneY, screen.get_width(), 50))
+            pygame.draw.rect(screen, (0, 180, 0), (0, endzoneY, screen.get_width(), 100))
             endzoneY += 1
             #defense
             i = 0
@@ -86,9 +95,9 @@ def puntReturn(screen):
 
             pygame.display.update()
 
-            if userY == endzoneY:
+            #check if user is in endzone
+            if userY == endzoneY + 5:
                 time.sleep(.25)
-                miniGame = False
                 screen.fill((0, 0, 0))
                 instructionText = font.render("You scored a touchdown!", True, (255, 255, 255))
 
@@ -97,11 +106,14 @@ def puntReturn(screen):
 
                 pygame.display.update()
 
+                win = True
+                miniGame = False
+
+            #check if user is tackled
             i = 0
             while len(defenseX) > i:
                 if defenseX[i] <= userX and defenseX[i] + spriteWidth >= userX and defenseY[i] <= userY and defenseY[i] + spriteHeight >= userY:
                     time.sleep(.25)
-                    miniGame = False
                     screen.fill((0, 0, 0))
                     instructionText = font.render("You were tackled", True, (255, 255, 255))
 
@@ -109,6 +121,9 @@ def puntReturn(screen):
                                                 screen.get_height() / 2 - instructionText.get_height() / 2))
 
                     pygame.display.update()
+
+                    win = False
+                    miniGame = False
                     
                 i += 1
 
