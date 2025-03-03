@@ -1,8 +1,5 @@
-import pygame, sys
-
-def kill_game():
-    pygame.quit()
-    sys.exit()
+import pygame
+import gridironRoad
 
 def draft(screen):
     screen.fill((0, 0, 0))
@@ -18,7 +15,7 @@ def draft(screen):
     while draftOpen:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                kill_game()
+                gridironRoad.killgame(screen)
             if event.type == pygame.KEYDOWN and draftOpen:
                 if event.key == pygame.K_ESCAPE:
-                    kill_game()
+                    gridironRoad.killgame(screen)

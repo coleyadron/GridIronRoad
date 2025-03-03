@@ -1,6 +1,8 @@
-import pygame, sys
+import pygame
+import sys
 import time
 import random
+import gridironRoad
 
 def kill_game():
     pygame.quit()
@@ -37,12 +39,14 @@ def puntReturn(screen):
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                kill_game()
+                # kill_game()
+                gridironRoad.killgame(screen)
 
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     print("Game has been closed")
-                    kill_game()
+                    # kill_game()
+                    gridironRoad.killgame(screen)
 
                 if event.key == pygame.K_SPACE and not miniGame:
                     miniGame = True

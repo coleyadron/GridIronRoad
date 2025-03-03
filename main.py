@@ -3,6 +3,8 @@ from screens import experienceSelection
 from screens import draft
 from screens import coachingStaff
 from screens import teamSelection
+import gridironRoad
+# from screens.minigames import puntReturn
 
 if __name__ == "__main__":
     pygame.init()
@@ -38,12 +40,12 @@ mainScreen = True
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            kill_game()
+            gridironRoad.killgame(screen)
 
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 print("Game has been closed")
-                kill_game()
+                gridironRoad.killgame(screen)
 
             if event.key == pygame.K_SPACE and mainScreen:
                 mainScreen = False

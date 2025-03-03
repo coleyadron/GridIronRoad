@@ -1,8 +1,5 @@
-import pygame, sys
-
-def kill_game():
-    pygame.quit()
-    sys.exit()
+import pygame
+import gridironRoad
 
 def inputStaff(screen):
     screen.fill((0, 0, 0))
@@ -39,7 +36,7 @@ def inputStaff(screen):
     while staffOpen:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                kill_game()
+                gridironRoad.killgame(screen)
             if event.type == pygame.KEYDOWN and staffOpen:
                 if event.key == pygame.K_RETURN:
                     if activeText < 3:
@@ -67,7 +64,7 @@ def inputStaff(screen):
 
                 if event.key == pygame.K_ESCAPE:
                     print("Game has been closed")
-                    kill_game()
+                    gridironRoad.killgame(screen)
 
                 if event.key == pygame.K_BACKSPACE:
                     if activeText == 1:

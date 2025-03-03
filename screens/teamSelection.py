@@ -1,9 +1,5 @@
 import pygame
-import sys
-
-def kill_game():
-    pygame.quit()
-    sys.exit()
+import gridironRoad
 
 def selectTeam(screen):
     screen.fill((0, 0, 0))
@@ -29,7 +25,7 @@ def selectTeam(screen):
     while teamOpen:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                kill_game()
+                gridironRoad.killgame(screen)
             if event.type == pygame.KEYDOWN and teamOpen:
                 if event.key == pygame.K_1 or event.key == pygame.K_KP1 and not confirmSelection:
                     # print("Team 1 selected")
@@ -73,7 +69,7 @@ def selectTeam(screen):
                     return
                 if event.key == pygame.K_ESCAPE:
                     print("Game has been closed")
-                    kill_game()
+                    gridironRoad.killgame(screen)
                 if event.key == pygame.K_BACKSPACE and confirmSelection:
                     # print("Team selection cancelled")
                     confirmSelection = False
