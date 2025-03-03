@@ -34,18 +34,18 @@ def fieldGoal(screen):
         keys = pygame.key.get_pressed()
         if keys[pygame.K_SPACE] and not confirm:
             if width <= 1050 and switch == False:
-                width += 8
+                width += 4
                 if width >= 1050:
                     switch = True
                     print("Switched True")
             elif switch:
-                width -= 10
+                width -= 5
                 if width <= 0:
                     switch = False
                     print("Switched False")
         elif not keys[pygame.K_SPACE] and not kicked:
             if width > 0:
-                width -= 4
+                width -= 2
                 confirm = True
         if keys[pygame.K_SPACE] and confirm:
             if width > success - 50 and width < success + 100:
