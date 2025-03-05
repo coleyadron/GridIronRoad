@@ -144,15 +144,17 @@ def selectExperience(screen):
     experienceOpen = True
     confirmSelection = False
     moreInfoOpen = False
+    returnMore = False
 
     while experienceOpen:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 gridironRoad.killgame(screen)
             if event.type == pygame.KEYDOWN and experienceOpen:
-                if event.key == pygame.K_1 or event.key == pygame.K_KP1 and not confirmSelection:
+                if (event.key == pygame.K_1 or event.key == pygame.K_KP1) and not confirmSelection:
                     # print("Experience 1 selected")
                     confirmSelection = True
+                    returnMore = False
 
                     inputSelection = font.render("Select your experience: 1", True, (255, 255, 255))
                     
@@ -170,9 +172,10 @@ def selectExperience(screen):
 
                     pygame.display.update()
 
-                elif event.key == pygame.K_2  or event.key == pygame.K_KP2 and not confirmSelection:
+                elif (event.key == pygame.K_2  or event.key == pygame.K_KP2) and not confirmSelection:
                     # print("Experience 2 selected")
                     confirmSelection = True
+                    returnMore = False
 
                     inputSelection = font.render("Select your experience: 2", True, (255, 255, 255))
                     
@@ -190,9 +193,10 @@ def selectExperience(screen):
 
                     pygame.display.update()
 
-                elif event.key == pygame.K_3 or event.key == pygame.K_KP3 and not confirmSelection:
+                elif (event.key == pygame.K_3 or event.key == pygame.K_KP3) and not confirmSelection:
                     # print("Experience 3 selected")
                     confirmSelection = True
+                    returnMore = False
 
                     inputSelection = font.render("Select your experience: 3", True, (255, 255, 255))
                     
@@ -210,10 +214,11 @@ def selectExperience(screen):
 
                     pygame.display.update()
 
-                elif event.key == pygame.K_4 or event.key == pygame.K_KP4 and not confirmSelection:
+                elif (event.key == pygame.K_4 or event.key == pygame.K_KP4) and not confirmSelection:
                     # print("Experience 4 selected")
                     confirmSelection = True
                     moreInfoOpen = True
+                    returnMore = True
 
                     inputSelection = font.render("Select your experience: 4", True, (255, 255, 255))
                     
@@ -226,10 +231,12 @@ def selectExperience(screen):
                 if event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER and confirmSelection:
                     # experienceOpen = False
                     # print("Enter action, next screen")
+
                     if moreInfoOpen:
                         showMoreInfo(screen)
                         moreInfoOpen = False
-                    elif not moreInfoOpen:
+                        returnMore = True
+                    elif returnMore:
                         displayEmpty(True)
                         confirmSelection = False
                     else:
