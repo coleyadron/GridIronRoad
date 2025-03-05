@@ -44,7 +44,7 @@ while running:
 
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
-                print("Game has been closed")
+                # print("Game has been closed")
                 gridironRoad.killgame(screen)
 
             if event.key == pygame.K_SPACE and mainScreen:

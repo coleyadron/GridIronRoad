@@ -68,7 +68,7 @@ def selectTeam(screen):
                     teamOpen = False
                     return
                 if event.key == pygame.K_ESCAPE:
-                    print("Game has been closed")
+                    # print("Game has been closed")
                     gridironRoad.killgame(screen)
                 if event.key == pygame.K_BACKSPACE and confirmSelection:
                     # print("Team selection cancelled")

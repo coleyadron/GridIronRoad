@@ -1,0 +1,118 @@
+{
+    "experienceLevels": {
+      "Rookie": [
+        {
+          "level": "Rookie_1",
+          "displayName": "New Recruit",
+          "description": "Very limited experience. Played high school football. Haven't picked up the pig skin since.",
+          "modifiers": {
+            "playerDevelopmentRate": 0.7,
+            "scoutingEfficiency": 0.6,
+            "contractNegotiationBonus": -0.2,
+            "fanExpectationMultiplier": 0.4,
+            "budgetMultiplier": 0.5
+          }
+        },
+        {
+          "level": "Rookie_2",
+          "displayName": "Aspiring Coach",
+          "description": "Played ball in high school. Coached your son's flag football team.",
+          "modifiers": {
+            "playerDevelopmentRate": 0.8,
+            "scoutingEfficiency": 0.7,
+            "contractNegotiationBonus": -0.1,
+            "fanExpectationMultiplier": 0.5,
+            "budgetMultiplier": 0.6
+          }
+        },
+        {
+          "level": "Rookie_3",
+          "displayName": "Promising Rookie",
+          "description": "Never played football, but you've been a coach at your local high school for years.",
+          "modifiers": {
+            "playerDevelopmentRate": 0.9,
+            "scoutingEfficiency": 0.8,
+            "contractNegotiationBonus": 0.0,
+            "fanExpectationMultiplier": 0.6,
+            "budgetMultiplier": 0.7
+          }
+        }
+      ],
+      "Experienced": [
+        {
+          "level": "Experienced_1",
+          "displayName": "Solid Coach",
+          "description": "You were a state champion in high school, but you haven't played since.",
+          "modifiers": {
+            "playerDevelopmentRate": 1.0,
+            "scoutingEfficiency": 0.9,
+            "contractNegotiationBonus": 0.1,
+            "fanExpectationMultiplier": 0.8,
+            "budgetMultiplier": 0.9
+          }
+        },
+        {
+          "level": "Experienced_2",
+          "displayName": "Proven Leader",
+          "description": "You played in high school and college, but you tore you're achilles and haven't played since.",
+          "modifiers": {
+            "playerDevelopmentRate": 1.1,
+            "scoutingEfficiency": 1.0,
+            "contractNegotiationBonus": 0.2,
+            "fanExpectationMultiplier": 1.0,
+            "budgetMultiplier": 1.0
+          }
+        },
+        {
+          "level": "Experienced_3",
+          "displayName": "Seasoned Veteran",
+          "description": "You never played high school, but you've been a high school coach for year, having won several state titles.",
+          "modifiers": {
+            "playerDevelopmentRate": 1.2,
+            "scoutingEfficiency": 1.1,
+            "contractNegotiationBonus": 0.3,
+            "fanExpectationMultiplier": 1.1,
+            "budgetMultiplier": 1.1
+          }
+        }
+      ],
+      "Legendary": [
+        {
+          "level": "Legendary_1",
+          "displayName": "Hall of Fame Bound",
+          "description": "No experience as a coach, but you're a NFL hall of fame bound player.",
+          "modifiers": {
+            "playerDevelopmentRate": 1.3,
+            "scoutingEfficiency": 1.2,
+            "contractNegotiationBonus": 0.4,
+            "fanExpectationMultiplier": 1.2,
+            "budgetMultiplier": 1.2
+          }
+        },
+        {
+          "level": "Legendary_2",
+          "displayName": "Living Legend",
+          "description": "A coaching legend. You've played basically you're whole life and have been coaching at the college level for years.",
+          "modifiers": {
+            "playerDevelopmentRate": 1.4,
+            "scoutingEfficiency": 1.3,
+            "contractNegotiationBonus": 0.5,
+            "fanExpectationMultiplier": 1.3,
+            "budgetMultiplier": 1.3
+          }
+        },
+        {
+          "level": "Legendary_3",
+          "displayName": "Ultimate Master",
+          "description": "Legendary player, legendary coach. You've been coaching in the NFL for years with countless accolades.",
+          "modifiers": {
+            "playerDevelopmentRate": 1.5,
+            "scoutingEfficiency": 1.4,
+            "contractNegotiationBonus": 0.6,
+            "fanExpectationMultiplier": 1.4,
+            "budgetMultiplier": 1.4
+          }
+        }
+      ]
+    }
+  }

@@ -63,7 +63,7 @@ def inputStaff(screen):
                             confirmationText = ''
 
                 if event.key == pygame.K_ESCAPE:
-                    print("Game has been closed")
+                    # print("Game has been closed")
                     gridironRoad.killgame(screen)
 
                 if event.key == pygame.K_BACKSPACE:
