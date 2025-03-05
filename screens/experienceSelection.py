@@ -30,6 +30,26 @@ def getExperienceLevels():
     except KeyError as e:
         print("Error reading experience levels: ", e)
         return ["Rookie", "Experienced", "Legendary"]
+    
+
+def showMoreInfo(screen):
+    return
+
+def wrap_text(text, font, max_width):
+    words = text.split(' ')
+    lines = []
+    current_line = ""
+
+    for word in words:
+        test_line = current_line + word + ' '
+        if font.size(test_line)[0] < max_width:
+            current_line = test_line
+        else:
+            lines.append(current_line)
+            current_line = word + ' '
+    lines.append(current_line)
+
+    return lines
 
 def selectExperience(screen):
     screen.fill((0, 0, 0))
@@ -59,6 +79,8 @@ def selectExperience(screen):
 
     experienceOpen = True
     confirmSelection = False
+    moreInfoOpen = False
+
     while experienceOpen:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -75,6 +97,15 @@ def selectExperience(screen):
                     screen.blit(experience3, (0, 100))
                     screen.blit(moreInfo, (0, 150))
                     screen.blit(inputSelection, (0, screen.get_height() - inputSelection.get_height()))
+
+                    wrapped_lines = wrap_text(expStrings[0]['description'], font, screen.get_width() - 100)  # 20 pixels padding
+
+                    y_offset = 10
+                    for line in wrapped_lines:
+                        text_surface = font.render(line, True, (255, 255, 255))
+                        screen.blit(text_surface, (50, screen.get_height() / 2 + y_offset))
+                        y_offset += font.get_linesize()
+
                     pygame.display.update()
 
                 elif event.key == pygame.K_2  or event.key == pygame.K_KP2 and not confirmSelection:
@@ -88,6 +119,15 @@ def selectExperience(screen):
                     screen.blit(experience3, (0, 100))
                     screen.blit(moreInfo, (0, 150))
                     screen.blit(inputSelection, (0, screen.get_height() - inputSelection.get_height()))
+
+                    wrapped_lines = wrap_text(expStrings[1]['description'], font, screen.get_width() - 100)  # 20 pixels padding
+
+                    y_offset = 10
+                    for line in wrapped_lines:
+                        text_surface = font.render(line, True, (255, 255, 255))
+                        screen.blit(text_surface, (50, screen.get_height() / 2 + y_offset))
+                        y_offset += font.get_linesize()
+
                     pygame.display.update()
 
                 elif event.key == pygame.K_3 or event.key == pygame.K_KP3 and not confirmSelection:
@@ -101,11 +141,21 @@ def selectExperience(screen):
                     screen.blit(experience3, (0, 100))
                     screen.blit(moreInfo, (0, 150))
                     screen.blit(inputSelection, (0, screen.get_height() - inputSelection.get_height()))
+
+                    wrapped_lines = wrap_text(expStrings[2]['description'], font, screen.get_width() - 100)  # 20 pixels padding
+
+                    y_offset = 10
+                    for line in wrapped_lines:
+                        text_surface = font.render(line, True, (255, 255, 255))
+                        screen.blit(text_surface, (50, screen.get_height() / 2 + y_offset))
+                        y_offset += font.get_linesize()
+
                     pygame.display.update()
 
                 elif event.key == pygame.K_4 or event.key == pygame.K_KP4 and not confirmSelection:
                     # print("Experience 4 selected")
                     confirmSelection = True
+                    moreInfoOpen = True
 
                     inputSelection = font.render("Select your experience: 4", True, (255, 255, 255))
                     screen.fill((0, 0, 0))
@@ -119,7 +169,11 @@ def selectExperience(screen):
                 if event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER and confirmSelection:
                     experienceOpen = False
                     # print("Enter action, next screen")
-                    return
+                    if moreInfoOpen:
+                        showMoreInfo(screen)
+                    else:
+                        return
+
                 if event.key == pygame.K_ESCAPE:
                     # print("Game has been closed")
                     gridironRoad.killgame(screen)
@@ -132,5 +186,6 @@ def selectExperience(screen):
                     screen.blit(experience1, (0, 0))
                     screen.blit(experience2, (0, 50))
                     screen.blit(experience3, (0, 100))
-                    screen.blit(inputSelection, (0, screen.get_height() - inputSelection.get_height() - 75))
+                    screen.blit(moreInfo, (0, 150))
+                    screen.blit(inputSelection, (0, screen.get_height() - inputSelection.get_height()))
                     pygame.display.update()
