@@ -30,10 +30,6 @@ def getExperienceLevels():
     except KeyError as e:
         print("Error reading experience levels: ", e)
         return ["Rookie", "Experienced", "Legendary"]
-    
-
-def showMoreInfo(screen):
-    return
 
 def wrap_text(text, font, max_width):
     words = text.split(' ')
@@ -51,7 +47,75 @@ def wrap_text(text, font, max_width):
 
     return lines
 
+def showMoreInfo(screen):
+    screen.fill((0, 0, 0))
+
+    font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
+
+    rookie = font.render("Rookie", True, (255, 255, 255))
+    experienced = font.render("Experienced", True, (255, 255, 255))
+    legendary = font.render("Legendary", True, (255, 255, 255))
+
+    rookieText = 'Rookie description'
+    experiencedText = 'Experienced description'
+    legendaryText = 'Legendary description'
+
+    wrapped_rookie = wrap_text(rookieText, font, screen.get_width() - 100)
+    wrapped_experienced = wrap_text(experiencedText, font, screen.get_width() - 100)
+    wrapped_legendary = wrap_text(legendaryText, font, screen.get_width() - 100)
+
+    y_offset = 10
+
+    screen.blit(rookie, (0, y_offset))
+    y_offset += font.get_linesize()
+    for line in wrapped_rookie:
+        text_surface = font.render(line, True, (255, 255, 255))
+        screen.blit(text_surface, (50, y_offset))
+        y_offset += font.get_linesize()
+
+
+    screen.blit(experienced, (0, y_offset))
+    y_offset += font.get_linesize()
+    for line in wrapped_experienced:
+        text_surface = font.render(line, True, (255, 255, 255))
+        screen.blit(text_surface, (50, y_offset))
+        y_offset += font.get_linesize()
+
+
+    screen.blit(legendary, (0, y_offset))
+    y_offset += font.get_linesize()
+    for line in wrapped_legendary:
+        text_surface = font.render(line, True, (255, 255, 255))
+        screen.blit(text_surface, (50, y_offset))
+        y_offset += font.get_linesize()
+
+
+    returnText = font.render("Press ENTER to return to experience selection", True, (255, 255, 255))
+    screen.blit(returnText, (0, screen.get_height() - returnText.get_height()))
+
+    pygame.display.update()
+
+    return
+
 def selectExperience(screen):
+
+    def displayEmpty(topRow):
+        screen.fill((0, 0, 0))
+
+        if topRow:
+            inputSelection = font.render("Select your experience:", True, (255, 255, 255))
+            screen.blit(inputSelection, (0, screen.get_height() - inputSelection.get_height()))
+
+        screen.blit(experience1, (0, 0))
+        screen.blit(experience2, (0, 50))
+        screen.blit(experience3, (0, 100))
+        screen.blit(moreInfo, (0, 150))
+
+        if topRow:
+            pygame.display.update()
+
+        return
+
     screen.fill((0, 0, 0))
 
     font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
@@ -71,7 +135,7 @@ def selectExperience(screen):
     screen.blit(experience3, (0, 100))
     screen.blit(moreInfo, (0, 150))
 
-    inputSelection = font.render("Select your selection:", True, (255, 255, 255))   
+    inputSelection = font.render("Select your experience:", True, (255, 255, 255))   
 
     screen.blit(inputSelection, (0, screen.get_height() - inputSelection.get_height()))
 
@@ -91,11 +155,9 @@ def selectExperience(screen):
                     confirmSelection = True
 
                     inputSelection = font.render("Select your experience: 1", True, (255, 255, 255))
-                    screen.fill((0, 0, 0))
-                    screen.blit(experience1, (0, 0))
-                    screen.blit(experience2, (0, 50))
-                    screen.blit(experience3, (0, 100))
-                    screen.blit(moreInfo, (0, 150))
+                    
+                    displayEmpty(False)
+                    
                     screen.blit(inputSelection, (0, screen.get_height() - inputSelection.get_height()))
 
                     wrapped_lines = wrap_text(expStrings[0]['description'], font, screen.get_width() - 100)  # 20 pixels padding
@@ -113,11 +175,9 @@ def selectExperience(screen):
                     confirmSelection = True
 
                     inputSelection = font.render("Select your experience: 2", True, (255, 255, 255))
-                    screen.fill((0, 0, 0))
-                    screen.blit(experience1, (0, 0))
-                    screen.blit(experience2, (0, 50))
-                    screen.blit(experience3, (0, 100))
-                    screen.blit(moreInfo, (0, 150))
+                    
+                    displayEmpty(False)
+
                     screen.blit(inputSelection, (0, screen.get_height() - inputSelection.get_height()))
 
                     wrapped_lines = wrap_text(expStrings[1]['description'], font, screen.get_width() - 100)  # 20 pixels padding
@@ -135,11 +195,9 @@ def selectExperience(screen):
                     confirmSelection = True
 
                     inputSelection = font.render("Select your experience: 3", True, (255, 255, 255))
-                    screen.fill((0, 0, 0))
-                    screen.blit(experience1, (0, 0))
-                    screen.blit(experience2, (0, 50))
-                    screen.blit(experience3, (0, 100))
-                    screen.blit(moreInfo, (0, 150))
+                    
+                    displayEmpty(False)
+
                     screen.blit(inputSelection, (0, screen.get_height() - inputSelection.get_height()))
 
                     wrapped_lines = wrap_text(expStrings[2]['description'], font, screen.get_width() - 100)  # 20 pixels padding
@@ -158,21 +216,26 @@ def selectExperience(screen):
                     moreInfoOpen = True
 
                     inputSelection = font.render("Select your experience: 4", True, (255, 255, 255))
-                    screen.fill((0, 0, 0))
-                    screen.blit(experience1, (0, 0))
-                    screen.blit(experience2, (0, 50))
-                    screen.blit(experience3, (0, 100))
-                    screen.blit(moreInfo, (0, 150))
+                    
+                    displayEmpty(False)
+                    
+
                     screen.blit(inputSelection, (0, screen.get_height() - inputSelection.get_height()))
                     pygame.display.update()
 
                 if event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER and confirmSelection:
-                    experienceOpen = False
+                    # experienceOpen = False
                     # print("Enter action, next screen")
                     if moreInfoOpen:
                         showMoreInfo(screen)
+                        moreInfoOpen = False
+                    elif not moreInfoOpen:
+                        displayEmpty(True)
+                        confirmSelection = False
                     else:
+                        experienceOpen = False
                         return
+                
 
                 if event.key == pygame.K_ESCAPE:
                     # print("Game has been closed")
@@ -180,12 +243,4 @@ def selectExperience(screen):
                 if event.key == pygame.K_BACKSPACE and confirmSelection:
                     confirmSelection = False
                     # print("Backspace action, reselect experience")
-
-                    inputSelection = font.render("Select your experience:", True, (255, 255, 255))
-                    screen.fill((0, 0, 0))
-                    screen.blit(experience1, (0, 0))
-                    screen.blit(experience2, (0, 50))
-                    screen.blit(experience3, (0, 100))
-                    screen.blit(moreInfo, (0, 150))
-                    screen.blit(inputSelection, (0, screen.get_height() - inputSelection.get_height()))
-                    pygame.display.update()
+                    displayEmpty(True)
