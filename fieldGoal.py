@@ -9,10 +9,10 @@ def kill_game():
 
 def fieldGoal(screen):
     screen.fill((0, 0, 0))
-    BGI = pygame.image.load("assets/images/fieldGoal.jpeg").convert()
-    font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
+    BGI = pygame.image.load("assets/images/fieldGoal.png").convert()
+    font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 30)
     instruction = font.render("Hold 'SPACE' to charge kick. Press 'SPACE' to enter kick", True, (255, 255, 255))
-    screen.blit(instruction, (0, 950))
+    screen.blit(instruction, (0, 952))
     screen.blit(BGI, (0, 0))
 
     pygame.draw.rect(screen, (45, 45, 45), (150, 990, 1050, 50))
@@ -61,7 +61,7 @@ def fieldGoal(screen):
             
         screen.fill((0, 0, 0))
         screen.blit(BGI, (0, 0))
-        screen.blit(instruction, (50,950))
+        screen.blit(instruction, (50,952))
         pygame.draw.rect(screen, (45, 45, 45), (150, 987, 1050, 55))
         pygame.draw.rect(screen, (255, 255, 0), (success, 987, 100, 55))
         pygame.draw.rect(screen, (255, 0, 0), (150, 990, width, 50))
