@@ -195,7 +195,7 @@ def draft(screen):
                 # prevRound = ROUND
                 ROUND = handle_click(mouse_pos, playerData, ROUND)
                 # if ROUND > prevRound:
-                if ROUND > 5:
+                if ROUND > 3:
                     draftOpen = False
                     print("Draft complete!")
                     for player in PLAYERS_SELECTED:
