@@ -1,0 +1,91 @@
+{
+    "contracts": {
+      "Rookie": {
+        "Easy": {
+          "level": "Easy",
+          "displayName": "Short-Term Deal",
+          "description": "A quick one-year contract. Low expectations, low salary.",
+          "salaryMultiplier": 0.7,
+          "performanceBonusMultiplier": 1.3,
+          "jobSecurity": "Low",
+          "goals": ["Win 50% of games"]
+        },
+        "Medium": {
+          "level": "Medium",
+          "displayName": "Developing Contract",
+          "description": "A two-year contract to build your skills. Moderate expectations.",
+          "salaryMultiplier": 0.8,
+          "performanceBonusMultiplier": 1.1,
+          "jobSecurity": "Medium",
+          "goals": ["Make the playoffs once"]
+        },
+        "Hard": {
+          "level": "Hard",
+          "displayName": "Challenging Start",
+          "description": "A three-year contract with high expectations. Prove yourself early.",
+          "salaryMultiplier": 0.9,
+          "performanceBonusMultiplier": 1.0,
+          "jobSecurity": "Low",
+          "goals": ["Win a championship"]
+        }
+      },
+      "Experienced": {
+        "Easy": {
+          "level": "Easy",
+          "displayName": "Stable Contract",
+          "description": "A two-year contract with reasonable goals. Focus on consistency.",
+          "salaryMultiplier": 1.0,
+          "performanceBonusMultiplier": 1.0,
+          "jobSecurity": "Medium",
+          "goals": ["Make playoffs both years"]
+        },
+        "Medium": {
+          "level": "Medium",
+          "displayName": "Competitive Contract",
+          "description": "A three-year contract to compete for championships. Higher salary.",
+          "salaryMultiplier": 1.1,
+          "performanceBonusMultiplier": 0.9,
+          "jobSecurity": "High",
+          "goals": ["Win a championship within 3 years"]
+        },
+        "Hard": {
+          "level": "Hard",
+          "displayName": "Legacy Contract",
+          "description": "A four-year contract to build a dynasty. High expectations, high reward.",
+          "salaryMultiplier": 1.2,
+          "performanceBonusMultiplier": 0.8,
+          "jobSecurity": "Medium",
+          "goals": ["Win two championships within 4 years"]
+        }
+      },
+      "Legendary": {
+        "Easy": {
+          "level": "Easy",
+          "displayName": "Relaxed Contract",
+          "description": "A three-year contract to maintain excellence. Low-pressure goals.",
+          "salaryMultiplier": 1.3,
+          "performanceBonusMultiplier": 0.9,
+          "jobSecurity": "Very High",
+          "goals": ["Maintain team's winning record"]
+        },
+        "Medium": {
+          "level": "Medium",
+          "displayName": "Dominance Contract",
+          "description": "A four-year contract to solidify your legendary status. High salary.",
+          "salaryMultiplier": 1.4,
+          "performanceBonusMultiplier": 0.8,
+          "jobSecurity": "Very High",
+          "goals": ["Win multiple championships"]
+        },
+        "Hard": {
+          "level": "Hard",
+          "displayName": "Dynasty Contract",
+          "description": "A five-year contract to create an unstoppable dynasty. Ultimate challenge.",
+          "salaryMultiplier": 1.5,
+          "performanceBonusMultiplier": 0.7,
+          "jobSecurity": "High",
+          "goals": ["Win a championship every year"]
+        }
+      }
+    }
+  }

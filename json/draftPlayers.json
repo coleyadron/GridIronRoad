@@ -1,0 +1,127 @@
+{
+  "draft_rounds": [
+    {
+      "round": 1,
+      "players": [
+        {
+          "name": "John Smith",
+          "position": "Quarterback",
+          "characteristics": {
+            "speed": 85,
+            "strength": 70,
+            "agility": 80,
+            "accuracy": 95,
+            "awareness": 90
+          }
+        },
+        {
+          "name": "Mike Johnson",
+          "position": "Running Back",
+          "characteristics": {
+            "speed": 92,
+            "strength": 85,
+            "agility": 90,
+            "elusiveness": 95,
+            "vision": 88
+          }
+        },
+        {
+          "name": "Chris Davis",
+          "position": "Wide Receiver",
+          "characteristics": {
+            "speed": 94,
+            "strength": 75,
+            "agility": 92,
+            "catching": 96,
+            "route_running": 90
+          }
+        },
+        {
+          "name": "David Wilson",
+          "position": "Defensive Lineman",
+          "characteristics": {
+            "speed": 80,
+            "strength": 90,
+            "agility": 75,
+            "pass_rush": 85,
+            "run_stop": 88
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "players": [
+        {
+          "name": "Alex Brown",
+          "position": "Quarterback",
+          "characteristics": {
+            "speed": 80,
+            "strength": 65,
+            "agility": 75,
+            "accuracy": 88,
+            "awareness": 85
+          }
+        },
+        {
+          "name": "Ryan Miller",
+          "position": "Linebacker",
+          "characteristics": {
+            "speed": 85,
+            "strength": 90,
+            "agility": 80,
+            "tackling": 88,
+            "coverage": 75
+          }
+        },
+        {
+          "name": "Ethan Wilson",
+          "position": "Cornerback",
+          "characteristics": {
+            "speed": 90,
+            "strength": 70,
+            "agility": 88,
+            "man_coverage": 85,
+            "zone_coverage": 80
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "players": [
+        {
+          "name": "Daniel Harris",
+          "position": "Tight End",
+          "characteristics": {
+            "speed": 78,
+            "strength": 85,
+            "agility": 75,
+            "catching": 82,
+            "blocking": 80
+          }
+        },
+        {
+          "name": "Kevin Lee",
+          "position": "Safety",
+          "characteristics": {
+            "speed": 85,
+            "strength": 75,
+            "agility": 80,
+            "tackling": 82,
+            "coverage": 78
+          }
+        },
+        {
+          "name": "Brian Taylor",
+          "position": "Kicker",
+          "characteristics": {
+            "power": 90,
+            "accuracy": 85,
+            "clutch": 80
+          }
+        }
+      ]
+    }
+  ]
+}
