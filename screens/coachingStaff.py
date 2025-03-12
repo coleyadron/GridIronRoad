@@ -57,7 +57,7 @@ def inputStaff(screen):
                         if confirmationText.upper() == 'YES' or confirmationText.upper() == 'Y':
                             print("YES CHECK")
                             staffOpen = False
-                            return
+                            return [offenseText, defenseText, specialText]
                         elif confirmationText.upper() == 'NO' or confirmationText.upper() == 'N':
                             print("NO CHECK")
                             return

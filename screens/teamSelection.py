@@ -2,6 +2,8 @@ import pygame
 import gridironRoad
 import json
 
+SELECTED = 0
+
 def getContracts():
     try:
         with open("json/contract.json", "r") as file:
@@ -46,6 +48,7 @@ def wrap_text(text, font, max_width):
 
 
 def selectTeam(screen):
+    global SELECTED
 
     def displayEmpty(topRow):
         screen.fill((0, 0, 0))
@@ -92,6 +95,7 @@ def selectTeam(screen):
                 gridironRoad.killgame(screen)
             if event.type == pygame.KEYDOWN and teamOpen:
                 if (event.key == pygame.K_1 or event.key == pygame.K_KP1) and not confirmSelection:
+                    SELECTED = 1
                     # print("Team 1 selected")
                     confirmSelection = True
 
@@ -111,6 +115,7 @@ def selectTeam(screen):
                     pygame.display.update()
                 
                 elif (event.key == pygame.K_2  or event.key == pygame.K_KP2) and not confirmSelection:
+                    SELECTED = 2
                     # print("Team 2 selected")
                     confirmSelection = True
 
@@ -130,6 +135,7 @@ def selectTeam(screen):
                     pygame.display.update()
 
                 elif (event.key == pygame.K_3 or event.key == pygame.K_KP3) and not confirmSelection:
+                    SELECTED = 3
                     # print("Team 3 selected")
                     confirmSelection = True
 
@@ -151,7 +157,7 @@ def selectTeam(screen):
                 if (event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER) and confirmSelection:
                     # print("Team selection confirmed")
                     teamOpen = False
-                    return
+                    return contractStrings[SELECTED - 1]
                 if event.key == pygame.K_ESCAPE:
                     # print("Game has been closed")
                     gridironRoad.killgame(screen)

@@ -3,6 +3,8 @@ import gridironRoad
 import json
 import random
 
+SELECTED = 0
+
 def getExperienceLevels():
     try:
         with open("json/experience.json", "r") as file:
@@ -98,6 +100,7 @@ def showMoreInfo(screen):
     return
 
 def selectExperience(screen):
+    global SELECTED
 
     def displayEmpty(topRow):
         screen.fill((0, 0, 0))
@@ -152,6 +155,7 @@ def selectExperience(screen):
                 gridironRoad.killgame(screen)
             if event.type == pygame.KEYDOWN and experienceOpen:
                 if (event.key == pygame.K_1 or event.key == pygame.K_KP1) and not confirmSelection:
+                    SELECTED = 1
                     # print("Experience 1 selected")
                     confirmSelection = True
                     returnMore = False
@@ -173,6 +177,7 @@ def selectExperience(screen):
                     pygame.display.update()
 
                 elif (event.key == pygame.K_2  or event.key == pygame.K_KP2) and not confirmSelection:
+                    SELECTED = 2
                     # print("Experience 2 selected")
                     confirmSelection = True
                     returnMore = False
@@ -194,6 +199,7 @@ def selectExperience(screen):
                     pygame.display.update()
 
                 elif (event.key == pygame.K_3 or event.key == pygame.K_KP3) and not confirmSelection:
+                    SELECTED = 3
                     # print("Experience 3 selected")
                     confirmSelection = True
                     returnMore = False
@@ -241,7 +247,7 @@ def selectExperience(screen):
                         confirmSelection = False
                     else:
                         experienceOpen = False
-                        return
+                        return expStrings[SELECTED]
                 
 
                 if event.key == pygame.K_ESCAPE:

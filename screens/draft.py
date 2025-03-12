@@ -200,6 +200,7 @@ def draft(screen):
                     print("Draft complete!")
                     for player in PLAYERS_SELECTED:
                         print(player["name"])
+                    return PLAYERS_SELECTED
                 else:
                     screen.fill((0, 0, 0))
                     draft = font.render("Draft a player: ", True, (255, 255, 255))

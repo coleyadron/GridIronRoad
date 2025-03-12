@@ -1,4 +1,19 @@
 import pygame, sys
+import json
+
+def retrieveGameState():
+    import main
+
+    state = main.retrieveState()
+    return state
+
+def saveGameState(data):
+    try:
+        with open("json/userState.json", "w") as f:
+            pass
+    except Exception as e:
+        print("Error saving game state: ", e)
+    print("Game is saved")
 
 def killgame(screen):
     font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
@@ -22,10 +37,14 @@ def killgame(screen):
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                data = retrieveGameState()
+                saveGameState(data)
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
+                    data = retrieveGameState()
+                    saveGameState(data)
                     pygame.quit()
                     sys.exit()
                 elif event.key == pygame.K_ESCAPE:
