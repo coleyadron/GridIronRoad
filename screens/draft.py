@@ -16,6 +16,7 @@ GRAY = (200, 200, 200)
 BLUE = (0, 0, 255)
 GREEN = (0, 255, 0)
 RED = (255, 0, 0)
+BLACK = (0, 0, 0)
 
 # Grid parameters
 GRID_COLS = 7
@@ -59,27 +60,39 @@ def draw_rounded_rect(surface, color, rect, radius):
 
 def draw_grid(surface, playerData):
     """Draw the grid of rounded rectangles."""
+    font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 28)
+    small_font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 24)
+
     for row in range(GRID_ROWS):
         for col in range(GRID_COLS):
             x = grid_x + col * (BOX_WIDTH + BOX_SPACING)
             y = grid_y + row * (BOX_HEIGHT + BOX_SPACING)
             rect = (x, y, BOX_WIDTH, BOX_HEIGHT)
             draw_rounded_rect(surface, GRAY, rect, CORNER_RADIUS)
-            font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
 
-            # Add some placeholder text
-            pickText = font.render(f"Pick {row * GRID_COLS + col + 1}", True, (0,0,0))
-            pickRender = pickText.get_rect(center=(x + BOX_WIDTH // 2, y + BOX_HEIGHT // 2))
+            # Calculate the player index
+            player_index = row * GRID_COLS + col
+            if player_index < len(playerData["draft_rounds"][ROUND - 1]["players"]):
+                player = playerData["draft_rounds"][ROUND - 1]["players"][player_index]
 
-            # nameText = font.render(playerData["draft_rounds"][ROUND]["players"][], True, (0,0,0))
-            # nameRender = nameText.get_rect(center=(x + BOX_WIDTH // 2, y + BOX_HEIGHT // 2 + 50))
+                # Display player name
+                name_text = font.render(player["name"], True, BLACK)
+                name_rect = name_text.get_rect(center=(x + BOX_WIDTH // 2, y + BOX_HEIGHT // 2 - 20))
+                surface.blit(name_text, name_rect)
+
+                # Calculate and display player rating (average of characteristics)
+                rating = sum(player["characteristics"].values()) // len(player["characteristics"])
+                rating_text = small_font.render(f"Rating: {rating}", True, BLACK)
+                rating_rect = rating_text.get_rect(center=(x + BOX_WIDTH // 2, y + BOX_HEIGHT // 2 + 20))
+                surface.blit(rating_text, rating_rect)
+            else:
+                # Display placeholder text if no player is available
+                pick_text = font.render(f"Pick {player_index + 1}", True, BLACK)
+                pick_rect = pick_text.get_rect(center=(x + BOX_WIDTH // 2, y + BOX_HEIGHT // 2))
+                surface.blit(pick_text, pick_rect)
 
 
-
-            surface.blit(pickText, pickRender)
-            # surface.blit(nameText, nameRender)
-
-def handle_click(mouse_pos):
+def handle_click(mouse_pos, playerData):
     """Handles mouse clicks"""
     for row in range(GRID_ROWS):
         for col in range(GRID_COLS):
@@ -87,7 +100,17 @@ def handle_click(mouse_pos):
             y = grid_y + row * (BOX_HEIGHT + BOX_SPACING)
             rect = pygame.Rect(x, y, BOX_WIDTH, BOX_HEIGHT)  # Create a Rect object
             if rect.collidepoint(mouse_pos):
-                print(f"Pick {row * GRID_COLS + col + 1}")
+                player_index = row * GRID_COLS + col
+                if player_index < len(playerData["draft_rounds"][ROUND - 1]["players"]):
+                    player = playerData["draft_rounds"][ROUND - 1]["players"][player_index]
+                    print(f"Player Information for Pick {player_index + 1}:")
+                    print(f"Name: {player['name']}")
+                    print(f"Position: {player['position']}")
+                    print(f"Characteristics: {player['characteristics']}")
+                    print(f"Rating: {sum(player['characteristics'].values()) // len(player['characteristics'])}")
+                else:
+                    print(f"No player available for Pick {player_index + 1}")
+
 
 def draft(screen):
     font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
@@ -118,7 +141,7 @@ def draft(screen):
                     kill_game()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = pygame.mouse.get_pos()
-                handle_click(mouse_pos)
+                handle_click(mouse_pos, playerData)
 
 
 def main():
