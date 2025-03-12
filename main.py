@@ -18,14 +18,18 @@ pygame.display.set_icon(pygame.image.load("assets/images/gridIronLogo.PNG"))
 
 font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
 
-mainScreenImg = pygame.image.load("assets/images/gridIronLogo.PNG").convert()
+mainScreenLogo = pygame.image.load("assets/images/giLogoBorder.png").convert_alpha()
+mainScreenImage = pygame.image.load("assets/images/startScreen.png").convert()
 startText = font.render("Press SPACE to Start Game", True, (255, 255, 255))
 
-screen.blit(mainScreenImg, (screen.get_width() / 2 - mainScreenImg.get_width() / 2, 
-                            screen.get_height() / 3 - mainScreenImg.get_height() / 3))
+screen.blit(mainScreenImage, (screen.get_width() / 2 - mainScreenImage.get_width() / 2,
+                             screen.get_height() / 3 - mainScreenImage.get_height() / 3))
+
+screen.blit(mainScreenLogo, (screen.get_width() / 2 - mainScreenLogo.get_width() / 2, 
+                            screen.get_height() / 10 - mainScreenLogo.get_height() / 10))
 
 screen.blit(startText, (screen.get_width() / 2 - startText.get_width() / 2, 
-                        screen.get_height() - startText.get_height() - 100))
+                        screen.get_height() - startText.get_height() - 30))
 
 pygame.display.update()
 
