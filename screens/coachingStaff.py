@@ -40,22 +40,25 @@ def inputStaff(screen):
             if event.type == pygame.KEYDOWN and staffOpen:
                 if event.key == pygame.K_RETURN:
                     if activeText < 3:
-                        activeText += 1
-                    elif activeText == 3:
+                        if activeText == 1 and offenseText != '':
+                            activeText += 1
+                        elif activeText == 2 and defenseText != '':
+                            activeText += 1
+                    elif activeText == 3 and specialText != '':
                         activeText += 1
 
                         confirmation = font.render("Are these names correct: ", True, (255, 255, 255))
                         screen.blit(confirmation, (0, screen.get_height() - confirmation.get_height() - 75))
                         pygame.display.flip()
 
-                    else:
+                    elif activeText == 4:
                         print(confirmationText)
                         print(confirmationText.upper())
-                        if confirmationText.upper() == 'YES':
+                        if confirmationText.upper() == 'YES' or confirmationText.upper() == 'Y':
                             print("YES CHECK")
                             staffOpen = False
                             return
-                        elif confirmationText.upper() == 'NO':
+                        elif confirmationText.upper() == 'NO' or confirmationText.upper() == 'N':
                             print("NO CHECK")
                             return
                         else:
@@ -63,7 +66,6 @@ def inputStaff(screen):
                             confirmationText = ''
 
                 if event.key == pygame.K_ESCAPE:
-                    # print("Game has been closed")
                     gridironRoad.killgame(screen)
 
                 if event.key == pygame.K_BACKSPACE:
@@ -84,6 +86,18 @@ def inputStaff(screen):
                         specialText += event.unicode
                     elif activeText == 4:
                         confirmationText += event.unicode
+                
+                if event.key == pygame.K_UP:
+                    if activeText > 1:
+                        activeText -= 1
+                elif event.key == pygame.K_DOWN:
+                    if activeText < 4:
+                        if activeText == 1 and offenseText != '':
+                            activeText += 1
+                        elif activeText == 2 and defenseText != '':
+                            activeText += 1
+                        elif activeText == 3 and specialText != '':
+                            activeText += 1
 
         pygame.draw.rect(screen, color, offenseInput)
         pygame.draw.rect(screen, color, defenseInput)
