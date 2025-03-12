@@ -92,8 +92,9 @@ def draw_grid(surface, playerData):
                 surface.blit(pick_text, pick_rect)
 
 
-def handle_click(mouse_pos, playerData):
+def handle_click(mouse_pos, playerData, ROUND):
     """Handles mouse clicks"""
+    currentRoundIndex = ROUND - 1
     for row in range(GRID_ROWS):
         for col in range(GRID_COLS):
             x = grid_x + col * (BOX_WIDTH + BOX_SPACING)
@@ -102,17 +103,63 @@ def handle_click(mouse_pos, playerData):
             if rect.collidepoint(mouse_pos):
                 player_index = row * GRID_COLS + col
                 if player_index < len(playerData["draft_rounds"][ROUND - 1]["players"]):
-                    player = playerData["draft_rounds"][ROUND - 1]["players"][player_index]
-                    print(f"Player Information for Pick {player_index + 1}:")
-                    print(f"Name: {player['name']}")
-                    print(f"Position: {player['position']}")
-                    print(f"Characteristics: {player['characteristics']}")
-                    print(f"Rating: {sum(player['characteristics'].values()) // len(player['characteristics'])}")
+                    player = playerData["draft_rounds"][currentRoundIndex]["players"][player_index]
+
+                    copy_screen = screen.copy()
+
+                    # Create a popup box
+                    popup_width = 600
+                    popup_height = 400
+                    popup_x = (WIDTH - popup_width) // 2
+                    popup_y = (HEIGHT - popup_height) // 2
+
+                    # Draw the popup background
+                    pygame.draw.rect(screen, WHITE, (popup_x, popup_y, popup_width, popup_height))
+                    pygame.draw.rect(screen, BLACK, (popup_x, popup_y, popup_width, popup_height), 3)
+
+                    # Display player information in the popup
+                    font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 24)
+                    small_font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 18)
+
+                    name_text = font.render(f"Name: {player['name']}", True, BLACK)
+                    position_text = font.render(f"Position: {player['position']}", True, BLACK)
+                    rating = sum(player["characteristics"].values()) // len(player["characteristics"])
+                    rating_text = font.render(f"Rating: {rating}", True, BLACK)
+
+                    screen.blit(name_text, (popup_x + 20, popup_y + 20))
+                    screen.blit(position_text, (popup_x + 20, popup_y + 60))
+                    screen.blit(rating_text, (popup_x + 20, popup_y + 100))
+
+                    # Display confirmation instructions
+                    confirm_text = small_font.render("Press SPACE to confirm or ESC to cancel", True, BLACK)
+                    screen.blit(confirm_text, (popup_x + 20, popup_y + 200))
+
+                    pygame.display.update()
+
+                    # Wait for user input (SPACE or ESC)
+                    confirmPick = True
+                    while confirmPick:
+                        for event in pygame.event.get():
+                            if event.type == pygame.KEYDOWN:
+                                if event.key == pygame.K_SPACE:
+                                    print(f"Player {player['name']} selected!")
+                                    confirmPick = False
+                                    ROUND += 1
+                                    return ROUND  # Confirm selection
+                                elif event.key == pygame.K_ESCAPE:
+                                    print("Selection canceled.")
+                                    screen.blit(copy_screen, (0, 0))
+                                    pygame.display.update()
+                                    confirmPick = False
+                                    return ROUND  # Cancel selection
+                            elif event.type == pygame.QUIT:
+                                kill_game()
                 else:
                     print(f"No player available for Pick {player_index + 1}")
 
 
 def draft(screen):
+    global ROUND
     font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
 
 
@@ -141,7 +188,21 @@ def draft(screen):
                     kill_game()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = pygame.mouse.get_pos()
-                handle_click(mouse_pos, playerData)
+                # prevRound = ROUND
+                ROUND = handle_click(mouse_pos, playerData, ROUND)
+                # if ROUND > prevRound:
+                if ROUND > 5:
+                    draftOpen = False
+                    print("Draft complete!")
+                else:
+                    screen.fill((0, 0, 0))
+                    draft = font.render("Draft a player: ", True, (255, 255, 255))
+                    roundText = font.render("Round: " + str(ROUND), True, (255, 255, 255))
+                    screen.blit(draft, (0, 0))
+                    screen.blit(roundText, (0, 50))
+                    draw_grid(screen, playerData)
+                    pygame.display.update()
+
 
 
 def main():
