@@ -3,6 +3,8 @@ import pygame, sys
 def killgame(screen):
     font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
 
+    copy_screen = screen.copy()
+
     confirmationText = font.render("Are you sure you want to quit the game?", True, (0, 0, 0))
     yesText = font.render("Press SPACE to exit", True, (0, 0, 0))
     
@@ -26,3 +28,7 @@ def killgame(screen):
                 if event.key == pygame.K_SPACE:
                     pygame.quit()
                     sys.exit()
+                elif event.key == pygame.K_ESCAPE:
+                    screen.blit(copy_screen, (0, 0))
+                    pygame.display.update()
+                    return
