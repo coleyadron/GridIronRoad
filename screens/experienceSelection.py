@@ -247,7 +247,7 @@ def selectExperience(screen):
                         confirmSelection = False
                     else:
                         experienceOpen = False
-                        return expStrings[SELECTED]
+                        return expStrings[SELECTED - 1]
                 
 
                 if event.key == pygame.K_ESCAPE:
