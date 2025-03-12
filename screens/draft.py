@@ -28,6 +28,8 @@ CORNER_RADIUS = 8
 
 ROUND = 1
 
+PLAYERS_SELECTED = []
+
 # Calculate grid position
 BOX_WIDTH = (WIDTH - (GRID_COLS - 1) * BOX_SPACING) // GRID_COLS
 BOX_HEIGHT = (HEIGHT - 120 - (GRID_ROWS - 1) * BOX_SPACING) // GRID_ROWS
@@ -94,6 +96,7 @@ def draw_grid(surface, playerData):
 
 def handle_click(mouse_pos, playerData, ROUND):
     """Handles mouse clicks"""
+    global PLAYERS_SELECTED
     currentRoundIndex = ROUND - 1
     for row in range(GRID_ROWS):
         for col in range(GRID_COLS):
@@ -145,6 +148,7 @@ def handle_click(mouse_pos, playerData, ROUND):
                                     print(f"Player {player['name']} selected!")
                                     confirmPick = False
                                     ROUND += 1
+                                    PLAYERS_SELECTED.append(player)
                                     return ROUND  # Confirm selection
                                 elif event.key == pygame.K_ESCAPE:
                                     print("Selection canceled.")
@@ -194,6 +198,8 @@ def draft(screen):
                 if ROUND > 5:
                     draftOpen = False
                     print("Draft complete!")
+                    for player in PLAYERS_SELECTED:
+                        print(player["name"])
                 else:
                     screen.fill((0, 0, 0))
                     draft = font.render("Draft a player: ", True, (255, 255, 255))

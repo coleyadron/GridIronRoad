@@ -35,6 +35,17 @@
             "catching": 96,
             "route_running": 90
           }
+        },
+        {
+          "name": "David Wilson",
+          "position": "Defensive Lineman",
+          "characteristics": {
+            "speed": 80,
+            "strength": 90,
+            "agility": 75,
+            "pass_rush": 85,
+            "run_stop": 88
+          }
         }
       ]
     },
