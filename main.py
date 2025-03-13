@@ -4,6 +4,7 @@ from screens import draft
 from screens import coachingStaff
 from screens import teamSelection
 import gridironRoad
+import json
 # from screens.minigames import puntReturn
 
 EXPERIENCE = None
@@ -21,6 +22,91 @@ DRAFT = None
 #     }
 #     print(state)
 #     return state
+
+def playGame(screen):
+    print("Game is starting")
+
+def newGame(screen):
+    # print("SPACE action, next screen")
+    EXPERIENCE = experienceSelection.selectExperience(screen)
+    # print(EXPERIENCE)
+    gridironRoad.updateGlobalState("experience", EXPERIENCE)
+
+    TEAM = teamSelection.selectTeam(screen)
+    # print(TEAM)
+    gridironRoad.updateGlobalState("team", TEAM)
+
+    STAFF = coachingStaff.inputStaff(screen)
+    # print(STAFF)
+    gridironRoad.updateGlobalState("staff", STAFF)
+
+    DRAFT = draft.draft(screen)
+    # print(DRAFT)
+    gridironRoad.updateGlobalState("draft", DRAFT)
+    
+
+def loadGame(screen, state):
+    font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
+
+    confirmationText = font.render("Would you like to load your save file?", True, (0, 0, 0))
+    yesText = font.render("Press SPACE to load or ESCAPE for a new file", True, (0, 0, 0))
+    
+    pygame.draw.rect(screen, (225, 225, 225), (screen.get_width() / 2 -  confirmationText.get_width() * 1.25 / 2,
+                                               screen.get_height() / 4,
+                                               confirmationText.get_width() * 1.25, screen.get_height() * .5))
+
+    screen.blit(confirmationText, (screen.get_width() / 2 - confirmationText.get_width() / 2, screen.get_height() * .33))
+    
+    screen.blit(yesText, (screen.get_width() / 2 - yesText.get_width() / 2, screen.get_height() * .66))
+        
+    pygame.display.update()
+
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                gridironRoad.killgame(screen)
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    print("Starting new game")
+                    newGame(screen)
+                    running = False
+                if event.key == pygame.K_SPACE:
+                    print("Loading game")
+
+                    gridironRoad.updateGlobalState("experience", state["experience"])
+                    gridironRoad.updateGlobalState("team", state["team"])
+                    gridironRoad.updateGlobalState("staff", state["staff"])
+                    gridironRoad.updateGlobalState("draft", state["draft"])     
+
+                    EXPERIENCE = state["experience"]
+                    TEAM = state["team"]
+                    STAFF = state["staff"]
+                    DRAFT = state["draft"]
+
+                    print("Experience: ", EXPERIENCE)
+                    print("Team: ", TEAM)
+                    print("Staff: ", STAFF)
+                    print("Draft: ", DRAFT)
+
+                    playGame(screen)
+
+                running = False
+
+def startGame(screen):
+    try:
+        with open("json/userState.json", "r") as f:
+            state = json.load(f)
+            print(state)
+            if state["started"]:
+                print("Game is already started")
+                loadGame(screen, state)
+                return
+            else:
+                print("Starting new game")
+                newGame(screen)
+    except Exception as e:
+        print("Error starting game: ", e)
 
 def main():
     global EXPERIENCE, TEAM, STAFF, DRAFT
@@ -71,22 +157,7 @@ def main():
 
                 if event.key == pygame.K_SPACE and mainScreen:
                     mainScreen = False
-                    # print("SPACE action, next screen")
-                    EXPERIENCE = experienceSelection.selectExperience(screen)
-                    # print(EXPERIENCE)
-                    gridironRoad.updateGlobalState("experience", EXPERIENCE)
-
-                    TEAM = teamSelection.selectTeam(screen)
-                    # print(TEAM)
-                    gridironRoad.updateGlobalState("team", TEAM)
-
-                    STAFF = coachingStaff.inputStaff(screen)
-                    # print(STAFF)
-                    gridironRoad.updateGlobalState("staff", STAFF)
-
-                    DRAFT = draft.draft(screen)
-                    # print(DRAFT)
-                    gridironRoad.updateGlobalState("draft", DRAFT)
-
+                    startGame(screen)
+                    
 if __name__ == "__main__":
     main()

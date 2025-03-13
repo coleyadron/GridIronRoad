@@ -1,26 +1,26 @@
 {
     "started": true,
     "experience": {
-        "level": "Experienced_1",
-        "displayName": "Solid Coach",
-        "description": "You were a state champion in high school, but you haven't played since.",
+        "level": "Rookie_1",
+        "displayName": "New Recruit",
+        "description": "Very limited experience. Played high school football. Haven't picked up the pig skin since.",
         "modifiers": {
-            "playerDevelopmentRate": 1.0,
-            "scoutingEfficiency": 0.9,
-            "contractNegotiationBonus": 0.1,
-            "fanExpectationMultiplier": 0.8,
-            "budgetMultiplier": 0.9
+            "playerDevelopmentRate": 0.7,
+            "scoutingEfficiency": 0.6,
+            "contractNegotiationBonus": -0.2,
+            "fanExpectationMultiplier": 0.4,
+            "budgetMultiplier": 0.5
         }
     },
     "team": {
-        "level": "Medium",
-        "displayName": "Developing Contract",
-        "description": "A two-year contract to build your skills. Moderate expectations.",
-        "salaryMultiplier": 0.8,
-        "performanceBonusMultiplier": 1.1,
-        "jobSecurity": "Medium",
+        "level": "Easy",
+        "displayName": "Short-Term Deal",
+        "description": "A quick one-year contract. Low expectations, low salary.",
+        "salaryMultiplier": 0.7,
+        "performanceBonusMultiplier": 1.3,
+        "jobSecurity": "Low",
         "goals": [
-            "Make the playoffs once"
+            "Win 50% of games"
         ]
     },
     "staff": null,
