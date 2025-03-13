@@ -26,6 +26,9 @@ def updateGlobalState(variable, value):
 
 def saveGameState():
     try:
+        if EXPERIENCE is None and TEAM is None and STAFF is None and DRAFT is None:
+            print("No game data to save")
+            return
         with open("json/userState.json", "w") as f:
             state = {
                 "started": True,

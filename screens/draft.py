@@ -1,10 +1,10 @@
 import pygame
-# import gridironRoad
+import gridironRoad
 import json
 
-def kill_game():
-    pygame.quit()
-    quit()
+# def kill_game():
+#     pygame.quit()
+#     quit()
 
 WIDTH, HEIGHT = 1400, 1050
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -157,7 +157,8 @@ def handle_click(mouse_pos, playerData, ROUND):
                                     confirmPick = False
                                     return ROUND  # Cancel selection
                             elif event.type == pygame.QUIT:
-                                kill_game()
+                                gridironRoad.killgame(screen)
+                                # kill_game()
                 else:
                     print(f"No player available for Pick {player_index + 1}")
 
@@ -184,12 +185,12 @@ def draft(screen):
     while draftOpen:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                # gridironRoad.killgame(screen)
-                kill_game()
+                gridironRoad.killgame(screen)
+                # kill_game()
             if event.type == pygame.KEYDOWN and draftOpen:
                 if event.key == pygame.K_ESCAPE:
-                    # gridironRoad.killgame(screen)
-                    kill_game()
+                    gridironRoad.killgame(screen)
+                    # kill_game()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = pygame.mouse.get_pos()
                 # prevRound = ROUND

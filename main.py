@@ -96,6 +96,10 @@ def loadGame(screen, state):
 def startGame(screen):
     try:
         with open("json/userState.json", "r") as f:
+            if f.read() == "":
+                print("No save file found")
+                newGame(screen)
+                return
             state = json.load(f)
             print(state)
             if state["started"]:

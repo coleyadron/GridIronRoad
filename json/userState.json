@@ -23,6 +23,10 @@
             "Win 50% of games"
         ]
     },
-    "staff": null,
+    "staff": [
+        "1",
+        "2",
+        "3"
+    ],
     "draft": null
 }
