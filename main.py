@@ -11,16 +11,16 @@ TEAM = None
 STAFF = None
 DRAFT = None
 
-def retrieveState():
-    state = {
-        "started": True,
-        "experience": EXPERIENCE,
-        "team": TEAM,
-        "staff": STAFF,
-        "draft": DRAFT
-    }
-    print(state)
-    return state
+# def retrieveState():
+#     state = {
+#         "started": True,
+#         "experience": EXPERIENCE,
+#         "team": TEAM,
+#         "staff": STAFF,
+#         "draft": DRAFT
+#     }
+#     print(state)
+#     return state
 
 def main():
     global EXPERIENCE, TEAM, STAFF, DRAFT
@@ -29,7 +29,7 @@ def main():
     pygame.display.init()
 
     # info = pygame.display.Info()
-    screen = pygame.display.set_mode((1400, 1050))
+    screen = pygame.display.set_mode((1300, 950))
 
     pygame.display.set_caption("GridIron Road")
     pygame.display.set_icon(pygame.image.load("assets/images/gridIronLogo.PNG"))
@@ -73,12 +73,20 @@ def main():
                     mainScreen = False
                     # print("SPACE action, next screen")
                     EXPERIENCE = experienceSelection.selectExperience(screen)
-                    print(EXPERIENCE)
+                    # print(EXPERIENCE)
+                    gridironRoad.updateGlobalState("experience", EXPERIENCE)
+
                     TEAM = teamSelection.selectTeam(screen)
-                    print(TEAM)
+                    # print(TEAM)
+                    gridironRoad.updateGlobalState("team", TEAM)
+
                     STAFF = coachingStaff.inputStaff(screen)
-                    print(STAFF)
+                    # print(STAFF)
+                    gridironRoad.updateGlobalState("staff", STAFF)
+
                     DRAFT = draft.draft(screen)
+                    # print(DRAFT)
+                    gridironRoad.updateGlobalState("draft", DRAFT)
 
 if __name__ == "__main__":
     main()

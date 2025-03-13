@@ -1,0 +1,28 @@
+{
+    "started": true,
+    "experience": {
+        "level": "Experienced_1",
+        "displayName": "Solid Coach",
+        "description": "You were a state champion in high school, but you haven't played since.",
+        "modifiers": {
+            "playerDevelopmentRate": 1.0,
+            "scoutingEfficiency": 0.9,
+            "contractNegotiationBonus": 0.1,
+            "fanExpectationMultiplier": 0.8,
+            "budgetMultiplier": 0.9
+        }
+    },
+    "team": {
+        "level": "Medium",
+        "displayName": "Developing Contract",
+        "description": "A two-year contract to build your skills. Moderate expectations.",
+        "salaryMultiplier": 0.8,
+        "performanceBonusMultiplier": 1.1,
+        "jobSecurity": "Medium",
+        "goals": [
+            "Make the playoffs once"
+        ]
+    },
+    "staff": null,
+    "draft": null
+}
