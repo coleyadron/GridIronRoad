@@ -96,11 +96,15 @@ def loadGame(screen, state):
 def startGame(screen):
     try:
         with open("json/userState.json", "r") as f:
-            if f.read() == "":
+            state = json.load(f)
+            if not state:
                 print("No save file found")
                 newGame(screen)
                 return
-            state = json.load(f)
+            elif not state["started"]:
+                print("Game started is False")
+                newGame(screen)
+                return
             print(state)
             if state["started"]:
                 print("Game is already started")
@@ -111,6 +115,10 @@ def startGame(screen):
                 newGame(screen)
     except Exception as e:
         print("Error starting game: ", e)
+    except FileNotFoundError:
+        print("No save file found")
+    except json.JSONDecodeError:
+        print("Error decoding save file")
 
 def main():
     global EXPERIENCE, TEAM, STAFF, DRAFT
