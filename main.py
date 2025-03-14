@@ -4,6 +4,7 @@ from screens import draft
 from screens import coachingStaff
 from screens import teamSelection
 from screens import seasonOverview
+from screens import pregameDecisions
 import gridironRoad
 import json
 # from screens.minigames import puntReturn
@@ -27,6 +28,8 @@ DRAFT = None
 def playGame(screen):
     print("Game is starting")
     seasonOverview.seasonOverview(screen)
+
+    pregameDecisions.preGameDecisions(screen)
 
 def newGame(screen):
     # print("SPACE action, next screen")

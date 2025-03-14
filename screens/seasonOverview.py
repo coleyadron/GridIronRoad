@@ -55,12 +55,15 @@ def seasonOverview(screen):
         print("No matchups found. Exiting.")
         return
 
-    y_offset = 50
+    y_offset = 100
     for game in season["matchups"]:
         text = display_matchup(game)
         text_surface = font.render(text, True, WHITE)
         screen.blit(text_surface, (50, y_offset))
         y_offset += 40
+
+    nextScreenText = font.render("Press SPACE to enter the next game", True, WHITE)
+    screen.blit(nextScreenText, (0, screen.get_height() - 100))
 
 
     pygame.display.update()
