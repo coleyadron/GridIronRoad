@@ -3,6 +3,7 @@ from screens import experienceSelection
 from screens import draft
 from screens import coachingStaff
 from screens import teamSelection
+from screens import seasonOverview
 import gridironRoad
 import json
 # from screens.minigames import puntReturn
@@ -25,6 +26,7 @@ DRAFT = None
 
 def playGame(screen):
     print("Game is starting")
+    seasonOverview.seasonOverview(screen)
 
 def newGame(screen):
     # print("SPACE action, next screen")
@@ -43,6 +45,9 @@ def newGame(screen):
     DRAFT = draft.draft(screen)
     # print(DRAFT)
     gridironRoad.updateGlobalState("draft", DRAFT)
+
+    #start game
+    playGame(screen)
     
 
 def loadGame(screen, state):
@@ -84,10 +89,10 @@ def loadGame(screen, state):
                     STAFF = state["staff"]
                     DRAFT = state["draft"]
 
-                    print("Experience: ", EXPERIENCE)
-                    print("Team: ", TEAM)
-                    print("Staff: ", STAFF)
-                    print("Draft: ", DRAFT)
+                    # print("Experience: ", EXPERIENCE)
+                    # print("Team: ", TEAM)
+                    # print("Staff: ", STAFF)
+                    # print("Draft: ", DRAFT)
 
                     playGame(screen)
 
@@ -127,7 +132,7 @@ def main():
     pygame.display.init()
 
     # info = pygame.display.Info()
-    screen = pygame.display.set_mode((1300, 950))
+    screen = pygame.display.set_mode((1400, 1050))
 
     pygame.display.set_caption("GridIron Road")
     pygame.display.set_icon(pygame.image.load("assets/images/gridIronLogo.PNG"))
