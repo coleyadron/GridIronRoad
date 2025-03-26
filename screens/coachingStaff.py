@@ -52,15 +52,17 @@ def inputStaff(screen):
                         pygame.display.flip()
 
                     elif activeText == 4:
+                        confirmationText = confirmationText.strip().upper()
                         print(confirmationText)
                         print(confirmationText.upper())
-                        if confirmationText.upper() == 'YES' or confirmationText.upper() == 'Y':
+                        if confirmationText == 'YES' or confirmationText == 'Y':
                             print("YES CHECK")
                             staffOpen = False
-                            return [offenseText, defenseText, specialText]
-                        elif confirmationText.upper() == 'NO' or confirmationText.upper() == 'N':
+                            return [offenseText.strip(), defenseText.strip(), specialText.strip()]
+                        elif confirmationText == 'NO' or confirmationText == 'N':
                             print("NO CHECK")
-                            return
+                            activeText = 1
+                            confirmationText = ''
                         else:
                             print("RESET")
                             confirmationText = ''

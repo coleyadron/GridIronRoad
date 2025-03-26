@@ -1,0 +1,324 @@
+{
+    "teams": [
+      {
+        "id": 1,
+        "name": "Arizona Cardinals",
+        "overall_rating": 78,
+        "players": [
+          {"name": "Kyler Murray", "position": "QB", "rating": 85},
+          {"name": "DeAndre Hopkins", "position": "WR", "rating": 92},
+          {"name": "Budda Baker", "position": "S", "rating": 88}
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Atlanta Falcons",
+        "overall_rating": 75,
+        "players": [
+          {"name": "Matt Ryan", "position": "QB", "rating": 83},
+          {"name": "Calvin Ridley", "position": "WR", "rating": 87},
+          {"name": "Grady Jarrett", "position": "DT", "rating": 89}
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Baltimore Ravens",
+        "overall_rating": 88,
+        "players": [
+          {"name": "Lamar Jackson", "position": "QB", "rating": 91},
+          {"name": "Mark Andrews", "position": "TE", "rating": 89},
+          {"name": "Marlon Humphrey", "position": "CB", "rating": 90}
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Buffalo Bills",
+        "overall_rating": 89,
+        "players": [
+          {"name": "Josh Allen", "position": "QB", "rating": 90},
+          {"name": "Stefon Diggs", "position": "WR", "rating": 93},
+          {"name": "Tre'Davious White", "position": "CB", "rating": 91}
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Carolina Panthers",
+        "overall_rating": 76,
+        "players": [
+          {"name": "Christian McCaffrey", "position": "RB", "rating": 95},
+          {"name": "Brian Burns", "position": "DE", "rating": 86},
+          {"name": "D.J. Moore", "position": "WR", "rating": 87}
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Chicago Bears",
+        "overall_rating": 77,
+        "players": [
+          {"name": "Khalil Mack", "position": "OLB", "rating": 94},
+          {"name": "Allen Robinson", "position": "WR", "rating": 88},
+          {"name": "Eddie Jackson", "position": "S", "rating": 87}
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Cincinnati Bengals",
+        "overall_rating": 79,
+        "players": [
+          {"name": "Joe Burrow", "position": "QB", "rating": 84},
+          {"name": "Ja'Marr Chase", "position": "WR", "rating": 86},
+          {"name": "Jessie Bates", "position": "S", "rating": 88}
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Cleveland Browns",
+        "overall_rating": 87,
+        "players": [
+          {"name": "Nick Chubb", "position": "RB", "rating": 93},
+          {"name": "Myles Garrett", "position": "DE", "rating": 96},
+          {"name": "Baker Mayfield", "position": "QB", "rating": 82}
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Dallas Cowboys",
+        "overall_rating": 86,
+        "players": [
+          {"name": "Dak Prescott", "position": "QB", "rating": 89},
+          {"name": "CeeDee Lamb", "position": "WR", "rating": 87},
+          {"name": "Micah Parsons", "position": "LB", "rating": 90}
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Denver Broncos",
+        "overall_rating": 82,
+        "players": [
+          {"name": "Von Miller", "position": "OLB", "rating": 91},
+          {"name": "Courtland Sutton", "position": "WR", "rating": 86},
+          {"name": "Justin Simmons", "position": "S", "rating": 89}
+        ]
+      },
+      {
+        "id": 11,
+        "name": "Detroit Lions",
+        "overall_rating": 72,
+        "players": [
+          {"name": "Jared Goff", "position": "QB", "rating": 78},
+          {"name": "T.J. Hockenson", "position": "TE", "rating": 85},
+          {"name": "De'Andre Swift", "position": "RB", "rating": 84}
+        ]
+      },
+      {
+        "id": 12,
+        "name": "Green Bay Packers",
+        "overall_rating": 90,
+        "players": [
+          {"name": "Aaron Rodgers", "position": "QB", "rating": 96},
+          {"name": "Davante Adams", "position": "WR", "rating": 97},
+          {"name": "Jaire Alexander", "position": "CB", "rating": 92}
+        ]
+      },
+      {
+        "id": 13,
+        "name": "Houston Texans",
+        "overall_rating": 70,
+        "players": [
+          {"name": "Brandin Cooks", "position": "WR", "rating": 85},
+          {"name": "Justin Reid", "position": "S", "rating": 84},
+          {"name": "Laremy Tunsil", "position": "OT", "rating": 88}
+        ]
+      },
+      {
+        "id": 14,
+        "name": "Indianapolis Colts",
+        "overall_rating": 85,
+        "players": [
+          {"name": "Jonathan Taylor", "position": "RB", "rating": 92},
+          {"name": "Quenton Nelson", "position": "OG", "rating": 95},
+          {"name": "Darius Leonard", "position": "LB", "rating": 93}
+        ]
+      },
+      {
+        "id": 15,
+        "name": "Jacksonville Jaguars",
+        "overall_rating": 71,
+        "players": [
+          {"name": "Trevor Lawrence", "position": "QB", "rating": 80},
+          {"name": "James Robinson", "position": "RB", "rating": 83},
+          {"name": "Josh Allen", "position": "OLB", "rating": 84}
+        ]
+      },
+      {
+        "id": 16,
+        "name": "Kansas City Chiefs",
+        "overall_rating": 92,
+        "players": [
+          {"name": "Patrick Mahomes", "position": "QB", "rating": 98},
+          {"name": "Travis Kelce", "position": "TE", "rating": 96},
+          {"name": "Tyreek Hill", "position": "WR", "rating": 95}
+        ]
+      },
+      {
+        "id": 17,
+        "name": "Las Vegas Raiders",
+        "overall_rating": 80,
+        "players": [
+          {"name": "Derek Carr", "position": "QB", "rating": 85},
+          {"name": "Darren Waller", "position": "TE", "rating": 90},
+          {"name": "Maxx Crosby", "position": "DE", "rating": 87}
+        ]
+      },
+      {
+        "id": 18,
+        "name": "Los Angeles Chargers",
+        "overall_rating": 86,
+        "players": [
+          {"name": "Justin Herbert", "position": "QB", "rating": 89},
+          {"name": "Keenan Allen", "position": "WR", "rating": 91},
+          {"name": "Derwin James", "position": "S", "rating": 90}
+        ]
+      },
+      {
+        "id": 19,
+        "name": "Los Angeles Rams",
+        "overall_rating": 91,
+        "players": [
+          {"name": "Matthew Stafford", "position": "QB", "rating": 88},
+          {"name": "Aaron Donald", "position": "DT", "rating": 99},
+          {"name": "Cooper Kupp", "position": "WR", "rating": 94}
+        ]
+      },
+      {
+        "id": 20,
+        "name": "Miami Dolphins",
+        "overall_rating": 81,
+        "players": [
+          {"name": "Tua Tagovailoa", "position": "QB", "rating": 82},
+          {"name": "Xavien Howard", "position": "CB", "rating": 92},
+          {"name": "Jaylen Waddle", "position": "WR", "rating": 84}
+        ]
+      },
+      {
+        "id": 21,
+        "name": "Minnesota Vikings",
+        "overall_rating": 83,
+        "players": [
+          {"name": "Kirk Cousins", "position": "QB", "rating": 84},
+          {"name": "Justin Jefferson", "position": "WR", "rating": 91},
+          {"name": "Danielle Hunter", "position": "DE", "rating": 89}
+        ]
+      },
+      {
+        "id": 22,
+        "name": "New England Patriots",
+        "overall_rating": 84,
+        "players": [
+          {"name": "Mac Jones", "position": "QB", "rating": 83},
+          {"name": "Matthew Judon", "position": "OLB", "rating": 88},
+          {"name": "Stephon Gilmore", "position": "CB", "rating": 90}
+        ]
+      },
+      {
+        "id": 23,
+        "name": "New Orleans Saints",
+        "overall_rating": 82,
+        "players": [
+          {"name": "Alvin Kamara", "position": "RB", "rating": 93},
+          {"name": "Cameron Jordan", "position": "DE", "rating": 90},
+          {"name": "Marshon Lattimore", "position": "CB", "rating": 89}
+        ]
+      },
+      {
+        "id": 24,
+        "name": "New York Giants",
+        "overall_rating": 74,
+        "players": [
+          {"name": "Saquon Barkley", "position": "RB", "rating": 88},
+          {"name": "Kenny Golladay", "position": "WR", "rating": 84},
+          {"name": "James Bradberry", "position": "CB", "rating": 87}
+        ]
+      },
+      {
+        "id": 25,
+        "name": "New York Jets",
+        "overall_rating": 70,
+        "players": [
+          {"name": "Zach Wilson", "position": "QB", "rating": 76},
+          {"name": "Quinnen Williams", "position": "DT", "rating": 86},
+          {"name": "C.J. Mosley", "position": "LB", "rating": 84}
+        ]
+      },
+      {
+        "id": 26,
+        "name": "Philadelphia Eagles",
+        "overall_rating": 79,
+        "players": [
+          {"name": "Jalen Hurts", "position": "QB", "rating": 80},
+          {"name": "Darius Slay", "position": "CB", "rating": 88},
+          {"name": "Fletcher Cox", "position": "DT", "rating": 89}
+        ]
+      },
+      {
+        "id": 27,
+        "name": "Pittsburgh Steelers",
+        "overall_rating": 85,
+        "players": [
+          {"name": "T.J. Watt", "position": "OLB", "rating": 96},
+          {"name": "Minkah Fitzpatrick", "position": "S", "rating": 92},
+          {"name": "Najee Harris", "position": "RB", "rating": 87}
+        ]
+      },
+      {
+        "id": 28,
+        "name": "San Francisco 49ers",
+        "overall_rating": 87,
+        "players": [
+          {"name": "George Kittle", "position": "TE", "rating": 95},
+          {"name": "Nick Bosa", "position": "DE", "rating": 93},
+          {"name": "Fred Warner", "position": "LB", "rating": 92}
+        ]
+      },
+      {
+        "id": 29,
+        "name": "Seattle Seahawks",
+        "overall_rating": 83,
+        "players": [
+          {"name": "Russell Wilson", "position": "QB", "rating": 91},
+          {"name": "Bobby Wagner", "position": "LB", "rating": 90},
+          {"name": "DK Metcalf", "position": "WR", "rating": 89}
+        ]
+      },
+      {
+        "id": 30,
+        "name": "Tampa Bay Buccaneers",
+        "overall_rating": 93,
+        "players": [
+          {"name": "Tom Brady", "position": "QB", "rating": 97},
+          {"name": "Mike Evans", "position": "WR", "rating": 92},
+          {"name": "Lavonte David", "position": "LB", "rating": 91}
+        ]
+      },
+      {
+        "id": 31,
+        "name": "Tennessee Titans",
+        "overall_rating": 86,
+        "players": [
+          {"name": "Derrick Henry", "position": "RB", "rating": 95},
+          {"name": "A.J. Brown", "position": "WR", "rating": 90},
+          {"name": "Kevin Byard", "position": "S", "rating": 89}
+        ]
+      },
+      {
+        "id": 32,
+        "name": "Washington Football Team",
+        "overall_rating": 80,
+        "players": [
+          {"name": "Chase Young", "position": "DE", "rating": 90},
+          {"name": "Terry McLaurin", "position": "WR", "rating": 88},
+          {"name": "Jonathan Allen", "position": "DT", "rating": 87}
+        ]
+      }
+    ]
+  }

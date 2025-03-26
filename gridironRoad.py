@@ -1,16 +1,43 @@
 import pygame, sys
 import json
+# from main import retrieveState
 
-def retrieveGameState():
-    import main
+EXPERIENCE = None
+TEAM = None
+STAFF = None
+DRAFT = None
 
-    state = main.retrieveState()
-    return state
+def updateGlobalState(variable, value):
+    global EXPERIENCE, TEAM, STAFF, DRAFT
+    if variable == "experience":
+        EXPERIENCE = value
+    elif variable == "team":
+        TEAM = value
+    elif variable == "staff":
+        STAFF = value
+    elif variable == "draft":
+        DRAFT = value
+    else:
+        print("Variable not found")
 
-def saveGameState(data):
+# def retrieveGameState():
+#     state = retrieveState()
+#     return state
+
+def saveGameState():
     try:
+        if EXPERIENCE is None and TEAM is None and STAFF is None and DRAFT is None:
+            print("No game data to save")
+            return
         with open("json/userState.json", "w") as f:
-            pass
+            state = {
+                "started": True,
+                "experience": EXPERIENCE,
+                "team": TEAM,
+                "staff": STAFF,
+                "draft": DRAFT
+            }
+            json.dump(state, f, indent=4)
     except Exception as e:
         print("Error saving game state: ", e)
     print("Game is saved")
@@ -37,14 +64,14 @@ def killgame(screen):
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                data = retrieveGameState()
-                saveGameState(data)
+                # data = retrieveGameState()
+                saveGameState()
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    data = retrieveGameState()
-                    saveGameState(data)
+                    # data = retrieveGameState()
+                    saveGameState()
                     pygame.quit()
                     sys.exit()
                 elif event.key == pygame.K_ESCAPE:

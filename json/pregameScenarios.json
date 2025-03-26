@@ -1,0 +1,124 @@
+{
+    "scenarios": [
+      {
+        "id": 1,
+        "description": "Key player suffers a season-ending injury.",
+        "effect": {
+          "morale": -20,
+          "performance": -15
+        }
+      },
+      {
+        "id": 2,
+        "description": "Team wins a close game in overtime.",
+        "effect": {
+          "morale": 15,
+          "performance": 10
+        }
+      },
+      {
+        "id": 3,
+        "description": "Team loses a close game due to a last-minute mistake.",
+        "effect": {
+          "morale": -15,
+          "performance": -10
+        }
+      },
+      {
+        "id": 4,
+        "description": "Team signs a star player in a mid-season trade.",
+        "effect": {
+          "morale": 20,
+          "performance": 20
+        }
+      },
+      {
+        "id": 5,
+        "description": "Team has a heated argument in the locker room.",
+        "effect": {
+          "morale": -25,
+          "performance": -20
+        }
+      },
+      {
+        "id": 6,
+        "description": "Team receives praise from fans and media after a dominant win.",
+        "effect": {
+          "morale": 10,
+          "performance": 5
+        }
+      },
+      {
+        "id": 7,
+        "description": "Team faces criticism from fans and media after a poor performance.",
+        "effect": {
+          "morale": -10,
+          "performance": -5
+        }
+      },
+      {
+        "id": 8,
+        "description": "Team participates in a community service event, boosting team bonding.",
+        "effect": {
+          "morale": 10,
+          "performance": 5
+        }
+      },
+      {
+        "id": 9,
+        "description": "Team's head coach is fired mid-season.",
+        "effect": {
+          "morale": -30,
+          "performance": -25
+        }
+      },
+      {
+        "id": 10,
+        "description": "Team's rookie player has a breakout game.",
+        "effect": {
+          "morale": 15,
+          "performance": 10
+        }
+      },
+      {
+        "id": 11,
+        "description": "Team faces travel delays, arriving late for a game.",
+        "effect": {
+          "morale": -10,
+          "performance": -10
+        }
+      },
+      {
+        "id": 12,
+        "description": "Team's star player wins a major award (e.g., MVP).",
+        "effect": {
+          "morale": 20,
+          "performance": 15
+        }
+      },
+      {
+        "id": 13,
+        "description": "Team's stadium experiences a power outage during a game.",
+        "effect": {
+          "morale": -5,
+          "performance": -5
+        }
+      },
+      {
+        "id": 14,
+        "description": "Team's quarterback sets a new franchise record.",
+        "effect": {
+          "morale": 15,
+          "performance": 10
+        }
+      },
+      {
+        "id": 15,
+        "description": "Team's defensive coordinator leaves for another job.",
+        "effect": {
+          "morale": -15,
+          "performance": -10
+        }
+      }
+    ]
+  }
