@@ -27,9 +27,9 @@ DRAFT = None
 
 def playGame(screen):
     print("Game is starting")
-    seasonOverview.seasonOverview(screen)
+    matchup = seasonOverview.seasonOverview(screen)
 
-    pregameDecisions.preGameDecisions(screen)
+    pregameDecisions.preGameDecisions(screen, matchup)
 
 def newGame(screen):
     # print("SPACE action, next screen")

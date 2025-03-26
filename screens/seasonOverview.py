@@ -1,6 +1,7 @@
 import pygame
 # import gridironRoad
 import json
+# import pregameDecisions
 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -42,6 +43,12 @@ def display_matchup(game):
 
     return text
 
+def findCurrentWeek(season):
+    for game in season["matchups"]:
+        if not game["played"]:
+            return game
+    return None
+
 def seasonOverview(screen):
     font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
     screen.fill((0, 0, 0))
@@ -65,8 +72,10 @@ def seasonOverview(screen):
     nextScreenText = font.render("Press SPACE to enter the next game", True, WHITE)
     screen.blit(nextScreenText, (0, screen.get_height() - 100))
 
-
     pygame.display.update()
+
+    matchup = findCurrentWeek(season)
+    print(matchup)
 
     seasonOverviewOpen = True
     while seasonOverviewOpen:
@@ -81,11 +90,14 @@ def seasonOverview(screen):
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     print("SPACE action, next screen")
+                    # pregameDecisions.preGameDecisions(screen, matchup)
                     seasonOverviewOpen = False
-                    return
+                    return matchup
                 if event.key == pygame.K_RETURN:
                     print("ENTER action, next screen")
+                    # pregameDecisions.preGameDecisions(screen, matchup)
                     seasonOverviewOpen = False
+                    return matchup
 
     return
 
