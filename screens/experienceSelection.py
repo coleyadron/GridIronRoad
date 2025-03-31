@@ -104,12 +104,13 @@ def selectExperience(screen):
 
     def displayEmpty(topRow):
         screen.fill((0, 0, 0))
+        screen.blit(bgi, (0, 0))
 
         if topRow:
+            print("Top row")
             inputSelection = font.render("Select your experience:", True, (255, 255, 255))
             screen.blit(inputSelection, (75, screen.get_height() - inputSelection.get_height() - 30))
 
-        screen.blit(bgi, (0, 0))
         screen.blit(experience1, (85, 55))
         screen.blit(experience2, (85, 105))
         screen.blit(experience3, (85, 155))
