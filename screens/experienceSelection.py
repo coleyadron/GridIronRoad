@@ -107,7 +107,6 @@ def selectExperience(screen):
         screen.blit(bgi, (0, 0))
 
         if topRow:
-            print("Top row")
             inputSelection = font.render("Select your experience:", True, (255, 255, 255))
             screen.blit(inputSelection, (75, screen.get_height() - inputSelection.get_height() - 30))
 

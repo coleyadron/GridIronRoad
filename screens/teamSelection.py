@@ -52,12 +52,12 @@ def selectTeam(screen):
 
     def displayEmpty(topRow):
         screen.fill((0, 0, 0))
+        screen.blit(bgi, (0, 0))
 
         if topRow:
             inputSelection = font.render("Select your team:", True, (255, 255, 255))
             screen.blit(inputSelection, (75, screen.get_height() - inputSelection.get_height() - 30))
 
-        screen.blit(bgi, (0, 0))
         screen.blit(team1, (85, 55))
         screen.blit(team2, (85, 105))
         screen.blit(team3, (85, 155))
