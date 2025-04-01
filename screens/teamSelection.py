@@ -52,14 +52,15 @@ def selectTeam(screen):
 
     def displayEmpty(topRow):
         screen.fill((0, 0, 0))
+        screen.blit(bgi, (0, 0))
 
         if topRow:
             inputSelection = font.render("Select your team:", True, (255, 255, 255))
-            screen.blit(inputSelection, (0, screen.get_height() - inputSelection.get_height()))
+            screen.blit(inputSelection, (75, screen.get_height() - inputSelection.get_height() - 30))
 
-        screen.blit(team1, (0, 0))
-        screen.blit(team2, (0, 50))
-        screen.blit(team3, (0, 100))
+        screen.blit(team1, (85, 55))
+        screen.blit(team2, (85, 105))
+        screen.blit(team3, (85, 155))
 
         if topRow:
             pygame.display.update()
@@ -69,6 +70,7 @@ def selectTeam(screen):
     screen.fill((0, 0, 0))
 
     font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
+    bgi = pygame.image.load("assets/images/BGI-1.png")
 
     contractStrings = []
     contractStrings = getContracts()
@@ -77,13 +79,14 @@ def selectTeam(screen):
     team2 = font.render('2. ' + contractStrings[1]['level'] + ': ' + contractStrings[1]['displayName'], True, (255, 255, 255))
     team3 = font.render('3. ' + contractStrings[2]['level'] + ': ' + contractStrings[2]['displayName'], True, (255, 255, 255))
 
-    screen.blit(team1, (0, 0))
-    screen.blit(team2, (0, 50))
-    screen.blit(team3, (0, 100))
+    screen.blit(bgi, (0, 0))
+    screen.blit(team1, (85, 55))
+    screen.blit(team2, (85, 105))
+    screen.blit(team3, (85, 155))
 
     inputSelection = font.render("Select your team:", True, (255, 255, 255))
 
-    screen.blit(inputSelection, (0, screen.get_height() - inputSelection.get_height()))
+    screen.blit(inputSelection, (75, screen.get_height() - inputSelection.get_height() - 30))
 
     pygame.display.update()
 
@@ -102,14 +105,14 @@ def selectTeam(screen):
                     displayEmpty(False)
 
                     inputSelection = font.render("Select your team: 1", True, (255, 255, 255))
-                    screen.blit(inputSelection, (0, screen.get_height() - inputSelection.get_height()))
+                    screen.blit(inputSelection, (75, screen.get_height() - inputSelection.get_height() - 30))
                     
-                    wrapped_lines = wrap_text(contractStrings[0]['description'], font, screen.get_width() - 100)
+                    wrapped_lines = wrap_text(contractStrings[0]['description'], font, screen.get_width() - 200)
 
                     y_offset = 10
                     for line in wrapped_lines:
                         text = font.render(line, True, (255, 255, 255))
-                        screen.blit(text, (50, screen.get_height() / 2 + y_offset))
+                        screen.blit(text, (85, screen.get_height() / 2 + y_offset))
                         y_offset += text.get_height()
                     
                     pygame.display.update()
@@ -122,14 +125,14 @@ def selectTeam(screen):
                     displayEmpty(False)
 
                     inputSelection = font.render("Select your team: 2", True, (255, 255, 255))
-                    screen.blit(inputSelection, (0, screen.get_height() - inputSelection.get_height()))
+                    screen.blit(inputSelection, (75, screen.get_height() - inputSelection.get_height() - 30))
                     
-                    wrapped_lines = wrap_text(contractStrings[1]['description'], font, screen.get_width() - 100)
+                    wrapped_lines = wrap_text(contractStrings[1]['description'], font, screen.get_width() - 200)
 
                     y_offset = 10
                     for line in wrapped_lines:
                         text = font.render(line, True, (255, 255, 255))
-                        screen.blit(text, (50, screen.get_height() / 2 + y_offset))
+                        screen.blit(text, (85, screen.get_height() / 2 + y_offset))
                         y_offset += text.get_height()
                     
                     pygame.display.update()
@@ -142,14 +145,14 @@ def selectTeam(screen):
                     displayEmpty(False)
 
                     inputSelection = font.render("Select your team: 3", True, (255, 255, 255))
-                    screen.blit(inputSelection, (0, screen.get_height() - inputSelection.get_height()))
+                    screen.blit(inputSelection, (75, screen.get_height() - inputSelection.get_height() - 30))
                     
-                    wrapped_lines = wrap_text(contractStrings[2]['description'], font, screen.get_width() - 100)
+                    wrapped_lines = wrap_text(contractStrings[2]['description'], font, screen.get_width() - 200)
 
                     y_offset = 10
                     for line in wrapped_lines:
                         text = font.render(line, True, (255, 255, 255))
-                        screen.blit(text, (50, screen.get_height() / 2 + y_offset))
+                        screen.blit(text, (85, screen.get_height() / 2 + y_offset))
                         y_offset += text.get_height()
                     
                     pygame.display.update()
