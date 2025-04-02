@@ -151,6 +151,7 @@ def selectExperience(screen):
     confirmSelection = False
     moreInfoOpen = False
     returnMore = False
+    moreInfoSelected = False
 
     while experienceOpen:
         for event in pygame.event.get():
@@ -228,6 +229,7 @@ def selectExperience(screen):
                     confirmSelection = True
                     moreInfoOpen = True
                     returnMore = True
+                    moreInfoSelected = True
 
                     inputSelection = font.render("Select your experience: 4", True, (255, 255, 255))
                     
@@ -241,9 +243,10 @@ def selectExperience(screen):
                     # experienceOpen = False
                     # print("Enter action, next screen")
 
-                    if moreInfoOpen:
+                    if moreInfoSelected:
                         showMoreInfo(screen)
-                        moreInfoOpen = False
+                        # moreInfoOpen = False
+                        moreInfoSelected = False
                         returnMore = True
                     elif returnMore:
                         displayEmpty(True)
@@ -258,5 +261,7 @@ def selectExperience(screen):
                     gridironRoad.killgame(screen)
                 if event.key == pygame.K_BACKSPACE and confirmSelection:
                     confirmSelection = False
+                    if moreInfoSelected:
+                        moreInfoSelected = False
                     # print("Backspace action, reselect experience")
                     displayEmpty(True)

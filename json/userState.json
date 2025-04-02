@@ -1,64 +1,18 @@
 {
     "started": true,
     "experience": {
-        "level": "Rookie_2",
-        "displayName": "Aspiring Coach",
-        "description": "Played ball in high school. Coached your son's flag football team.",
+        "level": "Experienced_1",
+        "displayName": "Solid Coach",
+        "description": "You were a state champion in high school, but you haven't played since.",
         "modifiers": {
-            "playerDevelopmentRate": 0.8,
-            "scoutingEfficiency": 0.7,
-            "contractNegotiationBonus": -0.1,
-            "fanExpectationMultiplier": 0.5,
-            "budgetMultiplier": 0.6
+            "playerDevelopmentRate": 1.0,
+            "scoutingEfficiency": 0.9,
+            "contractNegotiationBonus": 0.1,
+            "fanExpectationMultiplier": 0.8,
+            "budgetMultiplier": 0.9
         }
     },
-    "team": {
-        "level": "Medium",
-        "displayName": "Developing Contract",
-        "description": "A two-year contract to build your skills. Moderate expectations.",
-        "salaryMultiplier": 0.8,
-        "performanceBonusMultiplier": 1.1,
-        "jobSecurity": "Medium",
-        "goals": [
-            "Make the playoffs once"
-        ]
-    },
-    "staff": [
-        "mason",
-        "joey",
-        "cole"
-    ],
-    "draft": [
-        {
-            "name": "David Wilson",
-            "position": "Defensive Lineman",
-            "characteristics": {
-                "speed": 80,
-                "strength": 90,
-                "agility": 75,
-                "pass_rush": 85,
-                "run_stop": 88
-            }
-        },
-        {
-            "name": "Alex Brown",
-            "position": "Quarterback",
-            "characteristics": {
-                "speed": 80,
-                "strength": 65,
-                "agility": 75,
-                "accuracy": 88,
-                "awareness": 85
-            }
-        },
-        {
-            "name": "Brian Taylor",
-            "position": "Kicker",
-            "characteristics": {
-                "power": 90,
-                "accuracy": 85,
-                "clutch": 80
-            }
-        }
-    ]
+    "team": null,
+    "staff": null,
+    "draft": null
 }
