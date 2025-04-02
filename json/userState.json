@@ -1,15 +1,15 @@
 {
     "started": true,
     "experience": {
-        "level": "Experienced_1",
-        "displayName": "Solid Coach",
-        "description": "You were a state champion in high school, but you haven't played since.",
+        "level": "Rookie_2",
+        "displayName": "Aspiring Coach",
+        "description": "Played ball in high school. Coached your son's flag football team.",
         "modifiers": {
-            "playerDevelopmentRate": 1.0,
-            "scoutingEfficiency": 0.9,
-            "contractNegotiationBonus": 0.1,
-            "fanExpectationMultiplier": 0.8,
-            "budgetMultiplier": 0.9
+            "playerDevelopmentRate": 0.8,
+            "scoutingEfficiency": 0.7,
+            "contractNegotiationBonus": -0.1,
+            "fanExpectationMultiplier": 0.5,
+            "budgetMultiplier": 0.6
         }
     },
     "team": null,

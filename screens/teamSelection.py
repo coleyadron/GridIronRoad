@@ -4,16 +4,29 @@ import json
 
 SELECTED = 0
 
-def getContracts():
+def getContracts(level):
     try:
         with open("json/contract.json", "r") as file:
             data = json.load(file)
 
-            experience = "Rookie"
+            # print("Level: ", level)
 
-            easy_level = data["contracts"][experience]['Easy']
-            medium_level = data["contracts"][experience]['Medium']
-            hard_level = data["contracts"][experience]['Hard']
+            if str.__contains__(level, "Rookie"):
+                contractExperience = "Rookie"
+            elif str.__contains__(level, "Experienced"):
+                contractExperience = "Experienced"
+            elif str.__contains__(level, "Legendary"):
+                contractExperience = "Legendary"
+
+            print("Contract Experience: ", contractExperience)
+
+            easy_level = data["contracts"][contractExperience]['Easy']
+            medium_level = data["contracts"][contractExperience]['Medium']
+            hard_level = data["contracts"][contractExperience]['Hard']
+
+            # print("Easy level: ", easy_level)
+            # print("Medium level: ", medium_level)
+            # print("Hard level: ", hard_level)
 
             return [easy_level, medium_level, hard_level]
 
@@ -47,8 +60,10 @@ def wrap_text(text, font, max_width):
     return lines
 
 
-def selectTeam(screen):
+def selectTeam(screen, experience):
     global SELECTED
+
+    level = experience['level']
 
     def displayEmpty(topRow):
         screen.fill((0, 0, 0))
@@ -73,7 +88,7 @@ def selectTeam(screen):
     bgi = pygame.image.load("assets/images/BGI-1.png")
 
     contractStrings = []
-    contractStrings = getContracts()
+    contractStrings = getContracts(level)
 
     team1 = font.render('1. ' + contractStrings[0]['level'] + ': ' + contractStrings[0]['displayName'], True, (255, 255, 255))
     team2 = font.render('2. ' + contractStrings[1]['level'] + ': ' + contractStrings[1]['displayName'], True, (255, 255, 255))

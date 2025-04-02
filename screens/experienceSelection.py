@@ -149,7 +149,6 @@ def selectExperience(screen):
 
     experienceOpen = True
     confirmSelection = False
-    moreInfoOpen = False
     returnMore = False
     moreInfoSelected = False
 
@@ -227,7 +226,6 @@ def selectExperience(screen):
                 elif (event.key == pygame.K_4 or event.key == pygame.K_KP4) and not confirmSelection:
                     # print("Experience 4 selected")
                     confirmSelection = True
-                    moreInfoOpen = True
                     returnMore = True
                     moreInfoSelected = True
 

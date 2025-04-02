@@ -35,9 +35,9 @@ def newGame(screen):
     # print("SPACE action, next screen")
     EXPERIENCE = experienceSelection.selectExperience(screen)
     # print(EXPERIENCE)
-    gridironRoad.updateGlobalState("experience", EXPERIENCE)
+    gridironRoad.updateGlobalState("experience", EXPERIENCE) 
 
-    TEAM = teamSelection.selectTeam(screen)
+    TEAM = teamSelection.selectTeam(screen, EXPERIENCE)
     # print(TEAM)
     gridironRoad.updateGlobalState("team", TEAM)
 
