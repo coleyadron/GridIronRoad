@@ -1,8 +1,12 @@
 import pygame
 import gridironRoad
 
+
 def inputStaff(screen):
+    bgi = pygame.image.load("assets/images/BGI-2.png")
+
     screen.fill((0, 0, 0))
+    screen.blit(bgi, (0, 0))
 
     font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
 
@@ -12,14 +16,14 @@ def inputStaff(screen):
     confirmation = font.render("Are these names correct: ", True, (0,0,0))
 
 
-    screen.blit(offensiveCoordinator, (0, 0))
-    screen.blit(defensiveCoordinator, (0, 50))
-    screen.blit(specialTeamsCoordinator, (0, 100))
+    screen.blit(offensiveCoordinator, (85, 55))
+    screen.blit(defensiveCoordinator, (85, 105))
+    screen.blit(specialTeamsCoordinator, (85, 155))
 
-    offenseInput = pygame.Rect(offensiveCoordinator.get_width(), 0, 140, 35)
-    defenseInput = pygame.Rect(defensiveCoordinator.get_width(), 50, 140, 35)
-    specialInput = pygame.Rect(specialTeamsCoordinator.get_width(), 100, 140, 35)
-    confirmationInput = pygame.Rect(confirmation.get_width(), screen.get_height() - confirmation.get_height() - 75, 140, 35)
+    offenseInput = pygame.Rect(offensiveCoordinator.get_width() + 85, 55, 140, 35)
+    defenseInput = pygame.Rect(defensiveCoordinator.get_width() + 85, 105, 140, 35)
+    specialInput = pygame.Rect(specialTeamsCoordinator.get_width() + 85, 155, 140, 35)
+    confirmationInput = pygame.Rect(confirmation.get_width() + 80, screen.get_height() - confirmation.get_height() - 30, 140, 35)
 
     pygame.display.update()
 
@@ -48,7 +52,7 @@ def inputStaff(screen):
                         activeText += 1
 
                         confirmation = font.render("Are these names correct: ", True, (255, 255, 255))
-                        screen.blit(confirmation, (0, screen.get_height() - confirmation.get_height() - 75))
+                        screen.blit(confirmation, (80, screen.get_height() - confirmation.get_height() - 30))
                         pygame.display.flip()
 
                     elif activeText == 4:
@@ -120,7 +124,7 @@ def inputStaff(screen):
 
         if activeText == 4:
             confirmationDisplay = font.render(confirmationText, True, (255,255,255))
-            screen.blit(confirmationDisplay, (confirmation.get_width(), screen.get_height() - confirmationDisplay.get_height() - 75))
+            screen.blit(confirmationDisplay, (confirmation.get_width() + 80, screen.get_height() - confirmationDisplay.get_height() - 30))
             confirmationInput.w = max(100, confirmationDisplay.get_width() + 10)
 
 
