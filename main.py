@@ -31,7 +31,7 @@ def playGame(screen):
 
     pregameDecisions.preGameDecisions(screen, matchup)
 
-def newGame(screen):
+def  newGame(screen):
     # print("SPACE action, next screen")
     EXPERIENCE = experienceSelection.selectExperience(screen)
     # print(EXPERIENCE)
