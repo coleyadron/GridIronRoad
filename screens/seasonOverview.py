@@ -2,6 +2,7 @@ import pygame
 # import gridironRoad
 import json
 # import pregameDecisions
+from screens import teamOverview
 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -70,7 +71,9 @@ def seasonOverview(screen):
         y_offset += 40
 
     nextScreenText = font.render("Press SPACE to enter the next game", True, WHITE)
+    viewTeamText = font.render("Press 1 to view team", True, WHITE)
     screen.blit(nextScreenText, (0, screen.get_height() - 100))
+    screen.blit(viewTeamText, (0, screen.get_height() - 150))
 
     pygame.display.update()
 
@@ -98,6 +101,13 @@ def seasonOverview(screen):
                     # pregameDecisions.preGameDecisions(screen, matchup)
                     seasonOverviewOpen = False
                     return matchup
+                if event.key == pygame.K_1 or event.key == pygame.K_KP1:
+                    print("1 action, view team")
+                    overViewCopy = screen.copy()
+                    teamOverview.teamOverview(screen, 'season')
+                    screen.blit(overViewCopy, (0, 0))
+                    pygame.display.flip()
+
 
     return
 

@@ -42,7 +42,7 @@ def inputStaff(screen):
                 if event.key == pygame.K_ESCAPE:
                     gridironRoad.killgame(screen)
                 
-                elif event.key == pygame.K_RETURN:
+                elif event.key == pygame.K_RETURN or event.key == pygame.K_KP_ENTER:
                     if fields[field_order[current_field]]["text"].strip() != "":
                         if current_field < len(field_order) - 1:
                             current_field += 1

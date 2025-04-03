@@ -1,6 +1,7 @@
 import pygame
 import gridironRoad
 import json
+from screens import teamOverview
 
 # def kill_game():
 #     pygame.quit()
@@ -20,7 +21,7 @@ BLACK = (0, 0, 0)
 
 # Grid parameters
 GRID_COLS = 7
-GRID_ROWS = 4
+GRID_ROWS = 3
 BOX_WIDTH = 175
 BOX_HEIGHT = 200
 BOX_SPACING = 10
@@ -32,7 +33,7 @@ PLAYERS_SELECTED = []
 
 # Calculate grid position
 BOX_WIDTH = (WIDTH - (GRID_COLS - 1) * BOX_SPACING) // GRID_COLS
-BOX_HEIGHT = (HEIGHT - 120 - (GRID_ROWS - 1) * BOX_SPACING) // GRID_ROWS
+BOX_HEIGHT = (HEIGHT - 120 - (GRID_ROWS - 1) * BOX_SPACING) // (GRID_ROWS + 1)
 
 grid_x = 0
 grid_y = 100
@@ -135,6 +136,7 @@ def handle_click(mouse_pos, playerData, ROUND):
 
                     # Display confirmation instructions
                     confirm_text = small_font.render("Press SPACE to confirm or ESC to cancel", True, BLACK)
+                    
                     screen.blit(confirm_text, (popup_x + 20, popup_y + 200))
 
                     pygame.display.update()
@@ -172,8 +174,11 @@ def draft(screen):
 
     draft = font.render("Draft a player: ", True, (255, 255, 255))
     roundText = font.render("Round: " + str(ROUND), True, (255, 255, 255))
+    view_teamText = font.render("Press 1 to view team", True, (255, 255, 255))
+    
     screen.blit(draft, (0, 0))
     screen.blit(roundText, (0, 50))
+    screen.blit(view_teamText, (0, screen.get_height() - 50))
 
     playerData = load_json()
     draw_grid(screen, playerData)
@@ -191,6 +196,12 @@ def draft(screen):
                 if event.key == pygame.K_ESCAPE:
                     gridironRoad.killgame(screen)
                     # kill_game()
+                if event.key == pygame.K_1 or event.key == pygame.K_KP1:
+                    print("1 action, view team")
+                    overViewCopy = screen.copy()
+                    teamOverview.teamOverview(screen, 'draft')
+                    screen.blit(overViewCopy, (0, 0))
+                    pygame.display.flip()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = pygame.mouse.get_pos()
                 # prevRound = ROUND
