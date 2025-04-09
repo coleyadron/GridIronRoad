@@ -78,15 +78,41 @@ def draw_grid(surface, playerData):
             if player_index < len(playerData["draft_rounds"][ROUND - 1]["players"]):
                 player = playerData["draft_rounds"][ROUND - 1]["players"][player_index]
 
-                # Display player name
-                name_text = font.render(player["name"], True, BLACK)
-                name_rect = name_text.get_rect(center=(x + BOX_WIDTH // 2, y + BOX_HEIGHT // 2 - 20))
-                surface.blit(name_text, name_rect)
+                # Display player name with wrapping
+                name = player["name"]
+                words = name.split()
+                lines = []
+                current_line = []
+                
+                # Calculate maximum width for text (leave some padding)
+                max_width = BOX_WIDTH - 20  # 10px padding on each side
+                
+                # Build wrapped lines
+                for word in words:
+                    test_line = ' '.join(current_line + [word])
+                    test_width = font.size(test_line)[0]
+                    if test_width <= max_width:
+                        current_line.append(word)
+                    else:
+                        lines.append(' '.join(current_line))
+                        current_line = [word]
+                if current_line:
+                    lines.append(' '.join(current_line))
+                
+                # Render each line of the name
+                line_height = font.get_linesize()
+                total_text_height = len(lines) * line_height
+                start_y = y + (BOX_HEIGHT - total_text_height) // 2  # Adjust vertical position
+                
+                for i, line in enumerate(lines):
+                    name_text = font.render(line, True, BLACK)
+                    name_rect = name_text.get_rect(center=(x + BOX_WIDTH // 2, start_y + i * line_height))
+                    surface.blit(name_text, name_rect)
 
                 # Calculate and display player rating (average of characteristics)
                 rating = sum(player["characteristics"].values()) // len(player["characteristics"])
                 rating_text = small_font.render(f"Rating: {rating}", True, BLACK)
-                rating_rect = rating_text.get_rect(center=(x + BOX_WIDTH // 2, y + BOX_HEIGHT // 2 + 20))
+                rating_rect = rating_text.get_rect(center=(x + BOX_WIDTH // 2, start_y + total_text_height + 10))
                 surface.blit(rating_text, rating_rect)
             else:
                 # Display placeholder text if no player is available
@@ -113,7 +139,7 @@ def handle_click(mouse_pos, playerData, ROUND):
 
                     # Create a popup box
                     popup_width = 600
-                    popup_height = 400
+                    popup_height = 450
                     popup_x = (WIDTH - popup_width) // 2
                     popup_y = (HEIGHT - popup_height) // 2
 
@@ -123,21 +149,32 @@ def handle_click(mouse_pos, playerData, ROUND):
 
                     # Display player information in the popup
                     font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 24)
-                    small_font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 18)
+                    # small_font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 18)
 
                     name_text = font.render(f"Name: {player['name']}", True, BLACK)
                     position_text = font.render(f"Position: {player['position']}", True, BLACK)
-                    rating = sum(player["characteristics"].values()) // len(player["characteristics"])
-                    rating_text = font.render(f"Rating: {rating}", True, BLACK)
+                    contract_text = font.render(f"Contract: {format(player['salary'])}", True, BLACK)
+                    contract_len_text = font.render(f"Contract Length: {player['contract']}", True, BLACK)
+                    characteristics_text = font.render("Characteristics:", True, BLACK)
+                    rating_text = font.render(f"Rating: {player["characteristics"]["rating"]}", True, BLACK)
+                    speed_text = font.render(f"Speed: {player['characteristics']['speed']}", True, BLACK)
+                    strength_text = font.render(f"Strength: {player['characteristics']['strength']}", True, BLACK)
+                    athleticism_text = font.render(f"Athleticism: {player['characteristics']['athleticism']}", True, BLACK)
 
                     screen.blit(name_text, (popup_x + 20, popup_y + 20))
                     screen.blit(position_text, (popup_x + 20, popup_y + 60))
-                    screen.blit(rating_text, (popup_x + 20, popup_y + 100))
+                    screen.blit(contract_text, (popup_x + 20, popup_y + 100))
+                    screen.blit(contract_len_text, (popup_x + 20, popup_y + 140))
+                    screen.blit(characteristics_text, (popup_x + 20, popup_y + 180))
+                    screen.blit(rating_text, (popup_x + 40, popup_y + 220))
+                    screen.blit(speed_text, (popup_x + 40, popup_y + 260))
+                    screen.blit(strength_text, (popup_x + 40, popup_y + 300))
+                    screen.blit(athleticism_text, (popup_x + 40, popup_y + 340))
 
                     # Display confirmation instructions
-                    confirm_text = small_font.render("Press SPACE to confirm or ESC to cancel", True, BLACK)
+                    confirm_text = font.render("Press SPACE to confirm or ESC to cancel", True, BLACK)
                     
-                    screen.blit(confirm_text, (popup_x + 20, popup_y + 200))
+                    screen.blit(confirm_text, (popup_x + 20, popup_y + 380))
 
                     pygame.display.update()
 

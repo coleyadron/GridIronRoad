@@ -1,0 +1,184 @@
+{
+    "free_agents": [
+      {
+        "name": "Nick Chubb",
+        "position": "RB",
+        "contract": "4 years",
+        "salary": 40000000,
+        "rating": 88,
+        "speed": 88,
+        "strength": 90,
+        "athleticism": 86
+      },
+      {
+        "name": "J.K. Dobbins",
+        "position": "RB",
+        "contract": "3 years",
+        "salary": 32000000,
+        "rating": 84,
+        "speed": 90,
+        "strength": 75,
+        "athleticism": 87
+      },
+      {
+        "name": "Keenan Allen",
+        "position": "WR",
+        "contract": "3 years",
+        "salary": 28500000,
+        "rating": 83,
+        "speed": 90,
+        "strength": 70,
+        "athleticism": 89
+      },
+      {
+        "name": "Amari Cooper",
+        "position": "WR",
+        "contract": "3 years",
+        "salary": 28000000,
+        "rating": 83,
+        "speed": 90,
+        "strength": 68,
+        "athleticism": 91
+      },
+      {
+        "name": "Rasul Douglas",
+        "position": "CB",
+        "contract": "3 years",
+        "salary": 27000000,
+        "rating": 83,
+        "speed": 90,
+        "strength": 74,
+        "athleticism": 85
+      },
+      {
+        "name": "Justin Simmons",
+        "position": "S",
+        "contract": "3 years",
+        "salary": 26000000,
+        "rating": 82,
+        "speed": 88,
+        "strength": 65,
+        "athleticism": 93
+      },
+      {
+        "name": "Tyron Smith",
+        "position": "OT",
+        "contract": "3 years",
+        "salary": 25000000,
+        "rating": 82,
+        "speed": 75,
+        "strength": 94,
+        "athleticism": 77
+      },
+      {
+        "name": "Elijah Moore",
+        "position": "WR",
+        "contract": "2 years",
+        "salary": 17000000,
+        "rating": 81,
+        "speed": 92,
+        "strength": 60,
+        "athleticism": 91
+      },
+      {
+        "name": "Stephon Gilmore",
+        "position": "CB",
+        "contract": "2 years",
+        "salary": 16000000,
+        "rating": 81,
+        "speed": 87,
+        "strength": 65,
+        "athleticism": 91
+      },
+      {
+        "name": "Mike Hilton",
+        "position": "S",
+        "contract": "2 years",
+        "salary": 16000000,
+        "rating": 81,
+        "speed": 90,
+        "strength": 65,
+        "athleticism": 88
+      },
+      {
+        "name": "Calais Campbell",
+        "position": "DT",
+        "contract": "2 years",
+        "salary": 15000000,
+        "rating": 81,
+        "speed": 72,
+        "strength": 92,
+        "athleticism": 79
+      },
+      {
+        "name": "Za'Darius Smith",
+        "position": "DE",
+        "contract": "2 years",
+        "salary": 12000000,
+        "rating": 80,
+        "speed": 81,
+        "strength": 86,
+        "athleticism": 73
+      },
+      {
+        "name": "Asante Samuel Jr.",
+        "position": "CB",
+        "contract": "1 year",
+        "salary": 8000000,
+        "rating": 79,
+        "speed": 91,
+        "strength": 54,
+        "athleticism": 92
+      },
+      {
+        "name": "Kyzir White",
+        "position": "LB",
+        "contract": "1 year",
+        "salary": 8000000,
+        "rating": 79,
+        "speed": 85,
+        "strength": 68,
+        "athleticism": 84
+      },
+      {
+        "name": "Brandon Scherff",
+        "position": "OG",
+        "contract": "1 year",
+        "salary": 7500000,
+        "rating": 79,
+        "speed": 72,
+        "strength": 90,
+        "athleticism": 75
+      },
+      {
+        "name": "Julian Blackmon",
+        "position": "S",
+        "contract": "1 year",
+        "salary": 7000000,
+        "rating": 79,
+        "speed": 90,
+        "strength": 57,
+        "athleticism": 90
+      },
+      {
+        "name": "Jedrick Wills",
+        "position": "OT",
+        "contract": "1 year",
+        "salary": 6000000,
+        "rating": 79,
+        "speed": 72,
+        "strength": 94,
+        "athleticism": 71
+      },
+      {
+        "name": "Aaron Rodgers",
+        "position": "QB",
+        "contract": "1 year",
+        "salary": 4000000,
+        "rating": 72,
+        "speed": 79,
+        "strength": 59,
+        "athleticism": 78
+      }
+    ]
+  }
