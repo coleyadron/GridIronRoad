@@ -1,0 +1,48 @@
+{
+    "teams": [
+      {
+        "name": "Thunderhawks",
+        "ratings": 
+            {"overall": 72,
+            "offense": 78,
+            "defense": 65,
+            "special_teams": 73}
+        
+      },
+      {
+        "name": "Iron Titans",
+        "ratings": 
+            { "overall": 88,
+            "offense": 95,
+            "defense": 82,
+            "special_teams": 87}
+      },
+      {
+        "name": "Shadow Strikers",
+        "ratings": 
+            {"overall": 60,
+            "offense": 55,
+            "defense": 65,
+            "special_teams": 60}
+
+      },
+      {
+        "name": "Blazing Storm",
+        "ratings": 
+            {"overall": 79,
+            "offense": 85,
+            "defense": 72,
+            "special_teams": 80}
+        
+      },
+      {
+        "name": "Frost Guardians",
+        "ratings": 
+            {"overall": 67,
+            "offense": 62,
+            "defense": 70,
+            "special_teams": 69}
+      }
+    ]
+  }
+  
