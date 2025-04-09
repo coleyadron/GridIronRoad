@@ -1,6 +1,6 @@
 import pygame
 import gridironRoad
-from cursor import TextCursor
+from logic.cursor import TextCursor
 
 def inputStaff(screen):
     bgi = pygame.image.load("assets/images/BGI-2.png")
