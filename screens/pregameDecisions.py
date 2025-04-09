@@ -32,8 +32,10 @@ def preGameDecisions(screen, matchup):
 
     screen.fill((0, 0, 0))
 
-    pregameText = font.render("Welcome to Gridiron Road!", True, (255, 255, 255))
-    screen.blit(pregameText, (screen.get_width() / 2 - pregameText.get_width() / 2, 0))
+    pregameText = font.render("Welcome to the Gridiron Road!", True, (255, 255, 255))
+    matchupText = font.render(f"Week {matchup['week']} vs {matchup['opponent']}", True, (255, 255, 255))
+    screen.blit(pregameText, (screen.get_width() / 2 - pregameText.get_width() / 2, 25))
+    screen.blit(matchupText, (screen.get_width() / 2 - matchupText.get_width() / 2, 75))
 
     pygame.display.update()
 
