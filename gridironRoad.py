@@ -7,6 +7,37 @@ TEAM = None
 STAFF = None
 DRAFT = None
 
+def loadTeam():
+    try:
+        with open("json/userTeam.json", "r") as file:
+            data = json.load(file)
+            return data
+    except FileNotFoundError:
+        print("Error finding JSON file")
+        return None
+    except json.JSONDecodeError:
+        print("Error decoding JSON file")
+        return None
+    except Exception as e:
+        print("Error reading JSON file: ", e)
+        return None
+
+def calculateSalaryCap():
+    team = loadTeam()
+
+    # salary_cap = 279200000
+    teamSalary = 0
+
+    # Calculate the total salary of the team
+    players = team["players"]
+    for player in players:
+        teamSalary += player["salary"]
+
+    # Calculate the percentage of the salary cap used
+    # salary_percentage = (teamSalary / salary_cap) * 100
+
+    return teamSalary
+
 def updateGlobalState(variable, value):
     global EXPERIENCE, TEAM, STAFF, DRAFT
     if variable == "experience":
