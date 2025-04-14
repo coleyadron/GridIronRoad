@@ -138,8 +138,8 @@ def handle_click(mouse_pos, playerData):
 
                     copy_screen = screen.copy()
 
-                    # teamSalary = gridironRoad.getTeamSalary()
-                    teamSalary = 279100090
+                    teamSalary = gridironRoad.calculateSalaryCap()
+                    # teamSalary = 279100090
                     salary_cap = 279200000
 
                     # Create a popup box

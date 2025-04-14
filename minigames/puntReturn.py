@@ -8,6 +8,9 @@ def kill_game():
     pygame.quit()
     sys.exit()
 
+def exec(screen):
+    puntReturn(screen)
+
 def puntReturn(screen):
     screen.fill((0, 0, 0))
 
@@ -132,10 +135,10 @@ def puntReturn(screen):
                 i += 1
 
 
-def main():
-    pygame.init()
-    pygame.display.init()
+# def main():
+#     pygame.init()
+#     pygame.display.init()
 
-    puntReturn(screen = pygame.display.set_mode((1400, 1050)))
+#     puntReturn(screen = pygame.display.set_mode((1400, 1050)))
 
-main()
+# main()
