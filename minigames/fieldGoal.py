@@ -7,7 +7,7 @@ def kill_game():
     sys.exit()
 
 def exec(screen):
-    fieldGoal(screen)
+    return fieldGoal(screen)
 
 def fieldGoal(screen):
     screen.fill((0, 0, 0))
