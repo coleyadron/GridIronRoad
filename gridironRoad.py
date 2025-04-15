@@ -68,13 +68,13 @@ def calculateTeamOverall():
 
 
     # Calculate rating
-    overall /= len(players)
+    overall = overall // len(players)
     if offenseCount > 0:
-        offensiveOverall /= offenseCount
+        offensiveOverall = offensiveOverall // offenseCount
     if defenseCount > 0:
-        defensiveOverall /= defenseCount
+        defensiveOverall = defensiveOverall // defenseCount
     if specialCount > 0:
-        specialOverall /= specialCount
+        specialOverall = specialOverall // specialCount
 
     #create dictionary
     teamOverall = {
