@@ -67,11 +67,11 @@ def handleEndGame(screen, gameResult):
     #                 gridironRoad.killgame(screen)
     #                 running = False
 
-def handleTeamGlobals():
+def handleTeamGlobals(opponent):
     global OPPOSING_TEAM, OPPOSING_OVERALL, OPPOSING_OFFENSE, OPPOSING_DEFENSE, OPPOSING_SPECIAL
     global MY_TEAM, MY_OVERALL, MY_OFFENSE, MY_DEFENSE, MY_SPECIAL
 
-    opponent = gridironRoad.getOpponent("Pittsburgh Steelers")
+    opponent = gridironRoad.getOpponent(opponent)
 
     OPPOSING_TEAM = opponent['name']
     OPPOSING_OVERALL = opponent["overall"]
@@ -172,10 +172,17 @@ def miniGameHandler(screen):
 
     pygame.display.update()
 
+def resetWeek():
+    global TEAM_SCORE, OPPONENT_SCORE, QUARTER
+    TEAM_SCORE = 0
+    OPPONENT_SCORE = 0
+    QUARTER = 1
 
 
 def inGame(screen, matchup, scenarios):
     global WEEK, TEAM_SCORE, OPPONENT_SCORE, QUARTER
+
+    resetWeek()
 
     font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
 
@@ -205,7 +212,7 @@ def inGame(screen, matchup, scenarios):
     print("Morale total: ", moraleTotal)
     print("Performance total: ", performanceTotal)
 
-    handleTeamGlobals()
+    handleTeamGlobals(matchup["opponent"])
 
     inGame = True
     gameOver = False

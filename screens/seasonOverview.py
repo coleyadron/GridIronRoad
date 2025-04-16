@@ -39,7 +39,10 @@ def display_matchup(game):
     result = game["result"]
 
     if played:
-        text = f"Week {week}: {opponent} - {result.capitalize()}"
+        if opponent == "Bye Week":
+            text = f"Week {week}: Bye Week"
+        else:
+            text = f"Week {week}: {opponent} - {result.capitalize()}"
     else:
         text = f"Week {week}: {opponent}"
 

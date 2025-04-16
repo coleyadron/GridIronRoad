@@ -61,13 +61,23 @@ def playGame(screen):
 
         #find next week
         matchup = seasonOverview.findCurrentWeek(seasonOverview.loadSeason())
-        print("Matchup: ", matchup)
+
+        if matchup is not None:
+            print("Matchup: ", matchup)
+        else:
+            print("Playoffs?")
 
     postSeason = True
     while postSeason:
         if matchup["week"] > 18:
             #check record
             record = gridironRoad.getRecord()
+
+            if record["ties"] > 0:
+                print("Record: %s - %s - %s" % (record["wins"], record["losses"], record["ties"]))
+            else:
+                print("Record: %s - %s" % (record["wins"], record["losses"]))
+
             #if record over benchmark go into playoffs loop
             # playoffs record for playoffs --> random 8 - 10
             # first week bye record -> 14+

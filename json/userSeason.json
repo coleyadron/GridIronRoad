@@ -52,7 +52,7 @@
             {
                 "week": 7,
                 "opponent": "Bye Week",
-                "played": false,
+                "played": true,
                 "user_score": null,
                 "opponent_score": null,
                 "result": null
@@ -132,18 +132,18 @@
             {
                 "week": 17,
                 "opponent": "Los Angeles Chargers",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
+                "played": true,
+                "user_score": 9,
+                "opponent_score": 21,
+                "result": "loss"
             },
             {
                 "week": 18,
                 "opponent": "Pittsburgh Steelers",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
+                "played": true,
+                "user_score": 9,
+                "opponent_score": 21,
+                "result": "loss"
             }
         ]
     },
