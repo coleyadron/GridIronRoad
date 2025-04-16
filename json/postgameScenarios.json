@@ -1,0 +1,572 @@
+{
+    "scenarios": [
+      {
+        "id": 1,
+        "description": "Your tight end did really well",
+        "effect": {
+          "morale": 0.6,
+          "performance": 0.6
+        }
+      },
+      {
+        "id": 2,
+        "description": "Your team was caught deflating the play balls",
+        "effect": {
+          "morale": -0.9,
+          "performance": -0.8
+        }
+      },
+      {
+        "id": 3,
+        "description": "Your kicker did poorly",
+        "effect": {
+          "morale": -0.5,
+          "performance": -0.6
+        }
+      },
+      {
+        "id": 4,
+        "description": "Your quarterback pled guilty to dogfighting charges",
+        "effect": {
+          "morale": -1,
+          "performance": -0.9
+        }
+      },
+      {
+        "id": 5,
+        "description": "Your center tested positive for performance-enhancing drugs",
+        "effect": {
+          "morale": -0.9,
+          "performance": -0.9
+        }
+      },
+      {
+        "id": 6,
+        "description": "Your running back got a concussion",
+        "effect": {
+          "morale": -0.6,
+          "performance": -0.7
+        }
+      },
+      {
+        "id": 7,
+        "description": "Your quarterback hit new record of passing yards",
+        "effect": {
+          "morale": 0.7,
+          "performance": 0.8
+        }
+      },
+      {
+        "id": 8,
+        "description": "Rainy day on the field",
+        "effect": {
+          "morale": -0.3,
+          "performance": -0.2
+        }
+      },
+      {
+        "id": 9,
+        "description": "After the results of the game your social media following decreased",
+        "effect": {
+          "morale": -0.4,
+          "performance": -0.2
+        }
+      },
+      {
+        "id": 10,
+        "description": "After the results of the game your social media following increased",
+        "effect": {
+          "morale": 0.4,
+          "performance": 0.3
+        }
+      },
+      {
+        "id": 11,
+        "description": "Your corner back had best performance this season",
+        "effect": {
+          "morale": 0.8,
+          "performance": 0.7
+        }
+      },
+      {
+        "id": 12,
+        "description": "Your wide receiver performed well",
+        "effect": {
+          "morale": 0.5,
+          "performance": 0.5
+        }
+      },
+      {
+        "id": 13,
+        "description": "Two players got into an argument about a play",
+        "effect": {
+          "morale": -0.3,
+          "performance": -0.2
+        }
+      },
+      {
+        "id": 14,
+        "description": "Your star quarterback suffered a season-ending injury",
+        "effect": {
+          "morale": -1,
+          "performance": -1
+        }
+      },
+      {
+        "id": 15,
+        "description": "Your team won in overtime with a last-second field goal",
+        "effect": {
+          "morale": 0.8,
+          "performance": 0.9
+        }
+      },
+      {
+        "id": 16,
+        "description": "A defensive back was suspended for an off-field incident",
+        "effect": {
+          "morale": -0.7,
+          "performance": -0.6
+        }
+      },
+      {
+        "id": 17,
+        "description": "Your rookie wide receiver had a breakout game",
+        "effect": {
+          "morale": 0.6,
+          "performance": 0.7
+        }
+      },
+      {
+        "id": 18,
+        "description": "The head coach made a controversial call that cost the game",
+        "effect": {
+          "morale": -0.6,
+          "performance": -0.5
+        }
+      },
+      {
+        "id": 19,
+        "description": "Your kicker missed a game-winning field goal",
+        "effect": {
+          "morale": -0.5,
+          "performance": -0.6
+        }
+      },
+      {
+        "id": 20,
+        "description": "A major sponsor pulled funding due to a scandal",
+        "effect": {
+          "morale": -0.8,
+          "performance": -0.7
+        }
+      },
+      {
+        "id": 21,
+        "description": "Your team set a franchise record for most rushing yards in a game",
+        "effect": {
+          "morale": 0.7,
+          "performance": 0.8
+        }
+      },
+      {
+        "id": 22,
+        "description": "The backup quarterback stepped in and led the team to victory",
+        "effect": {
+          "morale": 0.6,
+          "performance": 0.7
+        }
+      },
+      {
+        "id": 23,
+        "description": "The offensive line allowed zero sacks for the first time this season",
+        "effect": {
+          "morale": 0.6,
+          "performance": 0.7
+        }
+      },
+      {
+        "id": 24,
+        "description": "Your team suffered a devastating loss",
+        "effect": {
+          "morale": -0.8,
+          "performance": -0.7
+        }
+      },
+      {
+        "id": 25,
+        "description": "A rookie cornerback intercepted two passes and secured the win",
+        "effect": {
+          "morale": 0.7,
+          "performance": 0.8
+        }
+      },
+      {
+        "id": 26,
+        "description": "Your team’s game was postponed due to severe weather",
+        "effect": {
+          "morale": -0.4,
+          "performance": -0.3
+        }
+      },
+      {
+        "id": 27,
+        "description": "A high-profile trade was announced after the game",
+        "effect": {
+          "morale": 0.5,
+          "performance": 0.4
+        }
+      },
+      {
+        "id": 28,
+        "description": "Your head coach gave an emotional postgame speech that went viral",
+        "effect": {
+          "morale": 0.6,
+          "performance": 0.5
+        }
+      },
+      {
+        "id": 29,
+        "description": "Team locker room celebration went viral",
+        "effect": {
+          "morale": 0.4,
+          "performance": 0.3
+        }
+      },
+      {
+        "id": 30,
+        "description": "Player criticized the coaching staff in a press conference",
+        "effect": {
+          "morale": -0.6,
+          "performance": -0.2
+        }
+      },
+      {
+        "id": 31,
+        "description": "Star kicker announced retirement after the game",
+        "effect": {
+          "morale": -0.4,
+          "performance": -0.1
+        }
+      },
+      {
+        "id": 32,
+        "description": "A brawl broke out between teams after the game",
+        "effect": {
+          "morale": -0.7,
+          "performance": -0.6
+        }
+      },
+      {
+        "id": 33,
+        "description": "Your team was fined for unsportsmanlike conduct",
+        "effect": {
+          "morale": -0.5,
+          "performance": -0.4
+        }
+      },
+      {
+        "id": 34,
+        "description": "Fan riots broke out after a controversial loss",
+        "effect": {
+          "morale": -0.8,
+          "performance": -0.7
+        }
+      },
+      {
+        "id": 35,
+        "description": "Players gave postgame autographs to kids",
+        "effect": {
+          "morale": 0.3,
+          "performance": 0.2
+        }
+      },
+      {
+        "id": 36,
+        "description": "Team owner publicly praised the coaching staff",
+        "effect": {
+          "morale": 0.5,
+          "performance": 0.4
+        }
+      },
+      {
+        "id": 37,
+        "description": "Quarterback tested positive for COVID-19 postgame",
+        "effect": {
+          "morale": -0.7,
+          "performance": -0.6
+        }
+      },
+      {
+        "id": 38,
+        "description": "The star tight end’s jersey sales spiked after the game",
+        "effect": {
+          "morale": 0.4,
+          "performance": 0.3
+        }
+      },
+      {
+        "id": 39,
+        "description": "Opponent accused your team of cheating",
+        "effect": {
+          "morale": -0.6,
+          "performance": -0.5
+        }
+      },
+      {
+        "id": 40,
+        "description": "Coach complimented the opposing team during the press conference",
+        "effect": {
+          "morale": 0.2,
+          "performance": 0.1
+        }
+      },
+      {
+        "id": 41,
+        "description": "Local media praised your team’s performance",
+        "effect": {
+          "morale": 0.4,
+          "performance": 0.3
+        }
+      },
+      {
+        "id": 42,
+        "description": "Team was involved in a charity event right after the game",
+        "effect": {
+          "morale": 0.3,
+          "performance": 0.2
+        }
+      },
+      {
+        "id": 43,
+        "description": "Running back awarded game MVP",
+        "effect": {
+          "morale": 0.6,
+          "performance": 0.7
+        }
+      },
+      {
+        "id": 44,
+        "description": "Opponent’s coach publicly disrespected your team",
+        "effect": {
+          "morale": -0.3,
+          "performance": 0.2
+        }
+      },
+      {
+        "id": 45,
+        "description": "Fans booed the team off the field after a bad performance",
+        "effect": {
+          "morale": -0.5,
+          "performance": -0.6
+        }
+      },
+      {
+        "id": 46,
+        "description": "Team bus was egged by angry fans",
+        "effect": {
+          "morale": -0.4,
+          "performance": -0.2
+        }
+      },
+      {
+        "id": 47,
+        "description": "Team celebrated with a victory parade the next day",
+        "effect": {
+          "morale": 0.6,
+          "performance": 0.4
+        }
+      },
+      {
+        "id": 48,
+        "description": "A power outage disrupted the postgame press conference",
+        "effect": {
+          "morale": -0.3,
+          "performance": -0.1
+        }
+      },
+      {
+        "id": 49,
+        "description": "A defensive lineman threw their helmet at the referee",
+        "effect": {
+          "morale": -1,
+          "performance": -0.9
+        }
+      },
+      {
+        "id": 50,
+        "description": "The Gatorade bath missed and hit a cameraman",
+        "effect": {
+          "morale": -0.1,
+          "performance": 0
+        }
+      },
+      {
+        "id": 51,
+        "description": "Opposing team left without shaking hands",
+        "effect": {
+          "morale": -0.3,
+          "performance": -0.3
+        }
+      },
+      {
+        "id": 52,
+        "description": "You were able to secure a new sponsor and hire more trainers",
+        "effect": {
+          "morale": 0.3,
+          "performance": 0.5
+        }
+      },
+      {
+        "id": 53,
+        "description": "Backup tight end proposed to his partner on the field",
+        "effect": {
+          "morale": 0.4,
+          "performance": 0.4
+        }
+      },
+      {
+        "id": 54,
+        "description": "Player was arrested in the parking lot postgame",
+        "effect": {
+          "morale": -1,
+          "performance": -0.9
+        }
+      },
+      {
+        "id": 55,
+        "description": "After an away game the team went out to sightsee",
+        "effect": {
+          "morale": 0.5,
+          "performance": 0.1
+        }
+      },
+      {
+        "id": 56,
+        "description": "Your wide receiver left the game early without notice",
+        "effect": {
+          "morale": -0.6,
+          "performance": -0.5
+        }
+      },
+      {
+        "id": 57,
+        "description": "Rival player started taunting your team on social media",
+        "effect": {
+          "morale": -0.4,
+          "performance": -0.4
+        }
+      },
+      {
+        "id": 58,
+        "description": "Equipment was stolen from the locker room",
+        "effect": {
+          "morale": -0.5,
+          "performance": -0.5
+        }
+      },
+      {
+        "id": 59,
+        "description": "Team doctor made a misdiagnosis that came to light",
+        "effect": {
+          "morale": -0.6,
+          "performance": -0.6
+        }
+      },
+      {
+        "id": 60,
+        "description": "Entire defensive unit was fined for celebration",
+        "effect": {
+          "morale": -0.5,
+          "performance": -0.4
+        }
+      },
+      {
+        "id": 61,
+        "description": "Your left tackle organized a post game dinner",
+        "effect": {
+          "morale": 0.2,
+          "performance": 0.1
+        }
+      },
+      {
+        "id": 62,
+        "description": "Your quarterback called an audible and tied the game",
+        "effect": {
+          "morale": 0.6,
+          "performance": 0.5
+        }
+      },
+      {
+        "id": 63,
+        "description": "Star safety fainted during the press conference",
+        "effect": {
+          "morale": -0.7,
+          "performance": -0.6
+        }
+      },
+      {
+        "id": 64,
+        "description": "Fire alarm went off during locker room interviews",
+        "effect": {
+          "morale": -0.2,
+          "performance": -0.2
+        }
+      },
+      {
+        "id": 65,
+        "description": "Water pipe burst in the locker room and flooded it",
+        "effect": {
+          "morale": -0.3,
+          "performance": -0.3
+        }
+      },
+      {
+        "id": 66,
+        "description": "You and your coach had a great meeting",
+        "effect": {
+          "morale": 0.2,
+          "performance": 0.5
+        }
+      },
+      {
+        "id": 67,
+        "description": "Teammate publicly apologized for poor performance",
+        "effect": {
+          "morale": 0.5,
+          "performance": 0.5
+        }
+      },
+      {
+        "id": 68,
+        "description": "Head coach hinted at retirement",
+        "effect": {
+          "morale": -0.3,
+          "performance": -0.4
+        }
+      },
+      {
+        "id": 69,
+        "description": "Your running back gave a halftime speech that brought the team closer together",
+        "effect": {
+          "morale": 0.6,
+          "performance": 0.9
+        }
+      },
+      {
+        "id": 70,
+        "description": "Your place kicker gave a postgame interview crying",
+        "effect": {
+          "morale": -0.5,
+          "performance": -0.5
+        }
+      },
+      {
+        "id": 71,
+        "description": "Reporter asked an offensive question during the presser",
+        "effect": {
+          "morale": -0.4,
+          "performance": -0.4
+        }
+      }
+    ]
+  }

@@ -17,7 +17,7 @@ def loadSeason():
     try:
         with open("json/userSeason.json", "r") as file:
             season = json.load(file)
-            return season
+            return season["regularSeason"]
     except FileNotFoundError:
         print("Error finding season file")
         return None
@@ -47,7 +47,7 @@ def display_matchup(game):
 
 def findCurrentWeek(season):
     for game in season["matchups"]:
-        if not game["played"]:
+        if not game["played"] or (game["opponent"] == "Bye Week" and not game["played"]):
             return game
     return None
 

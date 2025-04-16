@@ -5,9 +5,11 @@ from screens import coachingStaff
 from screens import teamSelection
 from screens import seasonOverview
 from screens import pregameDecisions
+from screens import postgameDecisions
 from screens import inGame
 import gridironRoad
 import json
+import random
 # from screens.minigames import puntReturn
 
 EXPERIENCE = None
@@ -30,11 +32,58 @@ def playGame(screen):
     print("Game is starting")
     matchup = seasonOverview.seasonOverview(screen)
 
-    scenarios = pregameDecisions.preGameDecisions(screen, matchup)
+    while matchup["week"] <= 18:
+        if not matchup["opponent"] == "Bye Week":
+            preScenarios = pregameDecisions.preGameDecisions(screen, matchup)
 
-    game_result = inGame.inGame(screen, matchup, scenarios)
+            game_result = inGame.inGame(screen, matchup, preScenarios)
 
-    gridironRoad.updateSeason(matchup, game_result)
+            gridironRoad.updateSeason(matchup, game_result)
+
+            postScenarios = postgameDecisions.postGameDecisions(screen, matchup)
+
+            print("Scenarios: ", postScenarios)
+        else:
+            print("Practice week")
+
+            #execute bye
+
+            #update season with the bye
+            bye_result = { 
+                "week": matchup["week"],
+                "opponent": matchup["opponent"],
+                "played": True,
+                "score": None,
+                "opponent_score": None,
+                "game_result": None
+            }
+            gridironRoad.updateSeason(matchup, bye_result)
+
+        #find next week
+        matchup = seasonOverview.findCurrentWeek(seasonOverview.loadSeason())
+        print("Matchup: ", matchup)
+
+    postSeason = True
+    while postSeason:
+        if matchup["week"] > 18:
+            #check record
+            record = gridironRoad.getRecord()
+            #if record over benchmark go into playoffs loop
+            # playoffs record for playoffs --> random 8 - 10
+            # first week bye record -> 14+
+            #else end season 
+
+            wins_for_playoffs = random.randint(8, 10)
+            first_round_bye = 14
+
+            if record["wins"] >= first_round_bye:
+                print("First round bye playoffs")
+            elif record["wins"] >= wins_for_playoffs:
+                print("First round playoffs")
+            else:
+                print("Season over")
+                postSeason = False
+
 
 def  newGame(screen):
     # print("SPACE action, next screen")

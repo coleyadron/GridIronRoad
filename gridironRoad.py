@@ -87,6 +87,49 @@ def calculateTeamOverall():
 
     return teamOverall
 
+def getRecord():
+    try:
+        with open("json/userSeason.json", "r") as file:
+            data = json.load(file)
+
+            record = data["regularSeason"]["matchups"]
+
+            wins = 0
+            losses = 0
+            ties = 0
+
+            for matchup in record:
+                if matchup["played"]:
+                    if matchup["result"] == "win":
+                        wins += 1
+                    elif matchup["result"] == "loss":
+                        losses += 1
+                    elif matchup["result"] == "tie":
+                        ties += 1
+            totalGames = wins + losses + ties
+            if totalGames == 0:
+                winPercentage = 0
+            else:
+                winPercentage = (wins / totalGames) * 100
+            record = {
+                "wins": wins,
+                "losses": losses,
+                "ties": ties,
+                "totalGames": totalGames,
+                "winPercentage": winPercentage
+            }
+            return record
+        
+    except FileNotFoundError:
+        print("Error finding JSON file")
+        return None
+    except json.JSONDecodeError:
+        print("Error decoding JSON file")
+        return None
+    except Exception as e:
+        print("Error reading JSON file: ", e)
+        return None
+
 def getOpponent(opponentName):
     opponent = None
     try:
@@ -160,7 +203,7 @@ def updateSeason(matchup, game_result):
     try:
         with open("json/userSeason.json", "r") as file:
             data = json.load(file)
-            season = data["matchups"]
+            season = data['regularSeason']["matchups"]
             season[week - 1] = updatedWeek
 
         with open("json/userSeason.json", "w") as file:
