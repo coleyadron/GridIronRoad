@@ -32,7 +32,9 @@ def playGame(screen):
 
     scenarios = pregameDecisions.preGameDecisions(screen, matchup)
 
-    inGame.inGame(screen, matchup, scenarios)
+    game_result = inGame.inGame(screen, matchup, scenarios)
+
+    gridironRoad.updateSeason(matchup, game_result)
 
 def  newGame(screen):
     # print("SPACE action, next screen")

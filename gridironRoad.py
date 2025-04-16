@@ -139,6 +139,39 @@ def updateGlobalState(variable, value):
 #     state = retrieveState()
 #     return state
 
+def updateSeason(matchup, game_result):
+    myScore = game_result["score"]
+    opponentScore = game_result["opponent_score"]
+
+    week = matchup["week"]
+    opponent = matchup["opponent"]
+
+    updatedWeek = {
+        "week": week,
+        "opponent": opponent,
+        "played": True,
+        "user_score": myScore,
+        "opponent_score": opponentScore,
+        "result": game_result["game_result"]
+    }
+
+    print("Updated week: ", updatedWeek)
+
+    try:
+        with open("json/userSeason.json", "r") as file:
+            data = json.load(file)
+            season = data["season"]
+            season[week] = updatedWeek
+
+        with open("json/season.json", "w") as file:
+            json.dump(data, file, indent=4)
+    except Exception as e:
+        print("Error updating season: ", e)
+    
+
+    # preText = "Welcome to week " + str(matchup["week"]) + " vs " + matchup["opponent"] + "!"
+
+
 def saveGameState():
     try:
         if EXPERIENCE is None and TEAM is None and STAFF is None and DRAFT is None:
