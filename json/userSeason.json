@@ -1,140 +1,140 @@
 {
     "matchups": [
-      {
-        "week": 1,
-        "opponent": "Team A",
-        "played": true,
-        "user_score": 24,
-        "opponent_score": 21,
-        "result": "win"
-      },
-      {
-        "week": 2,
-        "opponent": "Team B",
-        "played": true,
-        "user_score": 17,
-        "opponent_score": 28,
-        "result": "loss"
-      },
-      {
-        "week": 3,
-        "opponent": "Team C",
-        "played": true,
-        "user_score": 31,
-        "opponent_score": 24,
-        "result": "win"
-      },
-      {
-        "week": 4,
-        "opponent": "Team D",
-        "played": true,
-        "user_score": 14,
-        "opponent_score": 14,
-        "result": "tie"
-      },
-      {
-        "week": 5,
-        "opponent": "Team E",
-        "played": false,
-        "user_score": null,
-        "opponent_score": null,
-        "result": null
-      },
-      {
-        "week": 6,
-        "opponent": "Team F",
-        "played": false,
-        "user_score": null,
-        "opponent_score": null,
-        "result": null
-      },
-      {
-        "week": 7,
-        "opponent": "Team G",
-        "played": false,
-        "user_score": null,
-        "opponent_score": null,
-        "result": null
-      },
-      {
-        "week": 8,
-        "opponent": "Team H",
-        "played": false,
-        "user_score": null,
-        "opponent_score": null,
-        "result": null
-      },
-      {
-        "week": 9,
-        "opponent": "Team I",
-        "played": false,
-        "user_score": null,
-        "opponent_score": null,
-        "result": null
-      },
-      {
-        "week": 10,
-        "opponent": "Team J",
-        "played": false,
-        "user_score": null,
-        "opponent_score": null,
-        "result": null
-      },
-      {
-        "week": 11,
-        "opponent": "Team K",
-        "played": false,
-        "user_score": null,
-        "opponent_score": null,
-        "result": null
-      },
-      {
-        "week": 12,
-        "opponent": "Team L",
-        "played": false,
-        "user_score": null,
-        "opponent_score": null,
-        "result": null
-      },
-      {
-        "week": 13,
-        "opponent": "Team M",
-        "played": false,
-        "user_score": null,
-        "opponent_score": null,
-        "result": null
-      },
-      {
-        "week": 14,
-        "opponent": "Team N",
-        "played": false,
-        "user_score": null,
-        "opponent_score": null,
-        "result": null
-      },
-      {
-        "week": 15,
-        "opponent": "Team O",
-        "played": false,
-        "user_score": null,
-        "opponent_score": null,
-        "result": null
-      },
-      {
-        "week": 16,
-        "opponent": "Team P",
-        "played": false,
-        "user_score": null,
-        "opponent_score": null,
-        "result": null
-      },
-      {
-        "week": 17,
-        "opponent": "Team Q",
-        "played": false,
-        "user_score": null,
-        "opponent_score": null,
-        "result": null
-      }
+        {
+            "week": 1,
+            "opponent": "Team A",
+            "played": true,
+            "user_score": 24,
+            "opponent_score": 21,
+            "result": "win"
+        },
+        {
+            "week": 2,
+            "opponent": "Team B",
+            "played": true,
+            "user_score": 17,
+            "opponent_score": 28,
+            "result": "loss"
+        },
+        {
+            "week": 3,
+            "opponent": "Team C",
+            "played": true,
+            "user_score": 31,
+            "opponent_score": 24,
+            "result": "win"
+        },
+        {
+            "week": 4,
+            "opponent": "Team D",
+            "played": true,
+            "user_score": 14,
+            "opponent_score": 14,
+            "result": "tie"
+        },
+        {
+            "week": 5,
+            "opponent": "Team E",
+            "played": true,
+            "user_score": 9,
+            "opponent_score": 21,
+            "result": "loss"
+        },
+        {
+            "week": 6,
+            "opponent": "Team F",
+            "played": false,
+            "user_score": null,
+            "opponent_score": null,
+            "result": null
+        },
+        {
+            "week": 7,
+            "opponent": "Team G",
+            "played": false,
+            "user_score": null,
+            "opponent_score": null,
+            "result": null
+        },
+        {
+            "week": 8,
+            "opponent": "Team H",
+            "played": false,
+            "user_score": null,
+            "opponent_score": null,
+            "result": null
+        },
+        {
+            "week": 9,
+            "opponent": "Team I",
+            "played": false,
+            "user_score": null,
+            "opponent_score": null,
+            "result": null
+        },
+        {
+            "week": 10,
+            "opponent": "Team J",
+            "played": false,
+            "user_score": null,
+            "opponent_score": null,
+            "result": null
+        },
+        {
+            "week": 11,
+            "opponent": "Team K",
+            "played": false,
+            "user_score": null,
+            "opponent_score": null,
+            "result": null
+        },
+        {
+            "week": 12,
+            "opponent": "Team L",
+            "played": false,
+            "user_score": null,
+            "opponent_score": null,
+            "result": null
+        },
+        {
+            "week": 13,
+            "opponent": "Team M",
+            "played": false,
+            "user_score": null,
+            "opponent_score": null,
+            "result": null
+        },
+        {
+            "week": 14,
+            "opponent": "Team N",
+            "played": false,
+            "user_score": null,
+            "opponent_score": null,
+            "result": null
+        },
+        {
+            "week": 15,
+            "opponent": "Team O",
+            "played": false,
+            "user_score": null,
+            "opponent_score": null,
+            "result": null
+        },
+        {
+            "week": 16,
+            "opponent": "Team P",
+            "played": false,
+            "user_score": null,
+            "opponent_score": null,
+            "result": null
+        },
+        {
+            "week": 17,
+            "opponent": "Team Q",
+            "played": false,
+            "user_score": null,
+            "opponent_score": null,
+            "result": null
+        }
     ]
-  }
+}

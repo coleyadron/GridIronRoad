@@ -155,22 +155,18 @@ def updateSeason(matchup, game_result):
         "result": game_result["game_result"]
     }
 
-    print("Updated week: ", updatedWeek)
+    # print("Updated week: ", updatedWeek)
 
     try:
         with open("json/userSeason.json", "r") as file:
             data = json.load(file)
-            season = data["season"]
-            season[week] = updatedWeek
+            season = data["matchups"]
+            season[week - 1] = updatedWeek
 
-        with open("json/season.json", "w") as file:
+        with open("json/userSeason.json", "w") as file:
             json.dump(data, file, indent=4)
     except Exception as e:
         print("Error updating season: ", e)
-    
-
-    # preText = "Welcome to week " + str(matchup["week"]) + " vs " + matchup["opponent"] + "!"
-
 
 def saveGameState():
     try:
