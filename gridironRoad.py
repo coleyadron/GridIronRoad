@@ -107,6 +107,12 @@ def getRecord():
                     elif matchup["result"] == "tie":
                         ties += 1
             totalGames = wins + losses + ties
+
+            print("Wins: ", wins)
+            print("Losses: ", losses)
+            print("Ties: ", ties)
+            print("Total games: ", totalGames)
+
             if totalGames == 0:
                 winPercentage = 0
             else:

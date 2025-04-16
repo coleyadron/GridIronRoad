@@ -30,9 +30,18 @@ DRAFT = None
 
 def playGame(screen):
     print("Game is starting")
-    matchup = seasonOverview.seasonOverview(screen)
 
-    while matchup["week"] <= 18:
+    whereSeason = seasonOverview.findCurrentWeek(seasonOverview.loadSeason("regularSeason"))
+    if whereSeason is None:
+        currentMatch = seasonOverview.findCurrentWeek(seasonOverview.loadSeason("postSeason"))
+        if currentMatch is not None:
+            print("Current Match: ", currentMatch)
+        currentWeek = 20
+    else:
+        matchup = seasonOverview.seasonOverview(screen)
+        currentWeek = matchup["week"]
+
+    while currentWeek <= 18:
         if not matchup["opponent"] == "Bye Week":
             preScenarios = pregameDecisions.preGameDecisions(screen, matchup)
 
@@ -60,39 +69,51 @@ def playGame(screen):
             gridironRoad.updateSeason(matchup, bye_result)
 
         #find next week
-        matchup = seasonOverview.findCurrentWeek(seasonOverview.loadSeason())
+        matchup = seasonOverview.findCurrentWeek(seasonOverview.loadSeason("regularSeason"))
 
         if matchup is not None:
             print("Matchup: ", matchup)
+            currentWeek = matchup["week"]
         else:
             print("Playoffs?")
+            currentWeek = 20
 
     postSeason = True
     while postSeason:
-        if matchup["week"] > 18:
-            #check record
-            record = gridironRoad.getRecord()
+        matchups = seasonOverview.loadSeason('postSeason')
 
-            if record["ties"] > 0:
-                print("Record: %s - %s - %s" % (record["wins"], record["losses"], record["ties"]))
-            else:
-                print("Record: %s - %s" % (record["wins"], record["losses"]))
+        print("Matchups: ", matchups)
 
-            #if record over benchmark go into playoffs loop
-            # playoffs record for playoffs --> random 8 - 10
-            # first week bye record -> 14+
-            #else end season 
+        currentMatchup = seasonOverview.findCurrentWeek(matchups)
 
-            wins_for_playoffs = random.randint(8, 10)
-            first_round_bye = 14
+        if currentMatchup is None:
+            print("No more matchups")
+            break
+        print("Current matchup: ", currentMatchup)
+        
+        #check record
+        record = gridironRoad.getRecord()
 
-            if record["wins"] >= first_round_bye:
-                print("First round bye playoffs")
-            elif record["wins"] >= wins_for_playoffs:
-                print("First round playoffs")
-            else:
-                print("Season over")
-                postSeason = False
+        if record["ties"] > 0:
+            print("Record: %s - %s - %s" % (record["wins"], record["losses"], record["ties"]))
+        else:
+            print("Record: %s - %s" % (record["wins"], record["losses"]))
+
+        #if record over benchmark go into playoffs loop
+        # playoffs record for playoffs --> random 8 - 10
+        # first week bye record -> 14+
+        #else end season 
+
+        wins_for_playoffs = random.randint(8, 10)
+        first_round_bye = 14
+
+        if record["wins"] >= first_round_bye:
+            print("First round bye playoffs")
+        elif record["wins"] >= wins_for_playoffs:
+            print("First round playoffs")
+        else:
+            print("Season over")
+            postSeason = False
 
 
 def  newGame(screen):
