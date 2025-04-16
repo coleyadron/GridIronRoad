@@ -3,7 +3,7 @@ import random
 
 def scheduler():
     try:
-        with open("json/schedule.json", "r") as file:
+        with open("json/userSeason.json", "r") as file:
             schedule = json.load(file)
         with open("json/leagueTeams.json", "r") as file:
             teams = json.load(file)
@@ -19,8 +19,7 @@ def scheduler():
     
     possibleOpponents = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33]
     week = 1
-    for week in schedule["schedule"]:
-            game = week["game"]
+    for week in schedule["matchups"]:
             randomOpponent = random.choice(possibleOpponents)
             possibleOpponents.remove(randomOpponent)
             if randomOpponent == 33:
