@@ -5,6 +5,7 @@ from screens import coachingStaff
 from screens import teamSelection
 from screens import seasonOverview
 from screens import pregameDecisions
+from screens import inGame
 import gridironRoad
 import json
 # from screens.minigames import puntReturn
@@ -29,7 +30,11 @@ def playGame(screen):
     print("Game is starting")
     matchup = seasonOverview.seasonOverview(screen)
 
-    pregameDecisions.preGameDecisions(screen, matchup)
+    scenarios = pregameDecisions.preGameDecisions(screen, matchup)
+
+    game_result = inGame.inGame(screen, matchup, scenarios)
+
+    gridironRoad.updateSeason(matchup, game_result)
 
 def  newGame(screen):
     # print("SPACE action, next screen")

@@ -3,9 +3,11 @@ import pygame
 import sys
 
 def kill_game():
-    running = False
     pygame.quit()
     sys.exit()
+
+def exec(screen):
+    return fieldGoal(screen)
 
 def fieldGoal(screen):
     screen.fill((0, 0, 0))
@@ -69,9 +71,9 @@ def fieldGoal(screen):
 
     pygame.quit() 
 
-def main():
-    pygame.init()
-    pygame.display.init()
-    fieldGoal(screen = pygame.display.set_mode((1400, 1050)))
+# def main():
+#     pygame.init()
+#     pygame.display.init()
+#     fieldGoal(screen = pygame.display.set_mode((1400, 1050)))
 
-main()
+# main()

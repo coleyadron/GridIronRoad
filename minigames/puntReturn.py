@@ -8,6 +8,9 @@ def kill_game():
     pygame.quit()
     sys.exit()
 
+def exec(screen):
+    return puntReturn(screen)
+
 def puntReturn(screen):
     screen.fill((0, 0, 0))
 
@@ -53,10 +56,12 @@ def puntReturn(screen):
                 elif event.key == pygame.K_SPACE and miniGame:
                     if win:
                         print("You won the mini game")
-                        return
+                        running = False
+                        return True
                     else:
                         print("You lost the mini game")
-                        return
+                        running = False
+                        return False
 
                 if event.key == pygame.K_LEFT and miniGame and userX > 0:
                     userX -= spriteWidth
@@ -112,6 +117,9 @@ def puntReturn(screen):
 
                 win = True
                 miniGame = False
+                running = False
+                time.sleep(1)
+                return True
 
             #check if user is tackled
             i = 0
@@ -128,14 +136,17 @@ def puntReturn(screen):
 
                     win = False
                     miniGame = False
+                    running = False
+                    time.sleep(1)
+                    return False
                     
                 i += 1
 
 
-def main():
-    pygame.init()
-    pygame.display.init()
+# def main():
+#     pygame.init()
+#     pygame.display.init()
 
-    puntReturn(screen = pygame.display.set_mode((1400, 1050)))
+#     puntReturn(screen = pygame.display.set_mode((1400, 1050)))
 
-main()
+# main()

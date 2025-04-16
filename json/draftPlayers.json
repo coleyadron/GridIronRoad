@@ -4,47 +4,339 @@
       "round": 1,
       "players": [
         {
-          "name": "John Smith",
-          "position": "Quarterback",
+          "name": "Ashton Jeanty",
+          "position": "RB",
+          "contract": "5 years",
+          "salary": "$41,500,000",
           "characteristics": {
-            "speed": 85,
-            "strength": 70,
-            "agility": 80,
-            "accuracy": 95,
-            "awareness": 90
-          }
-        },
-        {
-          "name": "Mike Johnson",
-          "position": "Running Back",
-          "characteristics": {
+            "rating": 87,
             "speed": 92,
-            "strength": 85,
-            "agility": 90,
-            "elusiveness": 95,
-            "vision": 88
+            "strength": 81,
+            "athleticism": 88
           }
         },
         {
-          "name": "Chris Davis",
-          "position": "Wide Receiver",
+          "name": "Abdul Carter",
+          "position": "DE",
+          "contract": "5 years",
+          "salary": "$40,000,000",
           "characteristics": {
-            "speed": 94,
+            "rating": 87,
+            "speed": 88,
+            "strength": 86,
+            "athleticism": 87
+          }
+        },
+        {
+          "name": "Travis Hunter",
+          "position": "WR/CB",
+          "contract": "4 years",
+          "salary": "$36,000,000",
+          "characteristics": {
+            "rating": 86,
+            "speed": 99,
+            "strength": 62,
+            "athleticism": 97
+          }
+        },
+        {
+          "name": "Mason Graham",
+          "position": "DT",
+          "contract": "4 years",
+          "salary": "$34,500,000",
+          "characteristics": {
+            "rating": 84,
+            "speed": 75,
+            "strength": 94,
+            "athleticism": 83
+          }
+        },
+        {
+          "name": "Cam Ward",
+          "position": "QB",
+          "contract": "4 years",
+          "salary": "$32,000,000",
+          "characteristics": {
+            "rating": 81,
+            "speed": 85,
+            "strength": 73,
+            "athleticism": 85
+          }
+        },
+        {
+          "name": "Mykel Williams",
+          "position": "DE",
+          "contract": "5 years",
+          "salary": "$32,000,000",
+          "characteristics": {
+            "rating": 84,
+            "speed": 83,
+            "strength": 86,
+            "athleticism": 83
+          }
+        },
+        {
+          "name": "Will Johnson",
+          "position": "CB",
+          "contract": "4 years",
+          "salary": "$30,000,000",
+          "characteristics": {
+            "rating": 84,
+            "speed": 91,
             "strength": 75,
-            "agility": 92,
-            "catching": 96,
-            "route_running": 90
+            "athleticism": 86
           }
         },
         {
-          "name": "David Wilson",
-          "position": "Defensive Lineman",
+          "name": "Jalon Walker",
+          "position": "LB",
+          "contract": "4 years",
+          "salary": "$29,500,000",
           "characteristics": {
+            "rating": 84,
+            "speed": 85,
+            "strength": 82,
+            "athleticism": 85
+          }
+        },
+        {
+          "name": "Shedeur Sanders",
+          "position": "QB",
+          "contract": "3 years",
+          "salary": "$28,000,000",
+          "characteristics": {
+            "rating": 81,
+            "speed": 82,
+            "strength": 76,
+            "athleticism": 85
+          }
+        },
+        {
+          "name": "Tyler Warren",
+          "position": "TE",
+          "contract": "4 years",
+          "salary": "$27,000,000",
+          "characteristics": {
+            "rating": 81,
+            "speed": 82,
+            "strength": 80,
+            "athleticism": 81
+          }
+        },
+        {
+          "name": "Armand Membou",
+          "position": "OT",
+          "contract": "4 years",
+          "salary": "$26,000,000",
+          "characteristics": {
+            "rating": 80,
             "speed": 80,
+            "strength": 83,
+            "athleticism": 77
+          }
+        },
+        {
+          "name": "Colston Loveland",
+          "position": "TE",
+          "contract": "4 years",
+          "salary": "$23,000,000",
+          "characteristics": {
+            "rating": 79,
+            "speed": 83,
+            "strength": 76,
+            "athleticism": 78
+          }
+        },
+        {
+          "name": "Jaxson Dart",
+          "position": "QB",
+          "contract": "3 years",
+          "salary": "$22,000,000",
+          "characteristics": {
+            "rating": 77,
+            "speed": 83,
+            "strength": 73,
+            "athleticism": 75
+          }
+        },
+        {
+          "name": "Will Campbell",
+          "position": "OT",
+          "contract": "3 years",
+          "salary": "$22,000,000",
+          "characteristics": {
+            "rating": 80,
+            "speed": 76,
+            "strength": 84,
+            "athleticism": 80
+          }
+        },
+        {
+          "name": "Jihaad Campbell",
+          "position": "LB",
+          "contract": "4 years",
+          "salary": "$22,000,000",
+          "characteristics": {
+            "rating": 79,
+            "speed": 82,
+            "strength": 76,
+            "athleticism": 79
+          }
+        },
+        {
+          "name": "Tetairoa McMillan",
+          "position": "WR",
+          "contract": "4 years",
+          "salary": "$22,000,000",
+          "characteristics": {
+            "rating": 80,
+            "speed": 80,
+            "strength": 80,
+            "athleticism": 80
+          }
+        },
+        {
+          "name": "Donovan Ezeiruaku",
+          "position": "DE",
+          "contract": "4 years",
+          "salary": "$19,750,000",
+          "characteristics": {
+            "rating": 81,
+            "speed": 82,
+            "strength": 81,
+            "athleticism": 80
+          }
+        },
+        {
+          "name": "Walter Nolen",
+          "position": "DT",
+          "contract": "3 years",
+          "salary": "$19,500,000",
+          "characteristics": {
+            "rating": 83,
+            "speed": 79,
             "strength": 90,
-            "agility": 75,
-            "pass_rush": 85,
-            "run_stop": 88
+            "athleticism": 80
+          }
+        },
+        {
+          "name": "Shemar Stewart",
+          "position": "DE",
+          "contract": "3 years",
+          "salary": "$18,000,000",
+          "characteristics": {
+            "rating": 80,
+            "speed": 77,
+            "strength": 83,
+            "athleticism": 80
+          }
+        },
+        {
+          "name": "Kelvin Banks Jr.",
+          "position": "OT",
+          "contract": "3 years",
+          "salary": "$17,000,000",
+          "characteristics": {
+            "rating": 75,
+            "speed": 67,
+            "strength": 83,
+            "athleticism": 75
+          }
+        },
+        {
+          "name": "Jahdae Barron",
+          "position": "CB",
+          "contract": "3 years",
+          "salary": "$17,000,000",
+          "characteristics": {
+            "rating": 74,
+            "speed": 83,
+            "strength": 67,
+            "athleticism": 72
+          }
+        },
+        {
+          "name": "Azareye'h Thomas",
+          "position": "CB",
+          "contract": "3 years",
+          "salary": "$17,000,000",
+          "characteristics": {
+            "rating": 75,
+            "speed": 85,
+            "strength": 65,
+            "athleticism": 75
+          }
+        },
+        {
+          "name": "Matthew Golden",
+          "position": "WR",
+          "contract": "3 years",
+          "salary": "$16,000,000",
+          "characteristics": {
+            "rating": 75,
+            "speed": 87,
+            "strength": 68,
+            "athleticism": 70
+          }
+        },
+        {
+          "name": "Omarion Hampton",
+          "position": "RB",
+          "contract": "3 years",
+          "salary": "$15,500,000",
+          "characteristics": {
+            "rating": 79,
+            "speed": 81,
+            "strength": 77,
+            "athleticism": 79
+          }
+        },
+        {
+          "name": "Emeka Egbuka",
+          "position": "WR",
+          "contract": "3 years",
+          "salary": "$15,000,000",
+          "characteristics": {
+            "rating": 75,
+            "speed": 80,
+            "strength": 70,
+            "athleticism": 75
+          }
+        },
+        {
+          "name": "Aireontae Ersey",
+          "position": "OT",
+          "contract": "2 years",
+          "salary": "$13,500,000",
+          "characteristics": {
+            "rating": 74,
+            "speed": 60,
+            "strength": 85,
+            "athleticism": 77
+          }
+        },
+        {
+          "name": "Tyler Booker",
+          "position": "OG",
+          "contract": "2 years",
+          "salary": "$10,500,000",
+          "characteristics": {
+            "rating": 76,
+            "speed": 60,
+            "strength": 90,
+            "athleticism": 78
+          }
+        },
+        {
+          "name": "Jonah Savainaea",
+          "position": "OG",
+          "contract": "2 years",
+          "salary": "$8,500,000",
+          "characteristics": {
+            "rating": 75,
+            "speed": 65,
+            "strength": 85,
+            "athleticism": 75
           }
         }
       ]
@@ -53,36 +345,339 @@
       "round": 2,
       "players": [
         {
-          "name": "Alex Brown",
-          "position": "Quarterback",
+          "name": "Mike Green",
+          "position": "DE",
+          "contract": "3 years",
+          "salary": "$19,000,000",
           "characteristics": {
+            "rating": 85,
             "speed": 80,
-            "strength": 65,
-            "agility": 75,
-            "accuracy": 88,
-            "awareness": 85
+            "strength": 94,
+            "athleticism": 81
           }
         },
         {
-          "name": "Ryan Miller",
-          "position": "Linebacker",
+          "name": "TreVeyon Henderson",
+          "position": "RB",
+          "contract": "3 years",
+          "salary": "$18,500,000",
           "characteristics": {
-            "speed": 85,
-            "strength": 90,
-            "agility": 80,
-            "tackling": 88,
-            "coverage": 75
+            "rating": 85,
+            "speed": 92,
+            "strength": 79,
+            "athleticism": 84
           }
         },
         {
-          "name": "Ethan Wilson",
-          "position": "Cornerback",
+          "name": "Mason Taylor",
+          "position": "TE",
+          "contract": "3 years",
+          "salary": "$17,500,000",
           "characteristics": {
+            "rating": 82,
+            "speed": 82,
+            "strength": 82,
+            "athleticism": 82
+          }
+        },
+        {
+          "name": "Malaki Starks",
+          "position": "S",
+          "contract": "2 years",
+          "salary": "$12,000,000",
+          "characteristics": {
+            "rating": 80,
             "speed": 90,
             "strength": 70,
-            "agility": 88,
-            "man_coverage": 85,
-            "zone_coverage": 80
+            "athleticism": 80
+          }
+        },
+        {
+          "name": "Jack Sawyer",
+          "position": "DE",
+          "contract": "2 years",
+          "salary": "$11,750,000",
+          "characteristics": {
+            "rating": 81,
+            "speed": 80,
+            "strength": 83,
+            "athleticism": 80
+          }
+        },
+        {
+          "name": "Nick Emmanwori",
+          "position": "S",
+          "contract": "2 years",
+          "salary": "$11,500,000",
+          "characteristics": {
+            "rating": 77,
+            "speed": 82,
+            "strength": 74,
+            "athleticism": 75
+          }
+        },
+        {
+          "name": "Tyleik Williams",
+          "position": "DT",
+          "contract": "2 years",
+          "salary": "$11,000,000",
+          "characteristics": {
+            "rating": 80,
+            "speed": 75,
+            "strength": 85,
+            "athleticism": 80
+          }
+        },
+        {
+          "name": "Luther Burden III",
+          "position": "WR",
+          "contract": "2 years",
+          "salary": "$9,500,000",
+          "characteristics": {
+            "rating": 79,
+            "speed": 85,
+            "strength": 72,
+            "athleticism": 80
+          }
+        },
+        {
+          "name": "Xavier Watts",
+          "position": "S",
+          "contract": "2 years",
+          "salary": "$9,500,000",
+          "characteristics": {
+            "rating": 80,
+            "speed": 88,
+            "strength": 72,
+            "athleticism": 80
+          }
+        },
+        {
+          "name": "Josh Conerly Jr.",
+          "position": "OT",
+          "contract": "1 year",
+          "salary": "$8,500,000",
+          "characteristics": {
+            "rating": 77,
+            "speed": 72,
+            "strength": 82,
+            "athleticism": 77
+          }
+        },
+        {
+          "name": "Kenneth Grant",
+          "position": "DT",
+          "contract": "1 year",
+          "salary": "$8,500,000",
+          "characteristics": {
+            "rating": 75,
+            "speed": 65,
+            "strength": 85,
+            "athleticism": 75
+          }
+        },
+        {
+          "name": "Alfred Collins",
+          "position": "DT",
+          "contract": "2 years",
+          "salary": "$8,500,000",
+          "characteristics": {
+            "rating": 81,
+            "speed": 75,
+            "strength": 88,
+            "athleticism": 80
+          }
+        },
+        {
+          "name": "Kevin Winston Jr.",
+          "position": "S",
+          "contract": "2 years",
+          "salary": "$8,500,000",
+          "characteristics": {
+            "rating": 78,
+            "speed": 85,
+            "strength": 71,
+            "athleticism": 78
+          }
+        },
+        {
+          "name": "Donovan Jackson",
+          "position": "OG",
+          "contract": "1 year",
+          "salary": "$7,500,000",
+          "characteristics": {
+            "rating": 75,
+            "speed": 65,
+            "strength": 85,
+            "athleticism": 75
+          }
+        },
+        {
+          "name": "Isaiah Bond",
+          "position": "WR",
+          "contract": "1 year",
+          "salary": "$6,500,000",
+          "characteristics": {
+            "rating": 74,
+            "speed": 82,
+            "strength": 70,
+            "athleticism": 70
+          }
+        },
+        {
+          "name": "Charles Grant",
+          "position": "OT",
+          "contract": "1 year",
+          "salary": "$6,250,000",
+          "characteristics": {
+            "rating": 73,
+            "speed": 67,
+            "strength": 80,
+            "athleticism": 72
+          }
+        },
+        {
+          "name": "Derrick Harmon",
+          "position": "DT",
+          "contract": "1 year",
+          "salary": "$6,000,000",
+          "characteristics": {
+            "rating": 73,
+            "speed": 64,
+            "strength": 85,
+            "athleticism": 70
+          }
+        },
+        {
+          "name": "Trey Amos",
+          "position": "CB",
+          "contract": "1 year",
+          "salary": "$6,000,000",
+          "characteristics": {
+            "rating": 71,
+            "speed": 82,
+            "strength": 60,
+            "athleticism": 71
+          }
+        },
+        {
+          "name": "Jaylin Noel",
+          "position": "WR",
+          "contract": "1 year",
+          "salary": "$6,000,000",
+          "characteristics": {
+            "rating": 70,
+            "speed": 75,
+            "strength": 65,
+            "athleticism": 70
+          }
+        },
+        {
+          "name": "Maxwell Hairston",
+          "position": "CB",
+          "contract": "1 year",
+          "salary": "$5,500,000",
+          "characteristics": {
+            "rating": 70,
+            "speed": 80,
+            "strength": 60,
+            "athleticism": 70
+          }
+        },
+        {
+          "name": "Jared Wilson",
+          "position": "C",
+          "contract": "1 year",
+          "salary": "$5,500,000",
+          "characteristics": {
+            "rating": 65,
+            "speed": 50,
+            "strength": 80,
+            "athleticism": 65
+          }
+        },
+        {
+          "name": "Josh Simmons",
+          "position": "OT",
+          "contract": "1 year",
+          "salary": "$5,000,000",
+          "characteristics": {
+            "rating": 70,
+            "speed": 64,
+            "strength": 78,
+            "athleticism": 68
+          }
+        },
+        {
+          "name": "JT Tuimoloau",
+          "position": "DE",
+          "contract": "1 year",
+          "salary": "$4,750,000",
+          "characteristics": {
+            "rating": 70,
+            "speed": 65,
+            "strength": 75,
+            "athleticism": 70
+          }
+        },
+        {
+          "name": "Quinshon Judkins",
+          "position": "RB",
+          "contract": "1 year",
+          "salary": "$4,750,000",
+          "characteristics": {
+            "rating": 74,
+            "speed": 80,
+            "strength": 67,
+            "athleticism": 75
+          }
+        },
+        {
+          "name": "Grey Zabel",
+          "position": "OG",
+          "contract": "1 year",
+          "salary": "$4,500,000",
+          "characteristics": {
+            "rating": 68,
+            "speed": 55,
+            "strength": 80,
+            "athleticism": 69
+          }
+        },
+        {
+          "name": "Quinn Ewers",
+          "position": "QB",
+          "contract": "1 year",
+          "salary": "$4,500,000",
+          "characteristics": {
+            "rating": 73,
+            "speed": 82,
+            "strength": 61,
+            "athleticism": 76
+          }
+        },
+        {
+          "name": "Nic Scourton",
+          "position": "DE",
+          "contract": "1 year",
+          "salary": "$4,500,000",
+          "characteristics": {
+            "rating": 74,
+            "speed": 77,
+            "strength": 70,
+            "athleticism": 75
+          }
+        },
+        {
+          "name": "Shavon Revel Jr.",
+          "position": "CB",
+          "contract": "1 year",
+          "salary": "$4,000,000",
+          "characteristics": {
+            "rating": 66,
+            "speed": 80,
+            "strength": 50,
+            "athleticism": 68
           }
         }
       ]
@@ -91,34 +686,339 @@
       "round": 3,
       "players": [
         {
-          "name": "Daniel Harris",
-          "position": "Tight End",
+          "name": "Carson Schwesinger",
+          "position": "LB",
+          "contract": "2 years",
+          "salary": "$7,500,000",
           "characteristics": {
-            "speed": 78,
+            "rating": 84,
+            "speed": 84,
             "strength": 85,
-            "agility": 75,
-            "catching": 82,
-            "blocking": 80
+            "athleticism": 83
           }
         },
         {
-          "name": "Kevin Lee",
-          "position": "Safety",
+          "name": "Kaleb Johnson",
+          "position": "RB",
+          "contract": "2 years",
+          "salary": "$6,500,000",
           "characteristics": {
-            "speed": 85,
+            "rating": 82,
+            "speed": 90,
+            "strength": 73,
+            "athleticism": 83
+          }
+        },
+        {
+          "name": "James Pearce Jr.",
+          "position": "DE",
+          "contract": "2 years",
+          "salary": "$6,000,000",
+          "characteristics": {
+            "rating": 82,
+            "speed": 81,
+            "strength": 85,
+            "athleticism": 80
+          }
+        },
+        {
+          "name": "Jordan Burch",
+          "position": "DE",
+          "contract": "2 years",
+          "salary": "$4,500,000",
+          "characteristics": {
+            "rating": 82,
+            "speed": 80,
+            "strength": 84,
+            "athleticism": 82
+          }
+        },
+        {
+          "name": "Oluwafemi Oladejo",
+          "position": "DE",
+          "contract": "2 years",
+          "salary": "$3,000,000",
+          "characteristics": {
+            "rating": 81,
+            "speed": 80,
+            "strength": 83,
+            "athleticism": 80
+          }
+        },
+        {
+          "name": "Landon Jackson",
+          "position": "DE",
+          "contract": "2 years",
+          "salary": "$2,750,000",
+          "characteristics": {
+            "rating": 80,
+            "speed": 77,
+            "strength": 85,
+            "athleticism": 78
+          }
+        },
+        {
+          "name": "Terrance Ferguson",
+          "position": "TE",
+          "contract": "2 years",
+          "salary": "$2,500,000",
+          "characteristics": {
+            "rating": 81,
+            "speed": 83,
+            "strength": 80,
+            "athleticism": 80
+          }
+        },
+        {
+          "name": "Marcus Mbow",
+          "position": "OG",
+          "contract": "1 year",
+          "salary": "$1,500,000",
+          "characteristics": {
+            "rating": 74,
+            "speed": 62,
+            "strength": 82,
+            "athleticism": 78
+          }
+        },
+        {
+          "name": "Darius Alexander",
+          "position": "DT",
+          "contract": "1 year",
+          "salary": "$1,500,000",
+          "characteristics": {
+            "rating": 73,
+            "speed": 67,
+            "strength": 80,
+            "athleticism": 72
+          }
+        },
+        {
+          "name": "Benjamin Morrison",
+          "position": "CB",
+          "contract": "1 year",
+          "salary": "$1,500,000",
+          "characteristics": {
+            "rating": 76,
+            "speed": 82,
+            "strength": 72,
+            "athleticism": 74
+          }
+        },
+        {
+          "name": "Tate Ratledge",
+          "position": "OG",
+          "contract": "1 year",
+          "salary": "$1,500,000",
+          "characteristics": {
+            "rating": 75,
+            "speed": 65,
+            "strength": 84,
+            "athleticism": 76
+          }
+        },
+        {
+          "name": "Jayden Higgins",
+          "position": "WR",
+          "contract": "1 year",
+          "salary": "$1,275,000",
+          "characteristics": {
+            "rating": 74,
+            "speed": 78,
+            "strength": 70,
+            "athleticism": 74
+          }
+        },
+        {
+          "name": "Xavier Restrepo",
+          "position": "WR",
+          "contract": "1 year",
+          "salary": "$1,250,000",
+          "characteristics": {
+            "rating": 70,
+            "speed": 80,
+            "strength": 60,
+            "athleticism": 70
+          }
+        },
+        {
+          "name": "Anthony Belton",
+          "position": "OT",
+          "contract": "1 year",
+          "salary": "$1,250,000",
+          "characteristics": {
+            "rating": 76,
+            "speed": 71,
+            "strength": 82,
+            "athleticism": 75
+          }
+        },
+        {
+          "name": "Elijah Arroyo",
+          "position": "TE",
+          "contract": "1 year",
+          "salary": "$1,250,000",
+          "characteristics": {
+            "rating": 74,
+            "speed": 80,
+            "strength": 70,
+            "athleticism": 72
+          }
+        },
+        {
+          "name": "Joshua Farmer",
+          "position": "DT",
+          "contract": "1 year",
+          "salary": "$1,000,000",
+          "characteristics": {
+            "rating": 70,
+            "speed": 62,
+            "strength": 80,
+            "athleticism": 68
+          }
+        },
+        {
+          "name": "Jaydon Blue",
+          "position": "RB",
+          "contract": "1 year",
+          "salary": "$1,000,000",
+          "characteristics": {
+            "rating": 69,
+            "speed": 77,
+            "strength": 63,
+            "athleticism": 67
+          }
+        },
+        {
+          "name": "Tre Harris",
+          "position": "WR",
+          "contract": "1 year",
+          "salary": "$1,000,000",
+          "characteristics": {
+            "rating": 69,
+            "speed": 76,
+            "strength": 63,
+            "athleticism": 68
+          }
+        },
+        {
+          "name": "Seth McLaughlin",
+          "position": "C",
+          "contract": "1 year",
+          "salary": "$975,000",
+          "characteristics": {
+            "rating": 70,
+            "speed": 60,
+            "strength": 80,
+            "athleticism": 70
+          }
+        },
+        {
+          "name": "Jalen Mitroe",
+          "position": "QB",
+          "contract": "1 year",
+          "salary": "$950,000",
+          "characteristics": {
+            "rating": 71,
+            "speed": 76,
+            "strength": 67,
+            "athleticism": 70
+          }
+        },
+        {
+          "name": "Trevor Etienne",
+          "position": "RB",
+          "contract": "1 year",
+          "salary": "$950,000",
+          "characteristics": {
+            "rating": 69,
+            "speed": 73,
+            "strength": 66,
+            "athleticism": 68
+          }
+        },
+        {
+          "name": "Darien Porter",
+          "position": "CB",
+          "contract": "1 year",
+          "salary": "$925,000",
+          "characteristics": {
+            "rating": 67,
+            "speed": 75,
+            "strength": 60,
+            "athleticism": 66
+          }
+        },
+        {
+          "name": "Cameron Williams",
+          "position": "OG",
+          "contract": "1 year",
+          "salary": "$900,000",
+          "characteristics": {
+            "rating": 66,
+            "speed": 54,
+            "strength": 78,
+            "athleticism": 66
+          }
+        },
+        {
+          "name": "Jack Bech",
+          "position": "OT",
+          "contract": "1 year",
+          "salary": "$900,000",
+          "characteristics": {
+            "rating": 69,
+            "speed": 54,
+            "strength": 80,
+            "athleticism": 73
+          }
+        },
+        {
+          "name": "Shemar James",
+          "position": "LB",
+          "contract": "1 year",
+          "salary": "$875,000",
+          "characteristics": {
+            "rating": 67,
+            "speed": 66,
+            "strength": 70,
+            "athleticism": 65
+          }
+        },
+        {
+          "name": "Lathan Ransom",
+          "position": "S",
+          "contract": "1 year",
+          "salary": "$825,000",
+          "characteristics": {
+            "rating": 67,
+            "speed": 66,
+            "strength": 68,
+            "athleticism": 67
+          }
+        },
+        {
+          "name": "TJ Sanders",
+          "position": "DT",
+          "contract": "1 year",
+          "salary": "$810,000",
+          "characteristics": {
+            "rating": 67,
+            "speed": 62,
             "strength": 75,
-            "agility": 80,
-            "tackling": 82,
-            "coverage": 78
+            "athleticism": 64
           }
         },
         {
-          "name": "Brian Taylor",
-          "position": "Kicker",
+          "name": "Tyler Shough",
+          "position": "QB",
+          "contract": "1 year",
+          "salary": "$800,000",
           "characteristics": {
-            "power": 90,
-            "accuracy": 85,
-            "clutch": 80
+            "rating": 63,
+            "speed": 67,
+            "strength": 62,
+            "athleticism": 60
           }
         }
       ]

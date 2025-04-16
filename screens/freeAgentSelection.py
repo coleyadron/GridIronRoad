@@ -1,15 +1,15 @@
 import pygame
-import gridironRoad
 import json
 from screens import teamOverview
-
-# def kill_game():
-#     pygame.quit()
-#     quit()
+import gridironRoad
 
 WIDTH, HEIGHT = 1400, 1050
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Football Draft Grid")
+
+PLAYERS_SELECTED = []
+
+POPUP_OPEN = False
 
 # Colors
 WHITE = (255, 255, 255)
@@ -27,30 +27,31 @@ BOX_HEIGHT = 200
 BOX_SPACING = 10
 CORNER_RADIUS = 8
 
-ROUND = 1
-
-PLAYERS_SELECTED = []
-
-# Calculate grid position
 BOX_WIDTH = (WIDTH - (GRID_COLS - 1) * BOX_SPACING) // GRID_COLS
 BOX_HEIGHT = (HEIGHT - 120 - (GRID_ROWS - 1) * BOX_SPACING) // (GRID_ROWS + 1)
 
 grid_x = 0
 grid_y = 100
 
-def load_json():
+def killgame():
+    pygame.quit()
+    quit()
+
+def load_free_agents():
     try:
-        with open("json/draftPlayers.json", "r") as f:
-            data = json.load(f)
-            # print(data)
+        with open("json/freeAgents.json", "r") as file:
+            data = json.load(file)
             return data
     except FileNotFoundError:
-        print("Error finding draftPlayers file")
-        return []
+        print("Error finding JSON file")
+        return None
+    except json.JSONDecodeError:
+        print("Error decoding JSON file")
+        return None
     except Exception as e:
-        print("Error reading draftPlayers: ", e)
-        return []
-
+        print("Error reading JSON file: ", e)
+        return None
+    
 def draw_rounded_rect(surface, color, rect, radius):
     """Draw a rectangle with rounded corners."""
     x, y, w, h = rect
@@ -63,7 +64,7 @@ def draw_rounded_rect(surface, color, rect, radius):
 
 def draw_grid(surface, playerData):
     """Draw the grid of rounded rectangles."""
-    font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 28)
+    font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
     small_font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 24)
 
     for row in range(GRID_ROWS):
@@ -75,8 +76,8 @@ def draw_grid(surface, playerData):
 
             # Calculate the player index
             player_index = row * GRID_COLS + col
-            if player_index < len(playerData["draft_rounds"][ROUND - 1]["players"]):
-                player = playerData["draft_rounds"][ROUND - 1]["players"][player_index]
+            if player_index < len(playerData["free_agents"]):
+                player = playerData["free_agents"][player_index]
 
                 # Display player name with wrapping
                 name = player["name"]
@@ -110,7 +111,7 @@ def draw_grid(surface, playerData):
                     surface.blit(name_text, name_rect)
 
                 # Calculate and display player rating (average of characteristics)
-                rating = sum(player["characteristics"].values()) // len(player["characteristics"])
+                rating = player["rating"]
                 rating_text = small_font.render(f"Rating: {rating}", True, BLACK)
                 rating_rect = rating_text.get_rect(center=(x + BOX_WIDTH // 2, start_y + total_text_height + 10))
                 surface.blit(rating_text, rating_rect)
@@ -121,27 +122,67 @@ def draw_grid(surface, playerData):
                 surface.blit(pick_text, pick_rect)
 
 
-def handle_click(mouse_pos, playerData, ROUND):
+def handle_click(mouse_pos, playerData):
     """Handles mouse clicks"""
     global PLAYERS_SELECTED
-    currentRoundIndex = ROUND - 1
     for row in range(GRID_ROWS):
         for col in range(GRID_COLS):
             x = grid_x + col * (BOX_WIDTH + BOX_SPACING)
             y = grid_y + row * (BOX_HEIGHT + BOX_SPACING)
             rect = pygame.Rect(x, y, BOX_WIDTH, BOX_HEIGHT)  # Create a Rect object
-            if rect.collidepoint(mouse_pos):
+            if rect.collidepoint(mouse_pos) and not POPUP_OPEN:
                 player_index = row * GRID_COLS + col
-                if player_index < len(playerData["draft_rounds"][ROUND - 1]["players"]):
-                    player = playerData["draft_rounds"][currentRoundIndex]["players"][player_index]
+                if player_index < 18:
+                    # check within salary cap
+                    player = playerData["free_agents"][player_index]
 
                     copy_screen = screen.copy()
+
+                    teamSalary = gridironRoad.calculateSalaryCap()
+                    # teamSalary = 279100090
+                    salary_cap = 279200000
 
                     # Create a popup box
                     popup_width = 600
                     popup_height = 450
                     popup_x = (WIDTH - popup_width) // 2
                     popup_y = (HEIGHT - popup_height) // 2
+
+                    if teamSalary + (player["salary"] / int(player["contract"][:1])) > salary_cap:
+                        print("Salary cap exceeded")
+                        # Display a message
+                        font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
+
+                        pygame.draw.rect(screen, WHITE, (popup_x, popup_y, popup_width, popup_height))
+                        pygame.draw.rect(screen, BLACK, (popup_x, popup_y, popup_width, popup_height), 3)
+
+                        message_text = font.render("Salary cap exceeded", True, RED)
+                        message_rect = message_text.get_rect(center=(WIDTH // 2, HEIGHT // 2))
+                        exit_text = font.render("Press SPACE or ESC to exit", True, BLACK)
+                        exit_rect = exit_text.get_rect(center=(WIDTH // 2, HEIGHT // 2 + 50))
+                        screen.blit(exit_text, exit_rect)
+                        screen.blit(message_text, message_rect)
+                        pygame.display.update()
+
+                        confirmSalary = True
+                        while confirmSalary:
+                            for event in pygame.event.get():
+                                if event.type == pygame.KEYDOWN:
+                                    if event.key == pygame.K_SPACE:
+                                        screen.blit(copy_screen, (0, 0))
+                                        pygame.display.update()
+                                        print("Exit popup")
+                                        confirmSalary = False
+                                    elif event.key == pygame.K_ESCAPE:
+                                        print("Selection canceled.")
+                                        screen.blit(copy_screen, (0, 0))
+                                        pygame.display.update()
+                                        confirmSalary = False
+                                elif event.type == pygame.QUIT:
+                                    # gridironRoad.killgame(screen)
+                                    killgame()
+                        return
+
 
                     # Draw the popup background
                     pygame.draw.rect(screen, WHITE, (popup_x, popup_y, popup_width, popup_height))
@@ -156,10 +197,10 @@ def handle_click(mouse_pos, playerData, ROUND):
                     contract_text = font.render(f"Contract: {format(player['salary'])}", True, BLACK)
                     contract_len_text = font.render(f"Contract Length: {player['contract']}", True, BLACK)
                     characteristics_text = font.render("Characteristics:", True, BLACK)
-                    rating_text = font.render(f"Rating: {player["characteristics"]["rating"]}", True, BLACK)
-                    speed_text = font.render(f"Speed: {player['characteristics']['speed']}", True, BLACK)
-                    strength_text = font.render(f"Strength: {player['characteristics']['strength']}", True, BLACK)
-                    athleticism_text = font.render(f"Athleticism: {player['characteristics']['athleticism']}", True, BLACK)
+                    rating_text = font.render(f"Rating: {player["rating"]}", True, BLACK)
+                    speed_text = font.render(f"Speed: {player['speed']}", True, BLACK)
+                    strength_text = font.render(f"Strength: {player['strength']}", True, BLACK)
+                    athleticism_text = font.render(f"Athleticism: {player['athleticism']}", True, BLACK)
 
                     screen.blit(name_text, (popup_x + 20, popup_y + 20))
                     screen.blit(position_text, (popup_x + 20, popup_y + 60))
@@ -186,85 +227,69 @@ def handle_click(mouse_pos, playerData, ROUND):
                                 if event.key == pygame.K_SPACE:
                                     print(f"Player {player['name']} selected!")
                                     confirmPick = False
-                                    ROUND += 1
                                     PLAYERS_SELECTED.append(player)
-                                    return ROUND  # Confirm selection
                                 elif event.key == pygame.K_ESCAPE:
                                     print("Selection canceled.")
                                     screen.blit(copy_screen, (0, 0))
                                     pygame.display.update()
                                     confirmPick = False
-                                    return ROUND  # Cancel selection
                             elif event.type == pygame.QUIT:
-                                gridironRoad.killgame(screen)
-                                # kill_game()
+                                # gridironRoad.killgame(screen)
+                                killgame()
                 else:
-                    print(f"No player available for Pick {player_index + 1}")
-
-
-def draft(screen):
-    global ROUND
+                    print(f"No player available for Pick {player_index + 1}")    
+    
+def free_agents(screen):
     font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
-
-
     screen.fill((0, 0, 0))
 
-    draft = font.render("Draft a player: ", True, (255, 255, 255))
-    roundText = font.render("Round: " + str(ROUND), True, (255, 255, 255))
-    view_teamText = font.render("Press 1 to view team", True, (255, 255, 255))
-    
-    screen.blit(draft, (0, 0))
-    screen.blit(roundText, (0, 50))
-    screen.blit(view_teamText, (0, screen.get_height() - 50))
+    titleText = font.render("Available Free Agents", True, (255, 255, 255))
+    screen.blit(titleText, (screen.get_width() / 2 - titleText.get_width() / 2, 0))
 
-    playerData = load_json()
-    draw_grid(screen, playerData)
+    teamOverviewText = font.render("Press 1 to view team", True, (255, 255, 255))
+    screen.blit(teamOverviewText, (screen.get_width() / 2 - teamOverviewText.get_width() / 2, screen.get_height() - 50))
+
+    free_agents = load_free_agents()
+
+    if free_agents is None:
+        print("Error loading free agents")
+        return
+
+    draw_grid(screen, free_agents)
 
     pygame.display.update()
 
-
-    draftOpen = True
-    while draftOpen:
+    free_agents_open = True
+    while free_agents_open:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                gridironRoad.killgame(screen)
-                # kill_game()
-            if event.type == pygame.KEYDOWN and draftOpen:
+                # gridironRoad.killgame(screen)
+                killgame()
+            if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
-                    gridironRoad.killgame(screen)
-                    # kill_game()
+                    free_agents_open = False
+                    return
                 if event.key == pygame.K_1 or event.key == pygame.K_KP1:
                     print("1 action, view team")
                     overViewCopy = screen.copy()
-                    teamOverview.teamOverview(screen, 'draft')
+                    teamOverview.teamOverview(screen, "free agents")
                     screen.blit(overViewCopy, (0, 0))
-                    pygame.display.flip()
+                    pygame.display.update()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = pygame.mouse.get_pos()
-                # prevRound = ROUND
-                ROUND = handle_click(mouse_pos, playerData, ROUND)
-                # if ROUND > prevRound:
-                if ROUND > 3:
-                    draftOpen = False
-                    print("Draft complete!")
-                    for player in PLAYERS_SELECTED:
-                        print(player["name"])
-                    return PLAYERS_SELECTED
-                else:
-                    screen.fill((0, 0, 0))
-                    draft = font.render("Draft a player: ", True, (255, 255, 255))
-                    roundText = font.render("Round: " + str(ROUND), True, (255, 255, 255))
-                    screen.blit(draft, (0, 0))
-                    screen.blit(roundText, (0, 50))
-                    draw_grid(screen, playerData)
-                    pygame.display.update()
+                player = handle_click(mouse_pos, free_agents)
+                pygame.display.update()
 
-
+    return player
 
 def main():
     pygame.init()
+    pygame.display.init()
     screen = pygame.display.set_mode((1400, 1050))
-    draft(screen)
+    pygame.display.set_caption("Free Agents")
+    screen.fill((0, 0, 0))
+
+    free_agents(screen)
 
 if __name__ == "__main__":
     main()

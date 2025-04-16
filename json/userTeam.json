@@ -1,170 +1,593 @@
 {
-    "team_name": "User's Team",
-    "overall_rating": 85,
-    "players": [
-      {
-        "name": "John Smith",
-        "position": "QB",
-        "stats": {
-          "speed": 85,
-          "strength": 70,
-          "agility": 80,
-          "accuracy": 95,
-          "awareness": 90
-        },
-        "salary": 125000000
+  "team_name": "User's Team",
+  "players": [
+    {
+      "name": "John Smith",
+      "position": "QB",
+      "contract": "5 years",
+      "stats": {
+        "speed": 85,
+        "strength": 70,
+        "athleticism": 80,
+        "overall": 78
       },
-      {
-        "name": "Mike Johnson",
-        "position": "RB",
-        "stats": {
-          "speed": 92,
-          "strength": 85,
-          "agility": 90,
-          "elusiveness": 95,
-          "vision": 88
-        },
-        "salary": 18000000
+      "salary": 125000000
+    },
+    {
+      "name": "Mike Johnson",
+      "position": "RB",
+      "contract": "4 years",
+      "stats": {
+        "speed": 92,
+        "strength": 85,
+        "athleticism": 90,
+        "overall": 89
       },
-      {
-        "name": "Chris Davis",
-        "position": "WR",
-        "stats": {
-          "speed": 94,
-          "strength": 75,
-          "agility": 92,
-          "catching": 96,
-          "route_running": 90
-        },
-        "salary": 20000000
+      "salary": 48000000
+    },
+    {
+      "name": "Chris Davis",
+      "position": "WR",
+      "contract": "4 years",
+      "stats": {
+        "speed": 94,
+        "strength": 75,
+        "athleticism": 92,
+        "overall": 87
       },
-      {
-        "name": "Alex Brown",
-        "position": "TE",
-        "stats": {
-          "speed": 78,
-          "strength": 85,
-          "agility": 75,
-          "catching": 82,
-          "blocking": 80
-        },
-        "salary": 1500000
+      "salary": 42000000
+    },
+    {
+      "name": "Alex Brown",
+      "position": "TE",
+      "contract": "3 years",
+      "stats": {
+        "speed": 78,
+        "strength": 85,
+        "athleticism": 75,
+        "overall": 79
       },
-      {
-        "name": "Ryan Miller",
-        "position": "OT",
-        "stats": {
-          "strength": 90,
-          "agility": 60,
-          "pass_block": 78,
-          "run_block": 82,
-          "awareness": 75
-        },
-        "salary": 1200000
+      "salary": 18000000
+    },
+    {
+      "name": "Ryan Miller",
+      "position": "OT",
+      "contract": "4 years",
+      "stats": {
+        "speed": 60,
+        "strength": 90,
+        "athleticism": 65,
+        "overall": 72
       },
-      {
-        "name": "Ethan Wilson",
-        "position": "OG",
-        "stats": {
-          "strength": 88,
-          "agility": 65,
-          "pass_block": 80,
-          "run_block": 85,
-          "awareness": 78
-        },
-        "salary": 1100000
+      "salary": 20000000
+    },
+    {
+      "name": "Ethan Wilson",
+      "position": "OG",
+      "contract": "3 years",
+      "stats": {
+        "speed": 65,
+        "strength": 88,
+        "athleticism": 70,
+        "overall": 74
       },
-      {
-        "name": "Daniel Harris",
-        "position": "C",
-        "stats": {
-          "strength": 85,
-          "agility": 70,
-          "pass_block": 82,
-          "run_block": 84,
-          "awareness": 80
-        },
-        "salary": 1000000
+      "salary": 15000000
+    },
+    {
+      "name": "Daniel Harris",
+      "position": "C",
+      "contract": "3 years",
+      "stats": {
+        "speed": 55,
+        "strength": 85,
+        "athleticism": 60,
+        "overall": 67
       },
-      {
-        "name": "Kevin Lee",
-        "position": "DE",
-        "stats": {
-          "speed": 85,
-          "strength": 90,
-          "agility": 80,
-          "pass_rush": 88,
-          "run_stop": 85
-        },
-        "salary": 2200000
+      "salary": 12000000
+    },
+    {
+      "name": "Kevin Lee",
+      "position": "DE",
+      "contract": "4 years",
+      "stats": {
+        "speed": 85,
+        "strength": 90,
+        "athleticism": 80,
+        "overall": 85
       },
-      {
-        "name": "Brian Taylor",
-        "position": "DT",
-        "stats": {
-          "speed": 70,
-          "strength": 92,
-          "agility": 65,
-          "pass_rush": 75,
-          "run_stop": 88
-        },
-        "salary": 1900000
+      "salary": 38000000
+    },
+    {
+      "name": "Brian Taylor",
+      "position": "DT",
+      "contract": "3 years",
+      "stats": {
+        "speed": 70,
+        "strength": 92,
+        "athleticism": 65,
+        "overall": 76
       },
-      {
-        "name": "Jason White",
-        "position": "LB",
-        "stats": {
-          "speed": 85,
-          "strength": 88,
-          "agility": 80,
-          "tackling": 90,
-          "coverage": 75
-        },
-        "salary": 1700000
+      "salary": 22000000
+    },
+    {
+      "name": "Jason White",
+      "position": "LB",
+      "contract": "3 years",
+      "stats": {
+        "speed": 85,
+        "strength": 88,
+        "athleticism": 80,
+        "overall": 84
       },
-      {
-        "name": "Marcus Green",
-        "position": "CB",
-        "stats": {
-          "speed": 90,
-          "strength": 70,
-          "agility": 88,
-          "man_coverage": 85,
-          "zone_coverage": 80
-        },
-        "salary": 1600000
+      "salary": 25000000
+    },
+    {
+      "name": "Marcus Green",
+      "position": "CB",
+      "contract": "4 years",
+      "stats": {
+        "speed": 90,
+        "strength": 70,
+        "athleticism": 88,
+        "overall": 83
       },
-      {
-        "name": "Tyler Evans",
-        "position": "S",
-        "stats": {
-          "speed": 85,
-          "strength": 75,
-          "agility": 80,
-          "tackling": 82,
-          "coverage": 78
-        },
-        "salary": 1400000
+      "salary": 32000000
+    },
+    {
+      "name": "Tyler Evans",
+      "position": "S",
+      "contract": "3 years",
+      "stats": {
+        "speed": 85,
+        "strength": 75,
+        "athleticism": 80,
+        "overall": 80
       },
-      {
-        "name": "Logan Brown",
-        "position": "K",
-        "stats": {
-          "power": 90,
-          "accuracy": 85,
-          "clutch": 80
-        },
-        "salary": 800000
+      "salary": 18000000
+    },
+    {
+      "name": "Logan Brown",
+      "position": "K",
+      "contract": "2 years",
+      "stats": {
+        "speed": 60,
+        "strength": 65,
+        "athleticism": 70,
+        "overall": 65
       },
-      {
-        "name": "Derek Carter",
-        "position": "P",
-        "stats": {
-          "power": 88,
-          "accuracy": 82,
-          "hang_time": 85
-        },
-        "salary": 7000000
-      }
-    ]
-  }
+      "salary": 5000000
+    },
+    {
+      "name": "Derek Carter",
+      "position": "P",
+      "contract": "2 years",
+      "stats": {
+        "speed": 65,
+        "strength": 60,
+        "athleticism": 75,
+        "overall": 67
+      },
+      "salary": 4000000
+    },
+    {
+      "name": "Jordan King",
+      "position": "QB",
+      "contract": "2 years",
+      "stats": {
+        "speed": 75,
+        "strength": 60,
+        "athleticism": 70,
+        "overall": 68
+      },
+      "salary": 8000000
+    },
+    {
+      "name": "Anthony Martinez",
+      "position": "RB",
+      "contract": "3 years",
+      "stats": {
+        "speed": 88,
+        "strength": 75,
+        "athleticism": 82,
+        "overall": 82
+      },
+      "salary": 12000000
+    },
+    {
+      "name": "Trevor Wright",
+      "position": "WR",
+      "contract": "3 years",
+      "stats": {
+        "speed": 89,
+        "strength": 72,
+        "athleticism": 85,
+        "overall": 82
+      },
+      "salary": 15000000
+    },
+    {
+      "name": "Jamal Richardson",
+      "position": "TE",
+      "contract": "2 years",
+      "stats": {
+        "speed": 75,
+        "strength": 80,
+        "athleticism": 72,
+        "overall": 76
+      },
+      "salary": 7000000
+    },
+    {
+      "name": "Terrance Williams",
+      "position": "OT",
+      "contract": "3 years",
+      "stats": {
+        "speed": 62,
+        "strength": 87,
+        "athleticism": 68,
+        "overall": 72
+      },
+      "salary": 11000000
+    },
+    {
+      "name": "Darnell Jefferson",
+      "position": "OG",
+      "contract": "2 years",
+      "stats": {
+        "speed": 60,
+        "strength": 85,
+        "athleticism": 65,
+        "overall": 70
+      },
+      "salary": 6000000
+    },
+    {
+      "name": "Corey Matthews",
+      "position": "C",
+      "contract": "2 years",
+      "stats": {
+        "speed": 58,
+        "strength": 82,
+        "athleticism": 62,
+        "overall": 67
+      },
+      "salary": 5500000
+    },
+    {
+      "name": "Shawn Thompson",
+      "position": "DE",
+      "contract": "3 years",
+      "stats": {
+        "speed": 82,
+        "strength": 85,
+        "athleticism": 78,
+        "overall": 82
+      },
+      "salary": 15000000
+    },
+    {
+      "name": "Darius Jones",
+      "position": "DT",
+      "contract": "2 years",
+      "stats": {
+        "speed": 68,
+        "strength": 88,
+        "athleticism": 70,
+        "overall": 75
+      },
+      "salary": 9000000
+    },
+    {
+      "name": "Tyrone Washington",
+      "position": "LB",
+      "contract": "3 years",
+      "stats": {
+        "speed": 82,
+        "strength": 85,
+        "athleticism": 78,
+        "overall": 82
+      },
+      "salary": 12000000
+    },
+    {
+      "name": "Devin Parker",
+      "position": "CB",
+      "contract": "3 years",
+      "stats": {
+        "speed": 88,
+        "strength": 68,
+        "athleticism": 85,
+        "overall": 80
+      },
+      "salary": 14000000
+    },
+    {
+      "name": "Malik Henderson",
+      "position": "S",
+      "contract": "2 years",
+      "stats": {
+        "speed": 82,
+        "strength": 72,
+        "athleticism": 78,
+        "overall": 77
+      },
+      "salary": 8000000
+    },
+    {
+      "name": "Brandon Carter",
+      "position": "WR",
+      "contract": "2 years",
+      "stats": {
+        "speed": 87,
+        "strength": 70,
+        "athleticism": 82,
+        "overall": 80
+      },
+      "salary": 9000000
+    },
+    {
+      "name": "Andre Wilson",
+      "position": "FB",
+      "contract": "2 years",
+      "stats": {
+        "speed": 75,
+        "strength": 85,
+        "athleticism": 72,
+        "overall": 77
+      },
+      "salary": 5000000
+    },
+    {
+      "name": "Tyler Roberts",
+      "position": "OT",
+      "contract": "2 years",
+      "stats": {
+        "speed": 65,
+        "strength": 83,
+        "athleticism": 68,
+        "overall": 72
+      },
+      "salary": 7000000
+    },
+    {
+      "name": "Jamal Carter",
+      "position": "OG",
+      "contract": "2 years",
+      "stats": {
+        "speed": 62,
+        "strength": 84,
+        "athleticism": 65,
+        "overall": 70
+      },
+      "salary": 6500000
+    },
+    {
+      "name": "Derek Williams",
+      "position": "DE",
+      "contract": "2 years",
+      "stats": {
+        "speed": 80,
+        "strength": 83,
+        "athleticism": 75,
+        "overall": 79
+      },
+      "salary": 10000000
+    },
+    {
+      "name": "Chris Thompson",
+      "position": "DT",
+      "contract": "2 years",
+      "stats": {
+        "speed": 70,
+        "strength": 86,
+        "athleticism": 72,
+        "overall": 76
+      },
+      "salary": 8500000
+    },
+    {
+      "name": "Terrance Reed",
+      "position": "LB",
+      "contract": "2 years",
+      "stats": {
+        "speed": 80,
+        "strength": 82,
+        "athleticism": 76,
+        "overall": 79
+      },
+      "salary": 9000000
+    },
+    {
+      "name": "Darius Johnson",
+      "position": "CB",
+      "contract": "2 years",
+      "stats": {
+        "speed": 85,
+        "strength": 65,
+        "athleticism": 82,
+        "overall": 77
+      },
+      "salary": 8000000
+    },
+    {
+      "name": "Malik Williams",
+      "position": "S",
+      "contract": "2 years",
+      "stats": {
+        "speed": 80,
+        "strength": 70,
+        "athleticism": 75,
+        "overall": 75
+      },
+      "salary": 7000000
+    },
+    {
+      "name": "Jason Collins",
+      "position": "WR",
+      "contract": "2 years",
+      "stats": {
+        "speed": 85,
+        "strength": 68,
+        "athleticism": 80,
+        "overall": 78
+      },
+      "salary": 7500000
+    },
+    {
+      "name": "Tyrone Davis",
+      "position": "TE",
+      "contract": "2 years",
+      "stats": {
+        "speed": 72,
+        "strength": 78,
+        "athleticism": 70,
+        "overall": 73
+      },
+      "salary": 6000000
+    },
+    {
+      "name": "Brandon Miller",
+      "position": "OT",
+      "contract": "2 years",
+      "stats": {
+        "speed": 64,
+        "strength": 82,
+        "athleticism": 66,
+        "overall": 71
+      },
+      "salary": 6500000
+    },
+    {
+      "name": "Chris Wilson",
+      "position": "OG",
+      "contract": "2 years",
+      "stats": {
+        "speed": 63,
+        "strength": 83,
+        "athleticism": 64,
+        "overall": 70
+      },
+      "salary": 6000000
+    },
+    {
+      "name": "Derek Jones",
+      "position": "C",
+      "contract": "2 years",
+      "stats": {
+        "speed": 60,
+        "strength": 80,
+        "athleticism": 62,
+        "overall": 67
+      },
+      "salary": 5500000
+    },
+    {
+      "name": "Terrance Brown",
+      "position": "DE",
+      "contract": "2 years",
+      "stats": {
+        "speed": 78,
+        "strength": 80,
+        "athleticism": 72,
+        "overall": 77
+      },
+      "salary": 8000000
+    },
+    {
+      "name": "Jamal Williams",
+      "position": "DT",
+      "contract": "2 years",
+      "stats": {
+        "speed": 68,
+        "strength": 84,
+        "athleticism": 70,
+        "overall": 74
+      },
+      "salary": 7000000
+    },
+    {
+      "name": "Darius Smith",
+      "position": "LB",
+      "contract": "2 years",
+      "stats": {
+        "speed": 78,
+        "strength": 80,
+        "athleticism": 74,
+        "overall": 77
+      },
+      "salary": 7500000
+    },
+    {
+      "name": "Malik Jones",
+      "position": "CB",
+      "contract": "2 years",
+      "stats": {
+        "speed": 83,
+        "strength": 62,
+        "athleticism": 80,
+        "overall": 75
+      },
+      "salary": 7000000
+    },
+    {
+      "name": "Tyrone Johnson",
+      "position": "S",
+      "contract": "2 years",
+      "stats": {
+        "speed": 78,
+        "strength": 68,
+        "athleticism": 72,
+        "overall": 73
+      },
+      "salary": 6000000
+    },
+    {
+      "name": "Jason Williams",
+      "position": "WR",
+      "contract": "2 years",
+      "stats": {
+        "speed": 82,
+        "strength": 65,
+        "athleticism": 78,
+        "overall": 75
+      },
+      "salary": 6500000
+    },
+    {
+      "name": "Chris Davis",
+      "position": "TE",
+      "contract": "2 years",
+      "stats": {
+        "speed": 70,
+        "strength": 75,
+        "athleticism": 68,
+        "overall": 71
+      },
+      "salary": 5500000
+    },
+    {
+      "name": "Brandon Taylor",
+      "position": "K",
+      "contract": "1 year",
+      "stats": {
+        "speed": 55,
+        "strength": 60,
+        "athleticism": 65,
+        "overall": 60
+      },
+      "salary": 2500000
+    },
+    {
+      "name": "Tyler Wilson",
+      "position": "P",
+      "contract": "1 year",
+      "stats": {
+        "speed": 60,
+        "strength": 55,
+        "athleticism": 70,
+        "overall": 62
+      },
+      "salary": 2000000
+    }
+  ]
+}

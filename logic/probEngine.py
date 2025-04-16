@@ -50,5 +50,10 @@ def get_team_ratings(team_name, json_file):
 
 
 # Example usage
-result = determine_winner("Thunderhawks", "Blazing Storm")
-print(result)
+
+def main():
+    result = determine_winner("Thunderhawks", "Blazing Storm")
+    print(result)
+
+if __name__ == "__main__":
+    main()

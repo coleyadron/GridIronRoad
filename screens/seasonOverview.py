@@ -3,6 +3,7 @@ import pygame
 import json
 # import pregameDecisions
 from screens import teamOverview
+from screens import freeAgentSelection
 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -72,8 +73,10 @@ def seasonOverview(screen):
 
     nextScreenText = font.render("Press SPACE to enter the next game", True, WHITE)
     viewTeamText = font.render("Press 1 to view team", True, WHITE)
-    screen.blit(nextScreenText, (0, screen.get_height() - 100))
-    screen.blit(viewTeamText, (0, screen.get_height() - 150))
+    viewFreeAgentsText = font.render("Press 2 to view free agents", True, WHITE)
+    screen.blit(viewFreeAgentsText, (0, screen.get_height() - 50))
+    screen.blit(nextScreenText, (0, screen.get_height() - 150))
+    screen.blit(viewTeamText, (0, screen.get_height() - 100 ))
 
     pygame.display.update()
 
@@ -107,7 +110,12 @@ def seasonOverview(screen):
                     teamOverview.teamOverview(screen, 'season')
                     screen.blit(overViewCopy, (0, 0))
                     pygame.display.flip()
-
+                elif event.key == pygame.K_2 or event.key == pygame.K_KP2:
+                    print("2 action, view team")
+                    overViewCopy = screen.copy()
+                    freeAgentSelection.free_agents(screen)
+                    screen.blit(overViewCopy, (0, 0))
+                    pygame.display.flip()
 
     return
 
