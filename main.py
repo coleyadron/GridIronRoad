@@ -82,7 +82,7 @@ def playGame(screen):
     while postSeason:
         matchups = seasonOverview.loadSeason('postSeason')
 
-        print("Matchups: ", matchups)
+        # print("Matchups: ", matchups)
 
         currentMatchup = seasonOverview.findCurrentWeek(matchups)
 
@@ -94,10 +94,10 @@ def playGame(screen):
         #check record
         record = gridironRoad.getRecord()
 
-        if record["ties"] > 0:
-            print("Record: %s - %s - %s" % (record["wins"], record["losses"], record["ties"]))
-        else:
-            print("Record: %s - %s" % (record["wins"], record["losses"]))
+        # if record["ties"] > 0:
+        #     print("Record: %s - %s - %s" % (record["wins"], record["losses"], record["ties"]))
+        # else:
+        #     print("Record: %s - %s" % (record["wins"], record["losses"]))
 
         #if record over benchmark go into playoffs loop
         # playoffs record for playoffs --> random 8 - 10
@@ -108,9 +108,50 @@ def playGame(screen):
         first_round_bye = 14
 
         if record["wins"] >= first_round_bye:
-            print("First round bye playoffs")
+            # print("First round bye playoffs")
+            if currentMatchup["game_name"] == "Wild Card":
+                game_result = {
+                    "game_name": "Wild Card - Bye Week",
+                    "opponent": "Bye Week",
+                    "played": True,
+                    "score": None,
+                    "opponent_score": None,
+                    "game_result": None
+                }
+                
+                gridironRoad.updateSeason(currentMatchup, game_result, postSeason=True)
+
+                inGame.byeWeek(screen)
+
         elif record["wins"] >= wins_for_playoffs:
-            print("First round playoffs")
+            print("Playoff games")
+
+            preScenarios = pregameDecisions.preGameDecisions(screen, currentMatchup)
+
+            game_result = inGame.inGame(screen, currentMatchup, preScenarios)
+
+            gridironRoad.updateSeason(currentMatchup, game_result, postSeason=True)
+
+            if game_result["game_result"] == "loss":
+                print("You lost the game")
+                postSeason = False
+            
+            else:
+                print("You won the game")
+                postScenarios = postgameDecisions.postGameDecisions(screen, currentMatchup)
+
+                # print("Scenarios: ", postScenarios)
+
+                #check if there are more matchups
+                currentMatchup = seasonOverview.findCurrentWeek(seasonOverview.loadSeason("postSeason"))
+
+                if currentMatchup is None:
+                    print("No more matchups")
+                    break
+                else:
+                    print("Next matchup: ", currentMatchup)
+                    continue
+
         else:
             print("Season over")
             postSeason = False

@@ -39,7 +39,7 @@
                 "played": true,
                 "user_score": 14,
                 "opponent_score": 35,
-                "result": "loss"
+                "result": "win"
             },
             {
                 "week": 6,
@@ -47,7 +47,7 @@
                 "played": true,
                 "user_score": 28,
                 "opponent_score": 31,
-                "result": "loss"
+                "result": "win"
             },
             {
                 "week": 7,
@@ -71,7 +71,7 @@
                 "played": true,
                 "user_score": 17,
                 "opponent_score": 20,
-                "result": "loss"
+                "result": "win"
             },
             {
                 "week": 10,
@@ -95,7 +95,7 @@
                 "played": true,
                 "user_score": 21,
                 "opponent_score": 24,
-                "result": "loss"
+                "result": "win"
             },
             {
                 "week": 13,
@@ -119,7 +119,7 @@
                 "played": true,
                 "user_score": 24,
                 "opponent_score": 27,
-                "result": "loss"
+                "result": "win"
             },
             {
                 "week": 16,

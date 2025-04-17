@@ -178,6 +178,46 @@ def resetWeek():
     OPPONENT_SCORE = 0
     QUARTER = 1
 
+def singularMiniGame(screen):
+    #pick random mini-game
+    miniGames = [puntReturn]
+    miniGame = random.choice(miniGames)
+    print("Selected mini-game: ", miniGame.__name__)
+
+    pregame_Copy = screen.copy()
+
+    # #start mini-game
+    gameResult = miniGame.exec(screen)
+    print("Game result: ", gameResult)
+
+    screen.blit(pregame_Copy, (0, 0))
+
+def byeWeek(screen):
+    font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
+
+    screen.fill((0, 0, 0))
+
+    print("Bye week is starting")
+
+    preText = "Welcome to this week's bye week practice!"
+    pregameText = font.render(preText, True, (255, 255, 255))
+    screen.blit(pregameText, (screen.get_width() / 2 - pregameText.get_width() / 2, 50))
+
+    bottomText = font.render("Press ENTER to continue", True, (255, 255, 255))
+    screen.blit(bottomText, (screen.get_width() / 2 - bottomText.get_width() / 2, screen.get_height() - 100))
+    pygame.display.update()
+
+    byeWeek = True
+    while byeWeek:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                gridironRoad.killgame(screen)
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN:
+                    singularMiniGame(screen)
+                    byeWeek = False
+                    return
+
 
 def inGame(screen, matchup, scenarios):
     global WEEK, TEAM_SCORE, OPPONENT_SCORE, QUARTER
