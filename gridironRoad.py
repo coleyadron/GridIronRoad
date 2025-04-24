@@ -87,6 +87,55 @@ def calculateTeamOverall():
 
     return teamOverall
 
+def getRecord():
+    try:
+        with open("json/userSeason.json", "r") as file:
+            data = json.load(file)
+
+            record = data["regularSeason"]["matchups"]
+
+            wins = 0
+            losses = 0
+            ties = 0
+
+            for matchup in record:
+                if matchup["played"]:
+                    if matchup["result"] == "win":
+                        wins += 1
+                    elif matchup["result"] == "loss":
+                        losses += 1
+                    elif matchup["result"] == "tie":
+                        ties += 1
+            totalGames = wins + losses + ties
+
+            # print("Wins: ", wins)
+            # print("Losses: ", losses)
+            # print("Ties: ", ties)
+            # print("Total games: ", totalGames)
+
+            if totalGames == 0:
+                winPercentage = 0
+            else:
+                winPercentage = (wins / totalGames) * 100
+            record = {
+                "wins": wins,
+                "losses": losses,
+                "ties": ties,
+                "totalGames": totalGames,
+                "winPercentage": winPercentage
+            }
+            return record
+        
+    except FileNotFoundError:
+        print("Error finding JSON file")
+        return None
+    except json.JSONDecodeError:
+        print("Error decoding JSON file")
+        return None
+    except Exception as e:
+        print("Error reading JSON file: ", e)
+        return None
+
 def getOpponent(opponentName):
     opponent = None
     try:
@@ -139,37 +188,69 @@ def updateGlobalState(variable, value):
 #     state = retrieveState()
 #     return state
 
-def updateSeason(matchup, game_result):
-    myScore = game_result["score"]
-    opponentScore = game_result["opponent_score"]
+def updateSeason(matchup, game_result, postSeason=False):
+    if not postSeason:
+        myScore = game_result["score"]
+        opponentScore = game_result["opponent_score"]
 
-    week = matchup["week"]
-    opponent = matchup["opponent"]
+        week = matchup["week"]
+        opponent = matchup["opponent"]
 
-    updatedWeek = {
-        "week": week,
-        "opponent": opponent,
-        "played": True,
-        "user_score": myScore,
-        "opponent_score": opponentScore,
-        "result": game_result["game_result"]
-    }
+        updatedWeek = {
+            "week": week,
+            "opponent": opponent,
+            "played": True,
+            "user_score": myScore,
+            "opponent_score": opponentScore,
+            "result": game_result["game_result"]
+        }
 
-    print("Updated week: ", updatedWeek)
+        # print("Updated week: ", updatedWeek)
 
-    try:
-        with open("json/userSeason.json", "r") as file:
-            data = json.load(file)
-            season = data["season"]
-            season[week] = updatedWeek
+        try:
+            with open("json/userSeason.json", "r") as file:
+                data = json.load(file)
+                season = data['regularSeason']["matchups"]
+                season[week - 1] = updatedWeek
 
-        with open("json/season.json", "w") as file:
-            json.dump(data, file, indent=4)
-    except Exception as e:
-        print("Error updating season: ", e)
-    
+            with open("json/userSeason.json", "w") as file:
+                json.dump(data, file, indent=4)
+        except Exception as e:
+            print("Error updating season: ", e)
 
-    # preText = "Welcome to week " + str(matchup["week"]) + " vs " + matchup["opponent"] + "!"
+    else: #it is the post season
+        myScore = game_result["score"]
+        opponentScore = game_result["opponent_score"]
+
+        game_name = game_result["game_name"]
+        opponent = game_result["opponent"]
+
+        updatedWeek = {
+            "game_name": game_name,
+            "opponent": opponent,
+            "played": True,
+            "user_score": myScore,
+            "opponent_score": opponentScore,
+            "result": game_result["game_result"]
+        }
+
+        # print("Updated week: ", updatedWeek)
+
+        try:
+            with open("json/userSeason.json", "r") as file:
+                data = json.load(file)
+                season = data['postSeason']["matchups"]
+                
+                #find the right game
+                for game in season:
+                    if game["game_name"] == game_name:
+                        game.update(updatedWeek)
+                        break
+
+            with open("json/userSeason.json", "w") as file:
+                json.dump(data, file, indent=4)
+        except Exception as e:
+            print("Error updating season: ", e)
 
 
 def saveGameState():

@@ -67,11 +67,11 @@ def handleEndGame(screen, gameResult):
     #                 gridironRoad.killgame(screen)
     #                 running = False
 
-def handleTeamGlobals():
+def handleTeamGlobals(opponent):
     global OPPOSING_TEAM, OPPOSING_OVERALL, OPPOSING_OFFENSE, OPPOSING_DEFENSE, OPPOSING_SPECIAL
     global MY_TEAM, MY_OVERALL, MY_OFFENSE, MY_DEFENSE, MY_SPECIAL
 
-    opponent = gridironRoad.getOpponent("Pittsburgh Steelers")
+    opponent = gridironRoad.getOpponent(opponent)
 
     OPPOSING_TEAM = opponent['name']
     OPPOSING_OVERALL = opponent["overall"]
@@ -172,10 +172,57 @@ def miniGameHandler(screen):
 
     pygame.display.update()
 
+def resetWeek():
+    global TEAM_SCORE, OPPONENT_SCORE, QUARTER
+    TEAM_SCORE = 0
+    OPPONENT_SCORE = 0
+    QUARTER = 1
+
+def singularMiniGame(screen):
+    #pick random mini-game
+    miniGames = [puntReturn]
+    miniGame = random.choice(miniGames)
+    print("Selected mini-game: ", miniGame.__name__)
+
+    pregame_Copy = screen.copy()
+
+    # #start mini-game
+    gameResult = miniGame.exec(screen)
+    print("Game result: ", gameResult)
+
+    screen.blit(pregame_Copy, (0, 0))
+
+def byeWeek(screen):
+    font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
+
+    screen.fill((0, 0, 0))
+
+    print("Bye week is starting")
+
+    preText = "Welcome to this week's bye week practice!"
+    pregameText = font.render(preText, True, (255, 255, 255))
+    screen.blit(pregameText, (screen.get_width() / 2 - pregameText.get_width() / 2, 50))
+
+    bottomText = font.render("Press ENTER to continue", True, (255, 255, 255))
+    screen.blit(bottomText, (screen.get_width() / 2 - bottomText.get_width() / 2, screen.get_height() - 100))
+    pygame.display.update()
+
+    byeWeek = True
+    while byeWeek:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                gridironRoad.killgame(screen)
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN:
+                    singularMiniGame(screen)
+                    byeWeek = False
+                    return
 
 
 def inGame(screen, matchup, scenarios):
     global WEEK, TEAM_SCORE, OPPONENT_SCORE, QUARTER
+
+    resetWeek()
 
     font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
 
@@ -205,7 +252,7 @@ def inGame(screen, matchup, scenarios):
     print("Morale total: ", moraleTotal)
     print("Performance total: ", performanceTotal)
 
-    handleTeamGlobals()
+    handleTeamGlobals(matchup["opponent"])
 
     inGame = True
     gameOver = False

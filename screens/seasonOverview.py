@@ -13,11 +13,11 @@ def killgame():
     pygame.quit()
     quit()
 
-def loadSeason():
+def loadSeason(season_type):
     try:
         with open("json/userSeason.json", "r") as file:
             season = json.load(file)
-            return season
+            return season[season_type]
     except FileNotFoundError:
         print("Error finding season file")
         return None
@@ -39,7 +39,10 @@ def display_matchup(game):
     result = game["result"]
 
     if played:
-        text = f"Week {week}: {opponent} - {result.capitalize()}"
+        if opponent == "Bye Week":
+            text = f"Week {week}: Bye Week"
+        else:
+            text = f"Week {week}: {opponent} - {result.capitalize()}"
     else:
         text = f"Week {week}: {opponent}"
 
@@ -47,7 +50,7 @@ def display_matchup(game):
 
 def findCurrentWeek(season):
     for game in season["matchups"]:
-        if not game["played"]:
+        if not game["played"] or (game["opponent"] == "Bye Week" and not game["played"]):
             return game
     return None
 
@@ -58,7 +61,7 @@ def seasonOverview(screen):
     overviewText = font.render("Season Overview", True, (255, 255, 255))
     screen.blit(overviewText, (0,0))
 
-    season = loadSeason()
+    season = loadSeason('regularSeason')
 
     if not season:
         print("No matchups found. Exiting.")

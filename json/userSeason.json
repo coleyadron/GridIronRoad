@@ -3,6 +3,7 @@
         "matchups": [
             {
                 "week": 1,
+<<<<<<< HEAD
                 "opponent": "New York Giants",
                 "played": false,
                 "user_score": null,
@@ -53,6 +54,58 @@
                 "week": 7,
                 "opponent": "Detroit Lions",
                 "played": false,
+=======
+                "opponent": "Kansas City Chiefs",
+                "played": true,
+                "user_score": 24,
+                "opponent_score": 21,
+                "result": "win"
+            },
+            {
+                "week": 2,
+                "opponent": "Buffalo Bills",
+                "played": true,
+                "user_score": 17,
+                "opponent_score": 28,
+                "result": "loss"
+            },
+            {
+                "week": 3,
+                "opponent": "Philadelphia Eagles",
+                "played": true,
+                "user_score": 31,
+                "opponent_score": 24,
+                "result": "win"
+            },
+            {
+                "week": 4,
+                "opponent": "Miami Dolphins",
+                "played": true,
+                "user_score": 21,
+                "opponent_score": 17,
+                "result": "win"
+            },
+            {
+                "week": 5,
+                "opponent": "Dallas Cowboys",
+                "played": true,
+                "user_score": 14,
+                "opponent_score": 35,
+                "result": "win"
+            },
+            {
+                "week": 6,
+                "opponent": "San Francisco 49ers",
+                "played": true,
+                "user_score": 28,
+                "opponent_score": 31,
+                "result": "win"
+            },
+            {
+                "week": 7,
+                "opponent": "Bye Week",
+                "played": true,
+>>>>>>> origin/lorisoDev
                 "user_score": null,
                 "opponent_score": null,
                 "result": null
@@ -60,6 +113,7 @@
             {
                 "week": 8,
                 "opponent": "Baltimore Ravens",
+<<<<<<< HEAD
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,
@@ -132,22 +186,140 @@
             {
                 "week": 17,
                 "opponent": "Denver Broncos",
+=======
+                "played": true,
+                "user_score": 24,
+                "opponent_score": 21,
+                "result": "win"
+            },
+            {
+                "week": 9,
+                "opponent": "Cincinnati Bengals",
+                "played": true,
+                "user_score": 17,
+                "opponent_score": 20,
+                "result": "win"
+            },
+            {
+                "week": 10,
+                "opponent": "Los Angeles Rams",
+                "played": true,
+                "user_score": 28,
+                "opponent_score": 14,
+                "result": "win"
+            },
+            {
+                "week": 11,
+                "opponent": "Green Bay Packers",
+                "played": true,
+                "user_score": 31,
+                "opponent_score": 28,
+                "result": "win"
+            },
+            {
+                "week": 12,
+                "opponent": "Tampa Bay Buccaneers",
+                "played": true,
+                "user_score": 21,
+                "opponent_score": 24,
+                "result": "win"
+            },
+            {
+                "week": 13,
+                "opponent": "New York Jets",
+                "played": true,
+                "user_score": 35,
+                "opponent_score": 10,
+                "result": "win"
+            },
+            {
+                "week": 14,
+                "opponent": "New England Patriots",
+                "played": true,
+                "user_score": 17,
+                "opponent_score": 14,
+                "result": "win"
+            },
+            {
+                "week": 15,
+                "opponent": "Las Vegas Raiders",
+                "played": true,
+                "user_score": 24,
+                "opponent_score": 27,
+                "result": "win"
+            },
+            {
+                "week": 16,
+                "opponent": "Denver Broncos",
+                "played": true,
+                "user_score": 28,
+                "opponent_score": 21,
+                "result": "win"
+            },
+            {
+                "week": 17,
+                "opponent": "Los Angeles Chargers",
+                "played": true,
+                "user_score": 9,
+                "opponent_score": 21,
+                "result": "win"
+            },
+            {
+                "week": 18,
+                "opponent": "Pittsburgh Steelers",
+                "played": true,
+                "user_score": 9,
+                "opponent_score": 21,
+                "result": "loss"
+            }
+        ]
+    },
+    "postSeason": {
+        "matchups": [
+            {
+                "game_name": "Wild Card",
+                "opponent": "Jacksonville Jaguars",
+>>>>>>> origin/lorisoDev
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,
                 "result": null
             },
             {
+<<<<<<< HEAD
                 "week": 18,
                 "opponent": " ianapolis Colts",
+=======
+                "game_name": "Divisional",
+                "opponent": "Buffalo Bills",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "game_name": "Conference",
+                "opponent": "Kansas City Chiefs",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "game_name": "Hyper Plate",
+                "opponent": "Philadelphia Eagles",
+>>>>>>> origin/lorisoDev
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,
                 "result": null
             }
         ]
+<<<<<<< HEAD
     },
     "postSeason": {
         "matchups": []
+=======
+>>>>>>> origin/lorisoDev
     }
 }

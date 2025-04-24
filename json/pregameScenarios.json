@@ -1,124 +1,540 @@
 {
-    "scenarios": [
-      {
-        "id": 1,
-        "description": "Key player suffers a season-ending injury.",
-        "effect": {
-          "morale": -20,
-          "performance": -15
-        }
-      },
-      {
-        "id": 2,
-        "description": "Team wins a close game in overtime.",
-        "effect": {
-          "morale": 15,
-          "performance": 10
-        }
-      },
-      {
-        "id": 3,
-        "description": "Team loses a close game due to a last-minute mistake.",
-        "effect": {
-          "morale": -15,
-          "performance": -10
-        }
-      },
-      {
-        "id": 4,
-        "description": "Team signs a star player in a mid-season trade.",
-        "effect": {
-          "morale": 20,
-          "performance": 20
-        }
-      },
-      {
-        "id": 5,
-        "description": "Team has a heated argument in the locker room.",
-        "effect": {
-          "morale": -25,
-          "performance": -20
-        }
-      },
-      {
-        "id": 6,
-        "description": "Team receives praise from fans and media after a dominant win.",
-        "effect": {
-          "morale": 10,
-          "performance": 5
-        }
-      },
-      {
-        "id": 7,
-        "description": "Team faces criticism from fans and media after a poor performance.",
-        "effect": {
-          "morale": -10,
-          "performance": -5
-        }
-      },
-      {
-        "id": 8,
-        "description": "Team participates in a community service event, boosting team bonding.",
-        "effect": {
-          "morale": 10,
-          "performance": 5
-        }
-      },
-      {
-        "id": 9,
-        "description": "Team's head coach is fired mid-season.",
-        "effect": {
-          "morale": -30,
-          "performance": -25
-        }
-      },
-      {
-        "id": 10,
-        "description": "Team's rookie player has a breakout game.",
-        "effect": {
-          "morale": 15,
-          "performance": 10
-        }
-      },
-      {
-        "id": 11,
-        "description": "Team faces travel delays, arriving late for a game.",
-        "effect": {
-          "morale": -10,
-          "performance": -10
-        }
-      },
-      {
-        "id": 12,
-        "description": "Team's star player wins a major award (e.g., MVP).",
-        "effect": {
-          "morale": 20,
-          "performance": 15
-        }
-      },
-      {
-        "id": 13,
-        "description": "Team's stadium experiences a power outage during a game.",
-        "effect": {
-          "morale": -5,
-          "performance": -5
-        }
-      },
-      {
-        "id": 14,
-        "description": "Team's quarterback sets a new franchise record.",
-        "effect": {
-          "morale": 15,
-          "performance": 10
-        }
-      },
-      {
-        "id": 15,
-        "description": "Team's defensive coordinator leaves for another job.",
-        "effect": {
-          "morale": -15,
-          "performance": -10
-        }
+  "scenarios": [
+    {
+      "id": 1,
+      "description": "Practice was great this week",
+      "effect": {
+        "morale": 0.5,
+        "performance": 0.5
       }
-    ]
-  }
+    },
+    {
+      "id": 2,
+      "description": "Your quarterback and receiver had an affair",
+      "effect": {
+        "morale": 0.8,
+        "performance": -0.6
+      }
+    },
+    {
+      "id": 3,
+      "description": "Player got injured during practice",
+      "effect": {
+        "morale": -0.5,
+        "performance": -0.7
+      }
+    },
+    {
+      "id": 4,
+      "description": "Sexual assault scandal",
+      "effect": {
+        "morale": -1,
+        "performance": -0.9
+      }
+    },
+    {
+      "id": 5,
+      "description": "Your running back allegedly murdered his wife",
+      "effect": {
+        "morale": -1,
+        "performance": -1
+      }
+    },
+    {
+      "id": 6,
+      "description": "Your wide receiver was caught drunk driving",
+      "effect": {
+        "morale": -0.9,
+        "performance": -0.8
+      }
+    },
+    {
+      "id": 7,
+      "description": "Your tight end’s concussion count leaked",
+      "effect": {
+        "morale": -1,
+        "performance": -1
+      }
+    },
+    {
+      "id": 8,
+      "description": "Player got sent home for a family emergency",
+      "effect": {
+        "morale": -0.6,
+        "performance": -0.4
+      }
+    },
+    {
+      "id": 9,
+      "description": "Player got sick for a week",
+      "effect": {
+        "morale": -0.4,
+        "performance": -0.5
+      }
+    },
+    {
+      "id": 10,
+      "description": "Player lost his shoes",
+      "effect": {
+        "morale": -0.3,
+        "performance": -0.2
+      }
+    },
+    {
+      "id": 11,
+      "description": "Player lost his helmet",
+      "effect": {
+        "morale": -0.3,
+        "performance": -0.3
+      }
+    },
+    {
+      "id": 12,
+      "description": "Social media following decreased",
+      "effect": {
+        "morale": -0.4,
+        "performance": -0.1
+      }
+    },
+    {
+      "id": 13,
+      "description": "Social media following increased",
+      "effect": {
+        "morale": 0.3,
+        "performance": 0.1
+      }
+    },
+    {
+      "id": 14,
+      "description": "Star player missed practice due to contract negotiations",
+      "effect": {
+        "morale": -0.5,
+        "performance": -0.4
+      }
+    },
+    {
+      "id": 15,
+      "description": "Team bus broke down on the way to the stadium",
+      "effect": {
+        "morale": -0.6,
+        "performance": -0.5
+      }
+    },
+    {
+      "id": 16,
+      "description": "Weather conditions are expected to be severe on game day",
+      "effect": {
+        "morale": -0.3,
+        "performance": -0.3
+      }
+    },
+    {
+      "id": 17,
+      "description": "Head coach gave an inspiring pregame speech",
+      "effect": {
+        "morale": 0.6,
+        "performance": 0.4
+      }
+    },
+    {
+      "id": 18,
+      "description": "Key player is dealing with personal issues affecting focus",
+      "effect": {
+        "morale": -0.5,
+        "performance": -0.5
+      }
+    },
+    {
+      "id": 19,
+      "description": "Rookie player is making their first career start",
+      "effect": {
+        "morale": 0.2,
+        "performance": -0.2
+      }
+    },
+    {
+      "id": 20,
+      "description": "Veteran player announced this will be their final season",
+      "effect": {
+        "morale": -0.3,
+        "performance": -0.1
+      }
+    },
+    {
+      "id": 21,
+      "description": "Team facility was vandalized the night before the game",
+      "effect": {
+        "morale": -0.5,
+        "performance": -0.2
+      }
+    },
+    {
+      "id": 22,
+      "description": "Opposing team trash-talked your team on social media",
+      "effect": {
+        "morale": -0.2,
+        "performance": 0.2
+      }
+    },
+    {
+      "id": 23,
+      "description": "New offensive strategy was implemented during practice",
+      "effect": {
+        "morale": 0.4,
+        "performance": 0.6
+      }
+    },
+    {
+      "id": 24,
+      "description": "Star running back had food poisoning the night before",
+      "effect": {
+        "morale": -0.4,
+        "performance": -0.6
+      }
+    },
+    {
+      "id": 25,
+      "description": "Your team had a surprise drug test before the game",
+      "effect": {
+        "morale": -0.6,
+        "performance": -0.4
+      }
+    },
+    {
+      "id": 26,
+      "description": "A major trade rumor is distracting the locker room",
+      "effect": {
+        "morale": -0.5,
+        "performance": -0.3
+      }
+    },
+    {
+      "id": 27,
+      "description": "Team owner made controversial comments in the media",
+      "effect": {
+        "morale": -0.6,
+        "performance": -0.3
+      }
+    },
+    {
+      "id": 28,
+      "description": "Your team received unexpected praise from a sports analyst",
+      "effect": {
+        "morale": 0.4,
+        "performance": 0.3
+      }
+    },
+    {
+      "id": 29,
+      "description": "Team captain gave a motivating speech during warm-ups",
+      "effect": {
+        "morale": 0.4,
+        "performance": 0.3
+      }
+    },
+    {
+      "id": 30,
+      "description": "Star player is dealing with a minor injury but will play",
+      "effect": {
+        "morale": -0.1,
+        "performance": -0.3
+      }
+    },
+    {
+      "id": 31,
+      "description": "Coach put on the fan rally before the game",
+      "effect": {
+        "morale": 0.3,
+        "performance": 0.2
+      }
+    },
+    {
+      "id": 32,
+      "description": "Opponent’s star player is ruled out just before the game",
+      "effect": {
+        "morale": 0.4,
+        "performance": 0.6
+      }
+    },
+    {
+      "id": 33,
+      "description": "Team was featured on ESPN",
+      "effect": {
+        "morale": 0.2,
+        "performance": 0.1
+      }
+    },
+    {
+      "id": 34,
+      "description": "Player made controversial social media post",
+      "effect": {
+        "morale": -0.5,
+        "performance": -0.4
+      }
+    },
+    {
+      "id": 35,
+      "description": "Local community showed unexpected support",
+      "effect": {
+        "morale": 0.3,
+        "performance": 0.2
+      }
+    },
+    {
+      "id": 36,
+      "description": "Team had to change hotels last minute",
+      "effect": {
+        "morale": -0.4,
+        "performance": -0.3
+      }
+    },
+    {
+      "id": 37,
+      "description": "Team psychologist worked with the players before the game",
+      "effect": {
+        "morale": 0.4,
+        "performance": 0.3
+      }
+    },
+    {
+      "id": 38,
+      "description": "Heavy rain delayed practice all week",
+      "effect": {
+        "morale": -0.4,
+        "performance": -0.5
+      }
+    },
+    {
+      "id": 39,
+      "description": "One player tested positive for the flu",
+      "effect": {
+        "morale": -0.5,
+        "performance": -0.4
+      }
+    },
+    {
+      "id": 40,
+      "description": "Team captain is celebrating the birth of a child",
+      "effect": {
+        "morale": 0.4,
+        "performance": 0.1
+      }
+    },
+    {
+      "id": 41,
+      "description": "Opponent’s coach criticized your team’s strategy",
+      "effect": {
+        "morale": -0.2,
+        "performance": 0.1
+      }
+    },
+    {
+      "id": 42,
+      "description": "Equipment manager forgot to pack training gear",
+      "effect": {
+        "morale": -0.4,
+        "performance": -0.3
+      }
+    },
+    {
+      "id": 43,
+      "description": "Player involved in minor traffic accident on game day",
+      "effect": {
+        "morale": -0.3,
+        "performance": -0.4
+      }
+    },
+    {
+      "id": 44,
+      "description": "Team had a charity event the night before the game",
+      "effect": {
+        "morale": 0.2,
+        "performance": 0.1
+      }
+    },
+    {
+      "id": 45,
+      "description": "Unexpected family reunion lifted player spirits",
+      "effect": {
+        "morale": 0.4,
+        "performance": 0.2
+      }
+    },
+    {
+      "id": 46,
+      "description": "Opposing team is dealing with internal conflict",
+      "effect": {
+        "morale": 0.5,
+        "performance": 0.4
+      }
+    },
+    {
+      "id": 47,
+      "description": "New team mascot debuted to positive reactions",
+      "effect": {
+        "morale": 0.3,
+        "performance": 0.2
+      }
+    },
+    {
+      "id": 48,
+      "description": "Star quarterback was spotted at a club the night before",
+      "effect": {
+        "morale": -0.6,
+        "performance": -0.4
+      }
+    },
+    {
+      "id": 49,
+      "description": "Your tight end received great feedback on his podcast with his brother",
+      "effect": {
+        "morale": 0.2,
+        "performance": 0.1
+      }
+    },
+    {
+      "id": 50,
+      "description": "One player forgot the playbook on the plane",
+      "effect": {
+        "morale": -0.5,
+        "performance": -0.4
+      }
+    },
+    {
+      "id": 51,
+      "description": "The mascot accidentally set off the fire alarm",
+      "effect": {
+        "morale": -0.2,
+        "performance": -0.1
+      }
+    },
+    {
+      "id": 52,
+      "description": "Local newspaper published fake injury report about your team",
+      "effect": {
+        "morale": -0.4,
+        "performance": -0.4
+      }
+    },
+    {
+      "id": 53,
+      "description": "Team was fined for violating uniform regulations",
+      "effect": {
+        "morale": -0.6,
+        "performance": -0.5
+      }
+    },
+    {
+      "id": 54,
+      "description": "Your offensive line did not allow a sack this week in practice",
+      "effect": {
+        "morale": 0.4,
+        "performance": 0.3
+      }
+    },
+    {
+      "id": 55,
+      "description": "One player started a conspiracy theory in the locker room",
+      "effect": {
+        "morale": -0.7,
+        "performance": -0.6
+      }
+    },
+    {
+      "id": 56,
+      "description": "Your safety visited a cancer research wing",
+      "effect": {
+        "morale": 0.5,
+        "performance": 0.4
+      }
+    },
+    {
+      "id": 57,
+      "description": "Your team got locked out of the locker room",
+      "effect": {
+        "morale": -0.3,
+        "performance": -0.3
+      }
+    },
+    {
+      "id": 58,
+      "description": "A player was benched for arguing with a coach",
+      "effect": {
+        "morale": -0.6,
+        "performance": -0.6
+      }
+    },
+    {
+      "id": 59,
+      "description": "Your three wide receivers didn’t drop a pass all week in practice",
+      "effect": {
+        "morale": 0.3,
+        "performance": 0.4
+      }
+    },
+    {
+      "id": 60,
+      "description": "A rookie brought their pet snake to the team meeting",
+      "effect": {
+        "morale": -0.1,
+        "performance": 0
+      }
+    },
+    {
+      "id": 61,
+      "description": "Your team was randomly drug-tested during warmups",
+      "effect": {
+        "morale": -0.6,
+        "performance": -0.5
+      }
+    },
+    {
+      "id": 62,
+      "description": "Practice film was accidentally deleted by the intern",
+      "effect": {
+        "morale": -0.5,
+        "performance": -0.4
+      }
+    },
+    {
+      "id": 63,
+      "description": "Pregame meal was great",
+      "effect": {
+        "morale": 0.6,
+        "performance": 0.5
+      }
+    },
+    {
+      "id": 64,
+      "description": "Your quarterback hosted a charity event for wounded veterans",
+      "effect": {
+        "morale": 0.3,
+        "performance": 0.2
+      }
+    },
+    {
+      "id": 65,
+      "description": "National anthem singer was awful",
+      "effect": {
+        "morale": -0.2,
+        "performance": -0.1
+      }
+    },
+    {
+      "id": 66,
+      "description": "Your front office held a holiday party for the team members away from home",
+      "effect": {
+        "morale": 0.2,
+        "performance": 0.2
+      }
+    },
+    {
+      "id": 67,
+      "description": "An influencer challenged your team to a TikTok dance-off",
+      "effect": {
+        "morale": -0.1,
+        "performance": 0.1
+      }
+    }
+  ]
+}
