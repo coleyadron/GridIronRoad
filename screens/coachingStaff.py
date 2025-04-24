@@ -3,7 +3,7 @@ import gridironRoad
 from logic.cursor import TextCursor
 
 def inputStaff(screen):
-    bgi = pygame.image.load("assets/images/BGI-2.png")
+    bgi = pygame.image.load("assets/images/BGI-3.png")
     font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
 
     # Text surfaces
