@@ -3,58 +3,6 @@
         "matchups": [
             {
                 "week": 1,
-<<<<<<< HEAD
-                "opponent": "New York Giants",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 2,
-                "opponent": "New England Patriots",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 3,
-                "opponent": "Washington Commanders",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 4,
-                "opponent": "San Francisco 49ers",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 5,
-                "opponent": "Jacksonville Jaguars",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 6,
-                "opponent": "Los Angeles Rams",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 7,
-                "opponent": "Detroit Lions",
-                "played": false,
-=======
                 "opponent": "Kansas City Chiefs",
                 "played": true,
                 "user_score": 24,
@@ -105,7 +53,6 @@
                 "week": 7,
                 "opponent": "Bye Week",
                 "played": true,
->>>>>>> origin/lorisoDev
                 "user_score": null,
                 "opponent_score": null,
                 "result": null
@@ -113,80 +60,6 @@
             {
                 "week": 8,
                 "opponent": "Baltimore Ravens",
-<<<<<<< HEAD
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 9,
-                "opponent": "Minnesota Vikings",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 10,
-                "opponent": "Houston Texans",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 11,
-                "opponent": "New York Jets",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 12,
-                "opponent": "Tennessee Titans",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 13,
-                "opponent": "Los Angeles Chargers",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 14,
-                "opponent": "Bye",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 15,
-                "opponent": "Arizona Cardinals",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 16,
-                "opponent": "Atlanta Falcons",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 17,
-                "opponent": "Denver Broncos",
-=======
                 "played": true,
                 "user_score": 24,
                 "opponent_score": 21,
@@ -279,17 +152,12 @@
             {
                 "game_name": "Wild Card",
                 "opponent": "Jacksonville Jaguars",
->>>>>>> origin/lorisoDev
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,
                 "result": null
             },
             {
-<<<<<<< HEAD
-                "week": 18,
-                "opponent": " ianapolis Colts",
-=======
                 "game_name": "Divisional",
                 "opponent": "Buffalo Bills",
                 "played": false,
@@ -308,18 +176,11 @@
             {
                 "game_name": "Hyper Plate",
                 "opponent": "Philadelphia Eagles",
->>>>>>> origin/lorisoDev
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,
                 "result": null
             }
         ]
-<<<<<<< HEAD
-    },
-    "postSeason": {
-        "matchups": []
-=======
->>>>>>> origin/lorisoDev
     }
 }
