@@ -56,10 +56,12 @@ def findCurrentWeek(season):
 
 def seasonOverview(screen):
     font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
+    font2 = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 32)
     screen.fill((0, 0, 0))
-
+    BGI = pygame.image.load("assets/images/seasonOverview.png").convert()
+    screen.blit(BGI, (0, 0))
     overviewText = font.render("Season Overview", True, (255, 255, 255))
-    screen.blit(overviewText, (0,0))
+    screen.blit(overviewText, (550,50))
 
     season = loadSeason('regularSeason')
 
@@ -67,19 +69,26 @@ def seasonOverview(screen):
         print("No matchups found. Exiting.")
         return
 
-    y_offset = 100
+    y_offset = 150
+    y2_offset = 150
     for game in season["matchups"]:
-        text = display_matchup(game)
-        text_surface = font.render(text, True, WHITE)
-        screen.blit(text_surface, (50, y_offset))
-        y_offset += 40
+        if game["week"] < 10:
+            text = display_matchup(game)
+            text_surface = font2.render(text, True, WHITE)
+            screen.blit(text_surface, (75, y_offset))
+            y_offset += 42
+        elif game["week"] >= 10:
+            text = display_matchup(game)
+            text_surface = font2.render(text, True, WHITE)
+            screen.blit(text_surface, (725, y2_offset))
+            y2_offset += 42
 
     nextScreenText = font.render("Press SPACE to enter the next game", True, WHITE)
     viewTeamText = font.render("Press 1 to view team", True, WHITE)
     viewFreeAgentsText = font.render("Press 2 to view free agents", True, WHITE)
-    screen.blit(viewFreeAgentsText, (0, screen.get_height() - 50))
-    screen.blit(nextScreenText, (0, screen.get_height() - 150))
-    screen.blit(viewTeamText, (0, screen.get_height() - 100 ))
+    screen.blit(viewFreeAgentsText, (75, screen.get_height() - 80))
+    screen.blit(nextScreenText, (75, screen.get_height() - 150))
+    screen.blit(viewTeamText, (75, screen.get_height() - 115))
 
     pygame.display.update()
 
