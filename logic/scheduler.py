@@ -82,6 +82,6 @@ def cleanSchedule():
         game["played"] = False
         game["opponent"] = ""
 
-scheduler()
+# scheduler()
 
     
