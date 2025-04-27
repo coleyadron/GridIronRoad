@@ -2,7 +2,6 @@ import numpy as np
 import random 
 import json
 
-
 #Normalizes stats on scale of 0 to 100
 def normalize(value, min_val, max_val):
     return (value - min_val) / (max_val - min_val) if max_val > min_val else 0.5
@@ -47,6 +46,27 @@ def get_team_ratings(team_name, json_file):
             
     
     return f"Team '{team_name}' not found."
+
+def simulateDrive(
+            MY_OFFENSE,
+            MY_DEFENSE,
+            MY_SPECIAL,
+            OPPOSING_OFFENSE,
+            OPPOSING_DEFENSE,
+            OPPOSING_SPECIAL,
+            PERFORMANCE_TOTAL,
+            MORALE_TOTAL,
+            game_result):
+    print(MY_OFFENSE)
+    print(MY_DEFENSE)
+    print(MY_SPECIAL)
+    print(OPPOSING_OFFENSE)
+    print(OPPOSING_DEFENSE)
+    print(OPPOSING_SPECIAL)
+    print(PERFORMANCE_TOTAL)
+    print(MORALE_TOTAL)
+    print(game_result)
+    return -7
 
 
 # Example usage
