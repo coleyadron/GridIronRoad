@@ -55,9 +55,11 @@ def fieldGoal(screen):
                 ## -50 and +150 is to account for the moved y position of the power bar
                 print("Success!")
                 print(width)
+                return True
             else:
                 print("Fail!")
                 print(width)
+                return False
             kicked = True 
 
             
