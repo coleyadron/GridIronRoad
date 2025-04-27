@@ -7,7 +7,6 @@ from screens import seasonOverview
 from screens import pregameDecisions
 from screens import postgameDecisions
 from screens import inGame
-from logic import scheduler
 import gridironRoad
 import json
 import random
@@ -176,9 +175,6 @@ def  newGame(screen):
     # print(DRAFT)
     gridironRoad.updateGlobalState("draft", DRAFT)
 
-    # make season
-    scheduler.scheduler()
-
     #start game
     playGame(screen)
     
@@ -245,9 +241,8 @@ def startGame(screen):
                 return
             print(state)
             if state["started"]:
-                print("Game is already started but who cares")
-                newGame(screen)
-                # loadGame(screen, state)
+                print("Game is already started")
+                loadGame(screen, state)
                 return
             else:
                 print("Starting new game")
