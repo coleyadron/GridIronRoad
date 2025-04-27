@@ -3,11 +3,19 @@
         "matchups": [
             {
                 "week": 1,
-                "opponent": "Atlanta Falcons",
-                "played": true,
-                "user_score": 9,
-                "opponent_score": 21,
-                "result": "loss"
+                "opponent": "Houston Texans",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 2,
+                "opponent": "Carolina Panthers",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
             },
             {
                 "week": 2,
@@ -19,94 +27,6 @@
             },
             {
                 "week": 3,
-                "opponent": "Los Angeles Chargers",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 4,
-                "opponent": "Cincinnati Bengals",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 5,
-                "opponent": "Chicago Bears",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 6,
-                "opponent": "Baltimore Ravens",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 7,
-                "opponent": "Denver Broncos",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 8,
-                "opponent": "Los Angeles Rams",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 9,
-                "opponent": "Jacksonville Jaguars",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 10,
-                "opponent": "New York Jets",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 11,
-                "opponent": "Bye",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 12,
-                "opponent": "Philadelphia Eagles",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 13,
-                "opponent": "Washington Commanders",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
-            },
-            {
-                "week": 14,
                 "opponent": "Cleveland Browns",
                 "played": false,
                 "user_score": null,
@@ -114,7 +34,23 @@
                 "result": null
             },
             {
-                "week": 15,
+                "week": 4,
+                "opponent": "New Orleans Saints",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 5,
+                "opponent": "Los Angeles Rams",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 6,
                 "opponent": "Bye",
                 "played": false,
                 "user_score": null,
@@ -122,7 +58,7 @@
                 "result": null
             },
             {
-                "week": 16,
+                "week": 7,
                 "opponent": "Las Vegas Raiders",
                 "played": false,
                 "user_score": null,
@@ -130,8 +66,80 @@
                 "result": null
             },
             {
+                "week": 8,
+                "opponent": "Green Bay Packers",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 9,
+                "opponent": "Chicago Bears",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 10,
+                "opponent": "Pittsburgh Steelers",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 11,
+                "opponent": "San Francisco 49ers",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 12,
+                "opponent": "Cincinnati Bengals",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 13,
+                "opponent": "Minnesota Vikings",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 14,
+                "opponent": "Philadelphia Eagles",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 15,
+                "opponent": "New York Jets",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 16,
+                "opponent": "Bye",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
                 "week": 17,
-                "opponent": "Tampa Bay Buccaneers",
+                "opponent": "Seattle Seahawks",
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,
@@ -139,7 +147,7 @@
             },
             {
                 "week": 18,
-                "opponent": "Carolina Panthers",
+                "opponent": "Jacksonville Jaguars",
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,

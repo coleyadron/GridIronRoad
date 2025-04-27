@@ -24,6 +24,9 @@ MY_OFFENSE = None
 MY_DEFENSE = None
 MY_SPECIAL = None
 
+MORALE_TOTAL = 0
+PERFORMANCE_TOTAL = 0
+
 def killgame():
     pygame.quit()
     quit()
@@ -135,6 +138,10 @@ def updateScoreboard(screen):
 
 def miniGameHandler(screen):
     global QUARTER, OPPONENT_SCORE, TEAM_SCORE
+    global MY_OFFENSE, MY_DEFENSE, MY_SPECIAL
+    global OPPOSING_OFFENSE, OPPOSING_DEFENSE, OPPOSING_SPECIAL
+    global PERFORMANCE_TOTAL, MORALE_TOTAL
+
     #pick random mini-game
     miniGames = [puntReturn]
     miniGame = random.choice(miniGames)
@@ -152,6 +159,19 @@ def miniGameHandler(screen):
     #call the prob engine with the outcome of the mini-game
     if QUARTER < 5:
         #call probEngine with result of drive
+        probEngineResult = probEngine.simulateDrive(
+            MY_OFFENSE,
+            MY_DEFENSE,
+            MY_SPECIAL,
+            OPPOSING_OFFENSE,
+            OPPOSING_DEFENSE,
+            OPPOSING_SPECIAL,
+            PERFORMANCE_TOTAL,
+            MORALE_TOTAL,
+            gameResult)
+        
+        print("Prob engine result: ", probEngineResult)
+
         OPPONENT_SCORE += 7
         TEAM_SCORE += 3
         updateScoreboard(screen)
@@ -221,6 +241,7 @@ def byeWeek(screen):
 
 def inGame(screen, matchup, scenarios):
     global WEEK, TEAM_SCORE, OPPONENT_SCORE, QUARTER
+    global MORALE_TOTAL, PERFORMANCE_TOTAL
 
     resetWeek()
 
@@ -243,14 +264,12 @@ def inGame(screen, matchup, scenarios):
     for scenario in scenarios:
         print(scenario["description"])
 
-    moraleTotal = 0
-    performanceTotal = 0
     for scenario in scenarios:
-        moraleTotal += scenario["effect"]["morale"]
-        performanceTotal += scenario["effect"]["performance"]
+        MORALE_TOTAL += scenario["effect"]["morale"]
+        PERFORMANCE_TOTAL += scenario["effect"]["performance"]
 
-    print("Morale total: ", moraleTotal)
-    print("Performance total: ", performanceTotal)
+    print("Morale total: ", MORALE_TOTAL)
+    print("Performance total: ", PERFORMANCE_TOTAL)
 
     handleTeamGlobals(matchup["opponent"])
 

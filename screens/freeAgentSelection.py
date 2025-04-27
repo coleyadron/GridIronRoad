@@ -52,6 +52,59 @@ def load_free_agents():
         print("Error reading JSON file: ", e)
         return None
     
+def update_free_agent_json():
+    try:
+        with open("json/freeAgents.json", "r") as file:
+            data = json.load(file)
+        
+        # Create a list of player names to remove
+        players_to_remove = {p["name"] for p in PLAYERS_SELECTED}
+        
+        # Remove all selected players at once
+        initial_count = len(data["free_agents"])
+        data["free_agents"] = [p for p in data["free_agents"] 
+                             if p["name"] not in players_to_remove]
+        
+        if len(data["free_agents"]) == initial_count:
+            print("Warning: No players were removed from free agents")
+        
+        with open("json/freeAgents.json", "w") as file:
+            json.dump(data, file, indent=4)
+            
+    except FileNotFoundError:
+        print("Error: freeAgents.json file not found")
+    except json.JSONDecodeError:
+        print("Error: Invalid JSON in freeAgents.json")
+    except KeyError:
+        print("Error: Invalid structure in freeAgents.json")
+    except Exception as e:
+        print(f"Unexpected error updating free agents: {e}")
+
+def update_user_team_json():
+    try:
+        with open("json/userTeam.json", "r") as file:
+            data = json.load(file)
+            # Add the selected players to the user team
+            for player in PLAYERS_SELECTED:
+                data["players"].append(player)
+        
+        with open("json/userTeam.json", "w") as file:
+            json.dump(data, file, indent=4)
+    except FileNotFoundError:
+        print("Error finding JSON file")
+    except json.JSONDecodeError:
+        print("Error decoding JSON file")
+    except Exception as e:
+        print("Error writing to JSON file: ", e)
+
+def end_free_agents_selection():
+    #remove free agent from the json file
+    update_free_agent_json()    
+    # update the user team json
+    update_user_team_json()
+    # return to season screen
+    return
+
 def draw_rounded_rect(surface, color, rect, radius):
     """Draw a rectangle with rounded corners."""
     x, y, w, h = rect
@@ -138,8 +191,8 @@ def handle_click(mouse_pos, playerData):
 
                     copy_screen = screen.copy()
 
-                    teamSalary = gridironRoad.calculateSalaryCap()
-                    # teamSalary = 279100090
+                    # teamSalary = gridironRoad.calculateSalaryCap()
+                    teamSalary = 0
                     salary_cap = 279200000
 
                     # Create a popup box
@@ -228,6 +281,8 @@ def handle_click(mouse_pos, playerData):
                                     print(f"Player {player['name']} selected!")
                                     confirmPick = False
                                     PLAYERS_SELECTED.append(player)
+                                    end_free_agents_selection()
+                                    return
                                 elif event.key == pygame.K_ESCAPE:
                                     print("Selection canceled.")
                                     screen.blit(copy_screen, (0, 0))
@@ -278,6 +333,7 @@ def free_agents(screen):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = pygame.mouse.get_pos()
                 player = handle_click(mouse_pos, free_agents)
+                return
                 pygame.display.update()
 
     return player
