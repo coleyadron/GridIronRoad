@@ -1,6 +1,6 @@
 import pygame
 import random
-import sys
+import time
 from logic.player import Player
 from logic.defender import Defender
 
@@ -21,7 +21,7 @@ def runMiniGame(screen):
     GRAVITY = .5
     
     # Initialize game state
-    player = Player(PLAYER_START_X, GROUND_HEIGHT - 80)  # Adjust for your Player class
+    player = Player(PLAYER_START_X, GROUND_HEIGHT - 80)
     defenders = []
     distance = 0
     game_active = True
@@ -50,8 +50,8 @@ def runMiniGame(screen):
                     player.jump(JUMP_STRENGTH)
                 elif event.key == pygame.K_ESCAPE:
                     return False
-                elif event.key == pygame.K_r and not game_active:
-                    return runMiniGame(screen)  # Restart
+                # elif event.key == pygame.K_r and not game_active:
+                #     return runMiniGame(screen)  # Restart
         
         if game_active:
             if not initate_field:
@@ -107,8 +107,12 @@ def runMiniGame(screen):
         if not game_active:
             result_text = "TOUCHDOWN!" if result else "TACKLED!"
             color = (0, 200, 0) if result else (200, 0, 0)
-            text = font.render(f"{result_text} Press R to restart", True, color)
+            screen.fill((0, 0, 0))
+            text = font.render(f"{result_text}", True, color)
             screen.blit(text, (SCREEN_WIDTH//2 - text.get_width()//2, SCREEN_HEIGHT//2 - text.get_height()//2))
+            pygame.display.flip()
+            time.sleep(1)
+            return result
         
         pygame.display.flip()
         clock.tick(60)
