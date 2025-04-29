@@ -1,6 +1,5 @@
 import numpy as np
 import random 
-import json
 
 #Normalizes stats on scale of 0 to 100
 def normalize(value, min_val, max_val):
@@ -39,7 +38,7 @@ def determine_winner(team_a_offense, team_a_defense, team_a_special,
             team_a_wins += 1
     
     win_rate_a = team_a_wins / simulations
-    print(win_rate_a, power_a, power_b, variance_range, random.uniform(*variance_range))
+    #print(win_rate_a, power_a, power_b, variance_range, random.uniform(*variance_range))
     return True if win_rate_a > 0.5 else False
 
 def simulateDrive(
@@ -53,11 +52,16 @@ def simulateDrive(
             MORALE_TOTAL,
             game_result):
     possible_outcomes = [0, 3, 6, 7]
+    weight = (0.30, 0.13, 0.18, 0.39)
     drive_result = determine_winner(MY_OFFENSE, MY_DEFENSE, MY_SPECIAL, OPPOSING_OFFENSE, OPPOSING_DEFENSE, OPPOSING_SPECIAL, MORALE_TOTAL, PERFORMANCE_TOTAL, game_result)
     if drive_result:
-        return random.choice(possible_outcomes)
+        scored = random.choices(possible_outcomes, weights=weight, k=1)
+        print(scored[0])
+        return scored[0]
     else:
-        return random.choice([0, -3, -6, -7])
+        scored = random.choices([0, -3, -6, -7], weights=weight, k=1)
+        print(scored[0])
+        return scored[0]
 
     #will return 0,3,6,7 if won if loss then return negative values
 
