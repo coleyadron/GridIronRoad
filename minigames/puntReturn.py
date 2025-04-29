@@ -1,7 +1,6 @@
 import pygame
 import sys
 import time
-import random
 from logic.defender import Defender
 # import gridironRoad
 
@@ -118,6 +117,8 @@ def puntReturn(screen):
                 elif defender.collides_with(player_rect):
                     time.sleep(.25)
                     screen.fill((0, 0, 0))
+                    bgi = pygame.image.load("assets/images/blankField.PNG")
+                    screen.blit(bgi, (0, 0))
                     instructionText = font.render("You were tackled", True, (255, 255, 255))
 
                     screen.blit(instructionText, (screen.get_width() / 2 - instructionText.get_width() / 2,
@@ -152,6 +153,8 @@ def puntReturn(screen):
             if userY <= endzoneY:
                 time.sleep(.25)
                 screen.fill((0, 0, 0))
+                bgi = pygame.image.load("assets/images/blankField.PNG")
+                screen.blit(bgi, (0, 0))
                 instructionText = font.render("You scored a touchdown!", True, (255, 255, 255))
 
                 screen.blit(instructionText, (screen.get_width() / 2 - instructionText.get_width() / 2,
