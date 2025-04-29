@@ -2,16 +2,21 @@ import pygame
 import random
 
 class Defender:
-    def __init__(self, screen_width, image=None):
-        self.x = random.randint(0, screen_width - 50)
-        self.y = 125
-        self.speed = random.randint(2, 5)
+    def __init__(self, screen_width, image=None, x=0, y=125):
+        if x == 0:
+            x = random.randint(0, screen_width - 50)
+        self.x = x
+        self.y = y
+        self.speed = random.randint(3, 6)
         self.width = 50
         self.height = 75
         self.image = image
 
     def update(self):
         self.y += self.speed
+
+    def update_left(self):
+        self.x -= self.speed
     
     def draw(self, screen):
         if self.image:
