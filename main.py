@@ -175,7 +175,7 @@ def  newGame(screen):
     # print(DRAFT)
     gridironRoad.updateGlobalState("draft", DRAFT)
 
-    # make season
+       # make season
     scheduler.scheduler()
 
     #start game

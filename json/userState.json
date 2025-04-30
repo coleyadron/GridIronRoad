@@ -26,44 +26,7 @@
     "staff": [
         "1",
         "1",
-        "y"
+        "1"
     ],
-    "draft": [
-        {
-            "name": "Abdul Carter",
-            "position": "DE",
-            "contract": "5 years",
-            "salary": "$40,000,000",
-            "characteristics": {
-                "rating": 87,
-                "speed": 88,
-                "strength": 86,
-                "athleticism": 87
-            }
-        },
-        {
-            "name": "TreVeyon Henderson",
-            "position": "RB",
-            "contract": "3 years",
-            "salary": "$18,500,000",
-            "characteristics": {
-                "rating": 85,
-                "speed": 92,
-                "strength": 79,
-                "athleticism": 84
-            }
-        },
-        {
-            "name": "Kaleb Johnson",
-            "position": "RB",
-            "contract": "2 years",
-            "salary": "$6,500,000",
-            "characteristics": {
-                "rating": 82,
-                "speed": 90,
-                "strength": 73,
-                "athleticism": 83
-            }
-        }
-    ]
+    "draft": null
 }

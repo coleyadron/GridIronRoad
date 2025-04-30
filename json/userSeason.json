@@ -144,6 +144,30 @@
                 "user_score": null,
                 "opponent_score": null,
                 "result": null
+            },
+            {
+                "week": 16,
+                "opponent": "Washington Commanders",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 17,
+                "opponent": "Tampa Bay Buccaneers",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 18,
+                "opponent": "New England Patriots",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
             }
         ]
     },
