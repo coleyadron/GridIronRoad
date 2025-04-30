@@ -151,6 +151,7 @@ def miniGameHandler(screen):
 
     #pick random mini-game
     miniGames = [puntReturn, fieldGoal, runPlay, blockPass]
+    # miniGame = miniGames[QUARTER - 1]
     miniGame = random.choice(miniGames)
     print("Selected mini-game: ", miniGame.__name__)
 
