@@ -109,7 +109,7 @@ def updateScoreboard(screen):
 
     screen.fill((0, 0, 0))
 
-    preText = "Welcome to week " + str(WEEK) + " vs " + OPPOSING_TEAM + "!"
+    preText = "Week " + str(WEEK) + " vs " + OPPOSING_TEAM + "!"
     pregameText = font.render(preText, True, (255, 255, 255))
     screen.blit(pregameText, (screen.get_width() / 2 - pregameText.get_width() / 2, 50))
 
@@ -134,7 +134,7 @@ def updateScoreboard(screen):
 
     pygame.display.update()
 
-    time.sleep(1)
+    time.sleep(2)
 
 def miniGameHandler(screen):
     global QUARTER, OPPONENT_SCORE, TEAM_SCORE
@@ -255,7 +255,7 @@ def inGame(screen, matchup, scenarios):
 
     preText = "Welcome to week " + str(matchup["week"]) + " vs " + matchup["opponent"] + "!"
     pregameText = font.render(preText, True, (255, 255, 255))
-    screen.blit(pregameText, (screen.get_width() / 2 - pregameText.get_width() / 2, 50))
+    screen.blit(pregameText, (screen.get_width() / 2 - pregameText.get_width() / 2, screen.get_height() / 2))
 
     bottomText = font.render("Press ENTER to start the game", True, (255, 255, 255))
     screen.blit(bottomText, (screen.get_width() / 2 - bottomText.get_width() / 2, screen.get_height() - 100))
