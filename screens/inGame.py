@@ -134,7 +134,7 @@ def updateScoreboard(screen):
 
     pygame.display.update()
 
-    time.sleep(2)
+    # time.sleep(2)
 
 def miniGameHandler(screen):
     global QUARTER, OPPONENT_SCORE, TEAM_SCORE
@@ -194,6 +194,7 @@ def miniGameHandler(screen):
 
             updateScoreboard(screen)
             print("Current score: ", TEAM_SCORE, OPPONENT_SCORE)
+        time.sleep(2)
     else:
         #game is over
         gameResult = False
