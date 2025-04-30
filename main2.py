@@ -11,7 +11,7 @@ def main():
     pygame.display.set_caption("mini game test")
 
     # Create an instance of the PuntReturn class
-    minigame = runPlay.exec(screen)
+    minigame = puntReturn.exec(screen)
 
     print(minigame)
 

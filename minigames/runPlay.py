@@ -70,8 +70,8 @@ def runMiniGame(screen):
             # Spawn defenders
             if current_time - last_defender_time > defender_spawn_rate and spawn_new:
                 x = random.randint(SCREEN_WIDTH, SCREEN_WIDTH + 200)
-                while not checkDefenderSpawnLocation(Defender(SCREEN_WIDTH, defender_img, x=x), defenders):
-                        x = random.randint(350, SCREEN_WIDTH - 50)
+                # while not checkDefenderSpawnLocation(Defender(SCREEN_WIDTH, defender_img, x=x), defenders):
+                #         x = random.randint(350, SCREEN_WIDTH - 50)
                 defenders.append(Defender(SCREEN_WIDTH, defender_img, x=x, y=GROUND_HEIGHT - 80))
                 #generate 1 or 2 more defenders directly behind the first
                 for i in range(random.randint(0, 3)):

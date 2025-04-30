@@ -10,8 +10,13 @@ class Defender:
         self.height = 75
         self.image = image
         if x == 0:
-            self.x = random.randint(0, screen_width - 50)
+            mean = 13
+            stddev = 8
+            x_location = random.gauss(mean, stddev)
+            x_location = max(0, min(27, int(x_location)))
+            self.x = x_location * 50
             self.speed = random.randint(3, 6)
+            self.speed = random.randint(4, 8)
 
     def update(self):
         self.y += self.speed
