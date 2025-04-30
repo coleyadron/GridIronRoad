@@ -6,6 +6,22 @@ def killgame():
     pygame.quit()
     quit()
 
+def wrap_text(text, font, max_width):
+    words = text.split(' ')
+    lines = []
+    current_line = ""
+
+    for word in words:
+        test_line = current_line + word + ' '
+        if font.size(test_line)[0] < max_width:
+            current_line = test_line
+        else:
+            lines.append(current_line)
+            current_line = word + ' '
+    lines.append(current_line)
+
+    return lines
+
 def loadDecisions():
     try:
         with open("json/postgameScenarios.json", "r") as file:
@@ -54,7 +70,7 @@ def postGameDecisions(screen, matchup):
 
     pickedScenarios = []
 
-    numberScenarios = random.randint(1, 4)
+    numberScenarios = random.randint(1, 2)
     for i in range(numberScenarios):
         #pick and display scenario
         scenario = pickScenario(scenarios)
@@ -62,9 +78,16 @@ def postGameDecisions(screen, matchup):
         # print(scenario["description"])
         y_offset = screen.get_height() / 2 - 50
 
-        scenarioText = font.render(scenario["description"], True, (255, 255, 255))
-        screen.blit(scenarioText, (screen.get_width() / 2 - scenarioText.get_width() / 2, y_offset))
-        y_offset += 50
+        # Wrap the text to fit within the screen width
+        wrapped_lines = wrap_text(scenario["description"], font, screen.get_width() - 100)
+        for line in wrapped_lines:
+            scenarioText = font.render(line, True, (255, 255, 255))
+            screen.blit(scenarioText, (screen.get_width() / 2 - scenarioText.get_width() / 2, y_offset))
+            y_offset += 50
+
+        # scenarioText = font.render(scenario["description"], True, (255, 255, 255))
+        # screen.blit(scenarioText, (screen.get_width() / 2 - scenarioText.get_width() / 2, y_offset))
+        # y_offset += 50
         
         moraleStr = "Morale: " + str(scenario["effect"]["morale"])
         moraleText = font.render(moraleStr, True, (255, 255, 255))
