@@ -33,6 +33,7 @@ def pickScenario(scenarios):
 
 def preGameDecisions(screen, matchup):
     font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
+    BGI = pygame.image.load("assets/images/pregames.png")
 
     scenarios = loadDecisions()
 
@@ -41,11 +42,12 @@ def preGameDecisions(screen, matchup):
         return
 
     screen.fill((0, 0, 0))
+    screen.blit(BGI, (0, 0))
 
     preText = "Welcome to week " + str(matchup["week"]) + " vs " + matchup["opponent"] + "!"
 
     pregameText = font.render(preText, True, (255, 255, 255))
-    screen.blit(pregameText, (screen.get_width() / 2 - pregameText.get_width() / 2, 50))
+    screen.blit(pregameText, (screen.get_width() / 2 - pregameText.get_width() / 2, 80))
 
     start_screen = screen.copy()
 
