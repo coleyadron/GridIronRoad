@@ -2,7 +2,7 @@ import pygame
 # import json
 import random
 import gridironRoad
-from minigames import puntReturn, fieldGoal
+from minigames import puntReturn, fieldGoal, runPlay
 from logic import probEngine
 import time
 
@@ -143,7 +143,7 @@ def miniGameHandler(screen):
     global PERFORMANCE_TOTAL, MORALE_TOTAL
 
     #pick random mini-game
-    miniGames = [puntReturn]
+    miniGames = [puntReturn, fieldGoal, runPlay]
     miniGame = random.choice(miniGames)
     print("Selected mini-game: ", miniGame.__name__)
 
@@ -154,27 +154,46 @@ def miniGameHandler(screen):
     print("Game result: ", gameResult)
     QUARTER += 1
 
+    #update the score based on the mini-game result
+    if gameResult == True:
+        print(miniGame.__name__, "result: ", gameResult)
+        if miniGame.__name__ == "minigames.puntReturn":
+            TEAM_SCORE += 7
+        elif miniGame.__name__ == "minigames.fieldGoal":
+            TEAM_SCORE += 3
+        elif miniGame.__name__ == "minigames.runPlay":
+            TEAM_SCORE += 7
+
     screen.blit(pregame_Copy, (0, 0))
 
     #call the prob engine with the outcome of the mini-game
     if QUARTER < 5:
         #call probEngine with result of drive
-        probEngineResult = probEngine.simulateDrive(
-            MY_OFFENSE,
-            MY_DEFENSE,
-            MY_SPECIAL,
-            OPPOSING_OFFENSE,
-            OPPOSING_DEFENSE,
-            OPPOSING_SPECIAL,
-            PERFORMANCE_TOTAL,
-            MORALE_TOTAL,
-            gameResult)
-        
-        print("Prob engine result: ", probEngineResult)
+        drives = random.randint(1, 3)
+        for i in range(drives):
+            probEngineResult = probEngine.simulateDrive(
+                MY_OFFENSE,
+                MY_DEFENSE,
+                MY_SPECIAL,
+                OPPOSING_OFFENSE,
+                OPPOSING_DEFENSE,
+                OPPOSING_SPECIAL,
+                PERFORMANCE_TOTAL,
+                MORALE_TOTAL,
+                gameResult)
+            
+            print("Prob engine result: ", probEngineResult)
 
-        OPPONENT_SCORE += 7
-        TEAM_SCORE += 3
-        updateScoreboard(screen)
+            #update the score based on the probEngine result
+            if probEngineResult > 0:
+                # you scored
+                TEAM_SCORE += probEngineResult
+            elif probEngineResult < 0:
+                # they scored
+                OPPONENT_SCORE += abs(probEngineResult)
+
+            updateScoreboard(screen)
+            print("Current score: ", TEAM_SCORE, OPPONENT_SCORE)
     else:
         #game is over
         gameResult = False

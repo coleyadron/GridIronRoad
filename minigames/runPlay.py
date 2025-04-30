@@ -7,12 +7,12 @@ from logic.defender import Defender
 def checkDefenderSpawnLocation(defender, defenders):
     # Check if the defender's x position is too close to any existing defenders
     for other_defender in defenders:
-        if other_defender != defender and abs(defender.x - other_defender.x) < 250:
+        if other_defender != defender and abs(defender.x - other_defender.x) < 300:
             return False
     return True
 
 def runMiniGame(screen):
-    bgi = pygame.image.load("assets/images/dinoBGI.png")
+    bgi = pygame.image.load("assets/images/dinoRunFix.png")
     screen.blit(bgi, (0, 0))
     # Constants
     SCREEN_WIDTH, SCREEN_HEIGHT = screen.get_size()
@@ -40,6 +40,7 @@ def runMiniGame(screen):
 
 
     initate_field = False
+    spawn_new = True
     while True:
         current_time = pygame.time.get_ticks()
         
@@ -56,16 +57,21 @@ def runMiniGame(screen):
                 #     return runMiniGame(screen)  # Restart
         
         if game_active:
-            if not initate_field:
-                for i in range(3):
+            if not initate_field and spawn_new:
+                for i in range(2):
                     x = random.randint(350, SCREEN_WIDTH - 50)
                     while not checkDefenderSpawnLocation(Defender(SCREEN_WIDTH, defender_img, x=x), defenders):
                         x = random.randint(350, SCREEN_WIDTH - 50)
+                    #generate 1 or 2 more defenders directly behind the first    
                     defenders.append(Defender(SCREEN_WIDTH, defender_img, x=x, y=GROUND_HEIGHT - 80))
+                    for i in range(random.randint(0, 3)):
+                            defenders.append(Defender(SCREEN_WIDTH, defender_img, x=x + (i * 50), y=GROUND_HEIGHT - 80))
                 initate_field = True
             # Spawn defenders
-            if current_time - last_defender_time > defender_spawn_rate:
+            if current_time - last_defender_time > defender_spawn_rate and spawn_new:
                 x = random.randint(SCREEN_WIDTH, SCREEN_WIDTH + 200)
+                while not checkDefenderSpawnLocation(Defender(SCREEN_WIDTH, defender_img, x=x), defenders):
+                        x = random.randint(350, SCREEN_WIDTH - 50)
                 defenders.append(Defender(SCREEN_WIDTH, defender_img, x=x, y=GROUND_HEIGHT - 80))
                 #generate 1 or 2 more defenders directly behind the first
                 for i in range(random.randint(0, 3)):
@@ -87,14 +93,18 @@ def runMiniGame(screen):
                 
                 # Check collision
                 if defender.collides_with(player.get_rect()):
+                    # print("Collision detected!")
                     game_active = False
                     result = False
             
             # Check for touchdown (run distance)
-            if distance >= 4000000000000:  # Adjust as needed
-                print(distance)
+            if distance >= 3500:  # Adjust as needed
+                # print(distance)
                 game_active = False
                 result = True
+
+            if distance >= 1200:
+                spawn_new = False
         
         # Drawing
         screen.fill((255, 255, 255))
@@ -108,9 +118,9 @@ def runMiniGame(screen):
         for defender in defenders:
             defender.draw(screen)
         
-        # Draw UI
-        distance_text = font.render(f"Yards: {distance//10}", True, (0, 0, 0))
-        screen.blit(distance_text, (10, 10))
+        # distance debug
+        # distance_text = font.render(f"Yards: {distance//10}", True, (0, 0, 0))
+        # screen.blit(distance_text, (10, 10))
         
         if not game_active:
             result_text = "TOUCHDOWN!" if result else "TACKLED!"
