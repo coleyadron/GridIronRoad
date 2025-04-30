@@ -2,7 +2,7 @@ import pygame
 # import json
 import random
 import gridironRoad
-from minigames import puntReturn, fieldGoal, runPlay
+from minigames import puntReturn, fieldGoal, runPlay, blockPass
 from logic import probEngine
 import time
 
@@ -27,6 +27,9 @@ MY_SPECIAL = None
 MORALE_TOTAL = 0
 PERFORMANCE_TOTAL = 0
 
+preImage = pygame.image.load("assets/images/pregames.png")
+postImage = pygame.image.load("assets/images/postgame.png")
+
 def killgame():
     pygame.quit()
     quit()
@@ -37,6 +40,8 @@ def handleEndGame(screen, gameResult):
     font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
 
     screen.fill((0, 0, 0))
+
+    screen.blit(postImage, (0, 0))
 
     if gameResult == "win":
         endText = "You beat the %s! Final score: %s - %s" % (OPPOSING_TEAM, TEAM_SCORE, OPPONENT_SCORE)
@@ -109,6 +114,8 @@ def updateScoreboard(screen):
 
     screen.fill((0, 0, 0))
 
+    screen.blit(preImage, (0, 0))
+
     preText = "Week " + str(WEEK) + " vs " + OPPOSING_TEAM + "!"
     pregameText = font.render(preText, True, (255, 255, 255))
     screen.blit(pregameText, (screen.get_width() / 2 - pregameText.get_width() / 2, 50))
@@ -143,7 +150,7 @@ def miniGameHandler(screen):
     global PERFORMANCE_TOTAL, MORALE_TOTAL
 
     #pick random mini-game
-    miniGames = [puntReturn, fieldGoal, runPlay]
+    miniGames = [puntReturn, fieldGoal, runPlay, blockPass]
     miniGame = random.choice(miniGames)
     print("Selected mini-game: ", miniGame.__name__)
 
@@ -154,6 +161,8 @@ def miniGameHandler(screen):
     print("Game result: ", gameResult)
     QUARTER += 1
 
+    drives = random.randint(1, 3)
+
     #update the score based on the mini-game result
     if gameResult == True:
         print(miniGame.__name__, "result: ", gameResult)
@@ -163,13 +172,17 @@ def miniGameHandler(screen):
             TEAM_SCORE += 3
         elif miniGame.__name__ == "minigames.runPlay":
             TEAM_SCORE += 7
+        elif miniGame.__name__ == "minigames.blockPass":
+            drives -= 1
+    else:
+        if miniGame.__name__ == "minigames.blockPass":
+            drives += 1
 
     screen.blit(pregame_Copy, (0, 0))
 
     #call the prob engine with the outcome of the mini-game
     if QUARTER < 5:
         #call probEngine with result of drive
-        drives = random.randint(1, 3)
         for i in range(drives):
             probEngineResult = probEngine.simulateDrive(
                 MY_OFFENSE,
@@ -237,6 +250,8 @@ def byeWeek(screen):
 
     screen.fill((0, 0, 0))
 
+    screen.blit(preImage, (0, 0))
+
     print("Bye week is starting")
 
     preText = "Welcome to this week's bye week practice!"
@@ -268,6 +283,8 @@ def inGame(screen, matchup, scenarios):
     font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
 
     screen.fill((0, 0, 0))
+
+    screen.blit(preImage, (0, 0))
 
     print("Game is starting")
 
