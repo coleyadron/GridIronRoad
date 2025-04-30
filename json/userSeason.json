@@ -3,6 +3,7 @@
         "matchups": [
             {
                 "week": 1,
+<<<<<<< Updated upstream
                 "opponent": "New York Jets",
                 "played": true,
                 "user_score": 65,
@@ -28,6 +29,33 @@
             {
                 "week": 4,
                 "opponent": "San Francisco 49ers",
+=======
+                "opponent": "Cleveland Browns",
+                "played": true,
+                "user_score": 6,
+                "opponent_score": 31,
+                "result": "loss"
+            },
+            {
+                "week": 2,
+                "opponent": "Houston Texans",
+                "played": true,
+                "user_score": 24,
+                "opponent_score": 0,
+                "result": "win"
+            },
+            {
+                "week": 3,
+                "opponent": "Philadelphia Eagles",
+                "played": true,
+                "user_score": 13,
+                "opponent_score": 34,
+                "result": "loss"
+            },
+            {
+                "week": 4,
+                "opponent": "Tennessee Titans",
+>>>>>>> Stashed changes
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,
@@ -35,7 +63,11 @@
             },
             {
                 "week": 5,
+<<<<<<< Updated upstream
                 "opponent": "Dallas Cowboys",
+=======
+                "opponent": "Kansas City Chiefs",
+>>>>>>> Stashed changes
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,
@@ -43,6 +75,7 @@
             },
             {
                 "week": 6,
+<<<<<<< Updated upstream
                 "opponent": "Carolina Panthers",
                 "played": false,
                 "user_score": null,
@@ -123,6 +156,8 @@
             },
             {
                 "week": 16,
+=======
+>>>>>>> Stashed changes
                 "opponent": "Indianapolis Colts",
                 "played": false,
                 "user_score": null,
@@ -130,8 +165,93 @@
                 "result": null
             },
             {
+<<<<<<< Updated upstream
                 "week": 17,
                 "opponent": "Philadelphia Eagles",
+=======
+                "week": 7,
+                "opponent": "Los Angeles Rams",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 8,
+                "opponent": "Denver Broncos",
+>>>>>>> Stashed changes
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 9,
+                "opponent": "Seattle Seahawks",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 10,
+                "opponent": "Bye",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 11,
+                "opponent": "Arizona Cardinals",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 12,
+                "opponent": "Green Bay Packers",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 13,
+                "opponent": "Chicago Bears",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 14,
+                "opponent": "San Francisco 49ers",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 15,
+                "opponent": "Dallas Cowboys",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 16,
+                "opponent": "Los Angeles Chargers",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 17,
+                "opponent": "New York Giants",
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,
@@ -139,7 +259,11 @@
             },
             {
                 "week": 18,
+<<<<<<< Updated upstream
                 "opponent": "Miami Dolphins",
+=======
+                "opponent": "Detroit Lions",
+>>>>>>> Stashed changes
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,

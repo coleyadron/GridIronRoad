@@ -1,6 +1,7 @@
 {
     "started": true,
     "experience": {
+<<<<<<< Updated upstream
         "level": "Rookie_1",
         "displayName": "New Recruit",
         "description": "Very limited experience. Played high school football. Haven't picked up the pig skin since.",
@@ -10,6 +11,17 @@
             "contractNegotiationBonus": -0.2,
             "fanExpectationMultiplier": 0.4,
             "budgetMultiplier": 0.5
+=======
+        "level": "Rookie_2",
+        "displayName": "Aspiring Coach",
+        "description": "Played ball in high school. Coached your son's flag football team.",
+        "modifiers": {
+            "playerDevelopmentRate": 0.8,
+            "scoutingEfficiency": 0.7,
+            "contractNegotiationBonus": -0.1,
+            "fanExpectationMultiplier": 0.5,
+            "budgetMultiplier": 0.6
+>>>>>>> Stashed changes
         }
     },
     "team": {
@@ -28,5 +40,46 @@
         "1",
         "1"
     ],
+<<<<<<< Updated upstream
     "draft": null
+=======
+    "draft": [
+        {
+            "name": "Cam Ward",
+            "position": "QB",
+            "contract": "4 years",
+            "salary": "$32,000,000",
+            "characteristics": {
+                "rating": 81,
+                "speed": 85,
+                "strength": 73,
+                "athleticism": 85
+            }
+        },
+        {
+            "name": "Jack Sawyer",
+            "position": "DE",
+            "contract": "2 years",
+            "salary": "$11,750,000",
+            "characteristics": {
+                "rating": 81,
+                "speed": 80,
+                "strength": 83,
+                "athleticism": 80
+            }
+        },
+        {
+            "name": "Oluwafemi Oladejo",
+            "position": "DE",
+            "contract": "2 years",
+            "salary": "$3,000,000",
+            "characteristics": {
+                "rating": 81,
+                "speed": 80,
+                "strength": 83,
+                "athleticism": 80
+            }
+        }
+    ]
+>>>>>>> Stashed changes
 }
