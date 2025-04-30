@@ -7,16 +7,18 @@ from logic.defender import Defender
 def checkDefenderSpawnLocation(defender, defenders):
     # Check if the defender's x position is too close to any existing defenders
     for other_defender in defenders:
-        if other_defender != defender and abs(defender.x - other_defender.x) < 50:
+        if other_defender != defender and abs(defender.x - other_defender.x) < 250:
             return False
     return True
 
 def runMiniGame(screen):
+    bgi = pygame.image.load("assets/images/dinoBGI.png")
+    screen.blit(bgi, (0, 0))
     # Constants
     SCREEN_WIDTH, SCREEN_HEIGHT = screen.get_size()
     GROUND_HEIGHT = SCREEN_HEIGHT - 100
     PLAYER_START_X = 100
-    GAME_SPEED = 5
+    GAME_SPEED = 7
     JUMP_STRENGTH = 15
     GRAVITY = .5
     
@@ -26,13 +28,13 @@ def runMiniGame(screen):
     distance = 0
     game_active = True
     last_defender_time = 0
-    defender_spawn_rate = 1500
+    defender_spawn_rate = 2000
     clock = pygame.time.Clock()
     font = pygame.font.Font(None, 36)
     
     try:
         defender_img = pygame.image.load("assets/images/bearSprites/leftFour.PNG").convert_alpha()
-        defender_img = pygame.transform.scale(defender_img, (50, 75))
+        defender_img = pygame.transform.scale(defender_img, (75, 75))
     except:
         defender_img = None
 
@@ -63,7 +65,11 @@ def runMiniGame(screen):
                 initate_field = True
             # Spawn defenders
             if current_time - last_defender_time > defender_spawn_rate:
-                defenders.append(Defender(SCREEN_WIDTH, defender_img, x=SCREEN_WIDTH, y=GROUND_HEIGHT - 80))
+                x = random.randint(SCREEN_WIDTH, SCREEN_WIDTH + 200)
+                defenders.append(Defender(SCREEN_WIDTH, defender_img, x=x, y=GROUND_HEIGHT - 80))
+                #generate 1 or 2 more defenders directly behind the first
+                for i in range(random.randint(0, 3)):
+                    defenders.append(Defender(SCREEN_WIDTH, defender_img, x=x + (i * 50), y=GROUND_HEIGHT - 80))
                 last_defender_time = current_time
                 defender_spawn_rate = max(800, defender_spawn_rate - 20)
             
@@ -85,7 +91,8 @@ def runMiniGame(screen):
                     result = False
             
             # Check for touchdown (run distance)
-            if distance >= 2000:  # Adjust as needed
+            if distance >= 4000000000000:  # Adjust as needed
+                print(distance)
                 game_active = False
                 result = True
         
@@ -93,7 +100,8 @@ def runMiniGame(screen):
         screen.fill((255, 255, 255))
         
         # Draw ground
-        pygame.draw.rect(screen, (0, 128, 0), (0, GROUND_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT - GROUND_HEIGHT))
+        screen.blit(bgi, (distance * -.5, 0))
+        # pygame.draw.rect(screen, (0, 128, 0), (0, GROUND_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT - GROUND_HEIGHT))
         
         # Draw player and defenders
         player.draw(screen, 0)  # Camera_x not needed for vertical defenders

@@ -3,14 +3,15 @@ import random
 
 class Defender:
     def __init__(self, screen_width, image=None, x=0, y=125):
-        if x == 0:
-            x = random.randint(0, screen_width - 50)
         self.x = x
         self.y = y
-        self.speed = random.randint(3, 6)
+        self.speed = 5
         self.width = 50
         self.height = 75
         self.image = image
+        if x == 0:
+            x = random.randint(0, screen_width - 50)
+            self.speed = random.randint(3, 6)
 
     def update(self):
         self.y += self.speed

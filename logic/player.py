@@ -1,7 +1,7 @@
 import pygame
 
 class Player:
-    def __init__(self, x, y, width=50, height=75):
+    def __init__(self, x, y, width=45, height=75):
         self.x = x
         self.y = y
         self.width = width
@@ -12,7 +12,7 @@ class Player:
         
         try:
             self.sprite = pygame.image.load("assets/images/steelSprites/rightFour.PNG").convert_alpha()
-            self.sprite = pygame.transform.scale(self.sprite, (self.width, self.height))
+            self.sprite = pygame.transform.scale(self.sprite, (75, self.height))
         except:
             print("Couldn't load player sprite - using rectangle instead")
 
