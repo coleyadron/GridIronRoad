@@ -23,6 +23,7 @@ def load_team():
     
 def display_team(screen, team):
     font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
+    # font2 = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 25)
     team_name = team["team_name"]
 
     # Display team name
@@ -33,31 +34,40 @@ def display_team(screen, team):
 
     # Display players
     players = team["players"]
+    x_offset = 100
     y_offset = 100
+    text_y_offset = 0
+    playerCount = 0
     for player in players:
-        player_text = font.render(f"{player['name']}, {player['position']}, ${format(player['salary'], ",")}", True, (255, 255, 255))
-        screen.blit(player_text, (50, y_offset))
+        player_text = font.render(f"{player['name']}, {player['position']}", True, (255, 255, 255))
+        screen.blit(player_text, (x_offset, y_offset))
         y_offset += 50
         teamSalary += player["salary"]
+        playerCount += 1
+        if playerCount == 14 or playerCount == 28 or playerCount == 42:
+            text_y_offset = y_offset + 90
+            x_offset += 375
+            y_offset = 150
 
-    y_offset += 25
+    # y_offset += 25
 
     # Display current team salary
     current_salary_text = font.render(f"Team Salary: ${format(teamSalary, ",")}", True, (255, 255, 255))
-    screen.blit(current_salary_text, (0, y_offset))
-    y_offset += 50
+    screen.blit(current_salary_text, (50, text_y_offset - 50))
+    # y_offset += 50
 
     # Display salary cap
     salary_cap = 279200000
     salary_cap_text = font.render(f"Salary Cap: ${format(salary_cap, ",")}", True, (255, 255, 255))
-    screen.blit(salary_cap_text, (0, y_offset))
+    screen.blit(salary_cap_text, (50, text_y_offset))
 
     rect_width = screen.get_width() * .8
     red = (255, 0, 0)
     white = (255, 255, 255)
     rect_height = 50
-    rect_x = (screen.get_width() - rect_width) // 2
-    rect_y = y_offset + 50
+    rect_x = 50
+    # rect_x = (screen.get_width() - rect_width) // 2
+    rect_y = text_y_offset + 50
 
 
     salary_width = int((teamSalary / salary_cap) * rect_width)
@@ -71,9 +81,11 @@ def teamOverview(screen, state):
     screen.fill((0, 0, 0))
 
     overviewText = font.render("Current Roster", True, (255, 255, 255))
+    # returnText = font.render("Press SPACE to return", True, (255, 255, 255))
     returnText = font.render(f"Press SPACE to return to the {state}", True, (255, 255, 255))
     screen.blit(overviewText, (0,0))
-    screen.blit(returnText, (0, screen.get_height() - 50))
+    # screen.blit(returnText, (850, 50))
+    screen.blit(returnText, (50, screen.get_height() - 50))
 
     team = load_team()
 
@@ -98,13 +110,12 @@ def teamOverview(screen, state):
                     viewTeamOverview = False
         pygame.display.flip()
 
-
-
-    
-
 def main():
     screen = pygame.display.set_mode((1400, 1050))
     pygame.display.set_caption("Team Overview")
     screen.fill((0, 0, 0))
 
-    teamOverview(screen)
+    teamOverview(screen, "free agents")
+
+if __name__ == "__main__":
+    main()

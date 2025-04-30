@@ -301,7 +301,7 @@ def free_agents(screen):
     titleText = font.render("Available Free Agents", True, (255, 255, 255))
     screen.blit(titleText, (screen.get_width() / 2 - titleText.get_width() / 2, 0))
 
-    teamOverviewText = font.render("Press 1 to view team", True, (255, 255, 255))
+    teamOverviewText = font.render("Press 1 to view team, or SPACE to go back", True, (255, 255, 255))
     screen.blit(teamOverviewText, (screen.get_width() / 2 - teamOverviewText.get_width() / 2, screen.get_height() - 50))
 
     free_agents = load_free_agents()
@@ -321,7 +321,7 @@ def free_agents(screen):
                 # gridironRoad.killgame(screen)
                 killgame()
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_ESCAPE:
+                if event.key == pygame.K_SPACE:
                     free_agents_open = False
                     return
                 if event.key == pygame.K_1 or event.key == pygame.K_KP1:
@@ -334,7 +334,7 @@ def free_agents(screen):
                 mouse_pos = pygame.mouse.get_pos()
                 player = handle_click(mouse_pos, free_agents)
                 return
-                pygame.display.update()
+                # pygame.display.update()
 
     return player
 

@@ -11,7 +11,6 @@ from logic import scheduler
 import gridironRoad
 import json
 import random
-# from screens.minigames import puntReturn
 
 EXPERIENCE = None
 TEAM = None
