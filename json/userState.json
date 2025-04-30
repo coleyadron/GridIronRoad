@@ -1,6 +1,7 @@
 {
     "started": true,
     "experience": {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
         "level": "Rookie_1",
         "displayName": "New Recruit",
@@ -22,27 +23,41 @@
             "fanExpectationMultiplier": 0.5,
             "budgetMultiplier": 0.6
 >>>>>>> Stashed changes
+=======
+        "level": "Experienced_2",
+        "displayName": "Proven Leader",
+        "description": "You played in high school and college, but you tore you're achilles and haven't played since.",
+        "modifiers": {
+            "playerDevelopmentRate": 1.1,
+            "scoutingEfficiency": 1.0,
+            "contractNegotiationBonus": 0.2,
+            "fanExpectationMultiplier": 1.0,
+            "budgetMultiplier": 1.0
+>>>>>>> origin/main
         }
     },
     "team": {
-        "level": "Easy",
-        "displayName": "Short-Term Deal",
-        "description": "A quick one-year contract. Low expectations, low salary.",
-        "salaryMultiplier": 0.7,
-        "performanceBonusMultiplier": 1.3,
-        "jobSecurity": "Low",
+        "level": "Medium",
+        "displayName": "Competitive Contract",
+        "description": "A three-year contract to compete for championships. Higher salary.",
+        "salaryMultiplier": 1.1,
+        "performanceBonusMultiplier": 0.9,
+        "jobSecurity": "High",
         "goals": [
-            "Win 50% of games"
+            "Win a championship within 3 years"
         ]
     },
     "staff": [
-        "1",
-        "1",
-        "1"
+        "Dick Kickem",
+        "Cat from Garfiled",
+        "Money Man Dubs"
     ],
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     "draft": null
 =======
+=======
+>>>>>>> origin/main
     "draft": [
         {
             "name": "Cam Ward",
@@ -57,6 +72,7 @@
             }
         },
         {
+<<<<<<< HEAD
             "name": "Jack Sawyer",
             "position": "DE",
             "contract": "2 years",
@@ -66,6 +82,17 @@
                 "speed": 80,
                 "strength": 83,
                 "athleticism": 80
+=======
+            "name": "TreVeyon Henderson",
+            "position": "RB",
+            "contract": "3 years",
+            "salary": "$18,500,000",
+            "characteristics": {
+                "rating": 85,
+                "speed": 92,
+                "strength": 79,
+                "athleticism": 84
+>>>>>>> origin/main
             }
         },
         {
@@ -81,5 +108,8 @@
             }
         }
     ]
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> origin/main
 }

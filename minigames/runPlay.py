@@ -7,7 +7,7 @@ from logic.defender import Defender
 def checkDefenderSpawnLocation(defender, defenders):
     # Check if the defender's x position is too close to any existing defenders
     for other_defender in defenders:
-        if other_defender != defender and abs(defender.x - other_defender.x) < 300:
+        if other_defender != defender and abs(defender.x - other_defender.x) < 200:
             return False
     return True
 
@@ -59,9 +59,11 @@ def runMiniGame(screen):
         if game_active:
             if not initate_field and spawn_new:
                 for i in range(2):
-                    x = random.randint(350, SCREEN_WIDTH - 50)
-                    while not checkDefenderSpawnLocation(Defender(SCREEN_WIDTH, defender_img, x=x), defenders):
-                        x = random.randint(350, SCREEN_WIDTH - 50)
+                    x = random.randint(int(400 // ((i + 1) * .5)), int(SCREEN_WIDTH / (i+1)))
+                    # if i == 0:
+                    #     x = 400
+                    # while not checkDefenderSpawnLocation(Defender(SCREEN_WIDTH, defender_img, x=x), defenders):
+                    #     x = random.randint(350, SCREEN_WIDTH - 50)
                     #generate 1 or 2 more defenders directly behind the first    
                     defenders.append(Defender(SCREEN_WIDTH, defender_img, x=x, y=GROUND_HEIGHT - 80))
                     for i in range(random.randint(0, 3)):
@@ -69,9 +71,9 @@ def runMiniGame(screen):
                 initate_field = True
             # Spawn defenders
             if current_time - last_defender_time > defender_spawn_rate and spawn_new:
-                x = random.randint(SCREEN_WIDTH, SCREEN_WIDTH + 200)
-                while not checkDefenderSpawnLocation(Defender(SCREEN_WIDTH, defender_img, x=x), defenders):
-                        x = random.randint(350, SCREEN_WIDTH - 50)
+                x = random.randint(SCREEN_WIDTH, SCREEN_WIDTH + 50)
+                # while not checkDefenderSpawnLocation(Defender(SCREEN_WIDTH, defender_img, x=x), defenders):
+                #         x = random.randint(350, SCREEN_WIDTH - 50)
                 defenders.append(Defender(SCREEN_WIDTH, defender_img, x=x, y=GROUND_HEIGHT - 80))
                 #generate 1 or 2 more defenders directly behind the first
                 for i in range(random.randint(0, 3)):

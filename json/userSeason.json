@@ -3,31 +3,36 @@
         "matchups": [
             {
                 "week": 1,
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                 "opponent": "New York Jets",
+=======
+                "opponent": "New Orleans Saints",
+>>>>>>> origin/main
                 "played": true,
-                "user_score": 65,
-                "opponent_score": 3,
+                "user_score": 21,
+                "opponent_score": 20,
                 "result": "win"
             },
             {
                 "week": 2,
-                "opponent": "Kansas City Chiefs",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
+                "opponent": "Tennessee Titans",
+                "played": true,
+                "user_score": 0,
+                "opponent_score": 26,
+                "result": "loss"
             },
             {
                 "week": 3,
-                "opponent": "Washington Commanders",
-                "played": false,
-                "user_score": null,
-                "opponent_score": null,
-                "result": null
+                "opponent": "Green Bay Packers",
+                "played": true,
+                "user_score": 17,
+                "opponent_score": 21,
+                "result": "loss"
             },
             {
                 "week": 4,
+<<<<<<< HEAD
                 "opponent": "San Francisco 49ers",
 =======
                 "opponent": "Cleveland Browns",
@@ -77,6 +82,25 @@
                 "week": 6,
 <<<<<<< Updated upstream
                 "opponent": "Carolina Panthers",
+=======
+                "opponent": "New England Patriots",
+                "played": true,
+                "user_score": 21,
+                "opponent_score": 14,
+                "result": "win"
+            },
+            {
+                "week": 5,
+                "opponent": "Minnesota Vikings",
+                "played": true,
+                "user_score": 17,
+                "opponent_score": 27,
+                "result": "loss"
+            },
+            {
+                "week": 6,
+                "opponent": "Detroit Lions",
+>>>>>>> origin/main
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,
@@ -84,7 +108,7 @@
             },
             {
                 "week": 7,
-                "opponent": "Buffalo Bills",
+                "opponent": "Philadelphia Eagles",
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,
@@ -92,7 +116,7 @@
             },
             {
                 "week": 8,
-                "opponent": "Atlanta Falcons",
+                "opponent": "Dallas Cowboys",
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,
@@ -100,7 +124,7 @@
             },
             {
                 "week": 9,
-                "opponent": "Jacksonville Jaguars",
+                "opponent": "New York Jets",
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,
@@ -108,7 +132,7 @@
             },
             {
                 "week": 10,
-                "opponent": "Las Vegas Raiders",
+                "opponent": "San Francisco 49ers",
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,
@@ -116,7 +140,7 @@
             },
             {
                 "week": 11,
-                "opponent": "Seattle Seahawks",
+                "opponent": "Chicago Bears",
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,
@@ -124,7 +148,7 @@
             },
             {
                 "week": 12,
-                "opponent": "Cleveland Browns",
+                "opponent": "Baltimore Ravens",
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,
@@ -132,7 +156,7 @@
             },
             {
                 "week": 13,
-                "opponent": "Minnesota Vikings",
+                "opponent": "New York Giants",
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,
@@ -140,7 +164,7 @@
             },
             {
                 "week": 14,
-                "opponent": "Detroit Lions",
+                "opponent": "Buffalo Bills",
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,
@@ -156,9 +180,13 @@
             },
             {
                 "week": 16,
+<<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
                 "opponent": "Indianapolis Colts",
+=======
+                "opponent": "Seattle Seahawks",
+>>>>>>> origin/main
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,
@@ -167,6 +195,7 @@
             {
 <<<<<<< Updated upstream
                 "week": 17,
+<<<<<<< HEAD
                 "opponent": "Philadelphia Eagles",
 =======
                 "week": 7,
@@ -252,6 +281,9 @@
             {
                 "week": 17,
                 "opponent": "New York Giants",
+=======
+                "opponent": "Denver Broncos",
+>>>>>>> origin/main
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,
@@ -259,11 +291,15 @@
             },
             {
                 "week": 18,
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                 "opponent": "Miami Dolphins",
 =======
                 "opponent": "Detroit Lions",
 >>>>>>> Stashed changes
+=======
+                "opponent": "Las Vegas Raiders",
+>>>>>>> origin/main
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,

@@ -104,7 +104,7 @@ def puntReturn(screen):
             screen.fill((0, 0, 0))
 
             if current_time - last_defender_time > defender_spawn_rate:
-                defenders.append(Defender(screen.get_width(), bearDefense))
+                defenders.append(Defender(screen.get_width(), bearDefense, userX=userX, userY=userY))
                 last_defender_time = current_time
                 defender_spawn_rate = max(300, defender_spawn_rate - 10)
 

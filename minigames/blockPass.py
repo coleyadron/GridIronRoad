@@ -3,9 +3,12 @@ import sys
 import random
 import time
 
+<<<<<<< HEAD
 def exec(screen):
     return blockPass(screen)
 
+=======
+>>>>>>> origin/main
 def blockPass(screen):
     # Initialize pygame if not already initialized
     if not pygame.get_init():
