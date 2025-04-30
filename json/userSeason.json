@@ -3,7 +3,11 @@
         "matchups": [
             {
                 "week": 1,
+<<<<<<< HEAD
                 "opponent": "Tennessee Titans",
+=======
+                "opponent": "Detroit Lions",
+>>>>>>> origin/yadronDev
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,
@@ -11,7 +15,11 @@
             },
             {
                 "week": 2,
+<<<<<<< HEAD
                 "opponent": "Houston Texans",
+=======
+                "opponent": "Indianapolis Colts",
+>>>>>>> origin/yadronDev
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,
@@ -19,6 +27,7 @@
             },
             {
                 "week": 3,
+<<<<<<< HEAD
                 "opponent": "Indianapolis Colts",
                 "played": false,
                 "user_score": null,
@@ -132,14 +141,110 @@
             {
                 "week": 17,
                 "opponent": "Philadelphia Eagles",
+=======
+                "opponent": "Seattle Seahawks",
+>>>>>>> origin/yadronDev
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,
                 "result": null
             },
             {
+<<<<<<< HEAD
                 "week": 18,
                 "opponent": "Atlanta Falcons",
+=======
+                "week": 4,
+                "opponent": "Houston Texans",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 5,
+                "opponent": "Cincinnati Bengals",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 6,
+                "opponent": "Tennessee Titans",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 7,
+                "opponent": "Los Angeles Chargers",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 8,
+                "opponent": "Cleveland Browns",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 9,
+                "opponent": "Bye",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 10,
+                "opponent": "Kansas City Chiefs",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 11,
+                "opponent": "Philadelphia Eagles",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 12,
+                "opponent": "Pittsburgh Steelers",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 13,
+                "opponent": "Miami Dolphins",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 14,
+                "opponent": "Atlanta Falcons",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "week": 15,
+                "opponent": "Jacksonville Jaguars",
+>>>>>>> origin/yadronDev
                 "played": false,
                 "user_score": null,
                 "opponent_score": null,

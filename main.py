@@ -21,7 +21,7 @@ DRAFT = None
 #     state = {
 #         "started": True,
 #         "experience": EXPERIENCE,
-#         "team": TEAM,
+#         "team": TEAM, 
 #         "staff": STAFF,
 #         "draft": DRAFT
 #     }
@@ -52,6 +52,8 @@ def playGame(screen):
             postScenarios = postgameDecisions.postGameDecisions(screen, matchup)
 
             print("Scenarios: ", postScenarios)
+
+            overView = seasonOverview.seasonOverview(screen)
         else:
             print("Practice week")
 

@@ -33,6 +33,8 @@ def pickScenario(scenarios):
 
 def postGameDecisions(screen, matchup):
     font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
+    BGI = pygame.image.load("assets/images/postgame.png")
+    
 
     scenarios = loadDecisions()
 
@@ -41,11 +43,12 @@ def postGameDecisions(screen, matchup):
         return
 
     screen.fill((0, 0, 0))
+    screen.blit(BGI, (0, 0))
 
-    preText = "After to week " + str(matchup["week"]) + " vs " + matchup["opponent"] + "!"
+    preText = "After week " + str(matchup["week"]) + " vs " + matchup["opponent"] + "!"
 
     pregameText = font.render(preText, True, (255, 255, 255))
-    screen.blit(pregameText, (screen.get_width() / 2 - pregameText.get_width() / 2, 50))
+    screen.blit(pregameText, (screen.get_width() / 2 - pregameText.get_width() / 2, 80))
 
     start_screen = screen.copy()
 
