@@ -3,6 +3,9 @@ import sys
 import random
 import time
 
+def exec(screen):
+    blockPass(screen)
+
 def blockPass(screen):
     # Initialize pygame if not already initialized
     if not pygame.get_init():
