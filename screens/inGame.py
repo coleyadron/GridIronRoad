@@ -234,7 +234,7 @@ def resetWeek():
 
 def singularMiniGame(screen):
     #pick random mini-game
-    miniGames = [puntReturn]
+    miniGames = [puntReturn, fieldGoal, runPlay, blockPass]
     miniGame = random.choice(miniGames)
     print("Selected mini-game: ", miniGame.__name__)
 

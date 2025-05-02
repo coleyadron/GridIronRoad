@@ -42,7 +42,7 @@ def playGame(screen):
         currentWeek = matchup["week"]
 
     while currentWeek <= 18:
-        if not matchup["opponent"] == "Bye Week":
+        if not matchup["opponent"] == "Bye":
             preScenarios = pregameDecisions.preGameDecisions(screen, matchup)
 
             game_result = inGame.inGame(screen, matchup, preScenarios)
@@ -58,7 +58,7 @@ def playGame(screen):
             print("Practice week")
 
             #execute bye
-
+            inGame.byeWeek(screen)
             #update season with the bye
             bye_result = { 
                 "week": matchup["week"],
