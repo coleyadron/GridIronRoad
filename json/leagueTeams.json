@@ -5,8 +5,8 @@
       "name": "Arizona Cardinals",
       "ratings": {
         "overall": 78,
-        "offense": 76,
-        "defense": 79,
+        "offense": 73,
+        "defense": 71,
         "special_teams": 80
       }
     },
@@ -35,7 +35,7 @@
       "name": "Buffalo Bills",
       "ratings": {
         "overall": 89,
-        "offense": 90,
+        "offense": 87,
         "defense": 88,
         "special_teams": 84
       }
@@ -45,8 +45,8 @@
       "name": "Carolina Panthers",
       "ratings": {
         "overall": 76,
-        "offense": 74,
-        "defense": 78,
+        "offense": 69,
+        "defense": 73,
         "special_teams": 77
       }
     },
@@ -55,7 +55,7 @@
       "name": "Chicago Bears",
       "ratings": {
         "overall": 77,
-        "offense": 75,
+        "offense": 76,
         "defense": 79,
         "special_teams": 76
       }
@@ -65,9 +65,9 @@
       "name": "Cincinnati Bengals",
       "ratings": {
         "overall": 79,
-        "offense": 82,
+        "offense": 80,
         "defense": 76,
-        "special_teams": 78
+        "special_teams": 75
       }
     },
     {
@@ -75,9 +75,9 @@
       "name": "Cleveland Browns",
       "ratings": {
         "overall": 87,
-        "offense": 85,
-        "defense": 89,
-        "special_teams": 84
+        "offense": 69,
+        "defense": 75,
+        "special_teams": 77
       }
     },
     {
@@ -85,9 +85,9 @@
       "name": "Dallas Cowboys",
       "ratings": {
         "overall": 86,
-        "offense": 88,
-        "defense": 84,
-        "special_teams": 83
+        "offense": 77,
+        "defense": 78,
+        "special_teams": 84
       }
     },
     {
@@ -96,8 +96,8 @@
       "ratings": {
         "overall": 82,
         "offense": 80,
-        "defense": 84,
-        "special_teams": 81
+        "defense": 73,
+        "special_teams": 75
       }
     },
     {
@@ -105,9 +105,9 @@
       "name": "Detroit Lions",
       "ratings": {
         "overall": 72,
-        "offense": 74,
-        "defense": 70,
-        "special_teams": 73
+        "offense": 81,
+        "defense": 79,
+        "special_teams": 78
       }
     },
     {
@@ -115,9 +115,9 @@
       "name": "Green Bay Packers",
       "ratings": {
         "overall": 90,
-        "offense": 92,
-        "defense": 88,
-        "special_teams": 87
+        "offense": 83,
+        "defense":78,
+        "special_teams": 77
       }
     },
     {
@@ -135,9 +135,9 @@
       "name": "Indianapolis Colts",
       "ratings": {
         "overall": 85,
-        "offense": 84,
-        "defense": 86,
-        "special_teams": 83
+        "offense": 71,
+        "defense": 74,
+        "special_teams": 81
       }
     },
     {
@@ -154,9 +154,9 @@
       "id": 16,
       "name": "Kansas City Chiefs",
       "ratings": {
-        "overall": 92,
-        "offense": 94,
-        "defense": 90,
+        "overall": 91,
+        "offense": 91,
+        "defense": 87,
         "special_teams": 88
       }
     },
@@ -165,9 +165,9 @@
       "name": "Las Vegas Raiders",
       "ratings": {
         "overall": 80,
-        "offense": 82,
+        "offense": 70,
         "defense": 78,
-        "special_teams": 79
+        "special_teams": 74
       }
     },
     {
@@ -175,7 +175,7 @@
       "name": "Los Angeles Chargers",
       "ratings": {
         "overall": 86,
-        "offense": 88,
+        "offense": 82,
         "defense": 84,
         "special_teams": 83
       }
@@ -185,9 +185,9 @@
       "name": "Los Angeles Rams",
       "ratings": {
         "overall": 91,
-        "offense": 93,
-        "defense": 89,
-        "special_teams": 87
+        "offense": 86,
+        "defense": 82,
+        "special_teams": 80
       }
     },
     {
@@ -195,9 +195,9 @@
       "name": "Miami Dolphins",
       "ratings": {
         "overall": 81,
-        "offense": 83,
-        "defense": 79,
-        "special_teams": 80
+        "offense": 73,
+        "defense": 71,
+        "special_teams": 69
       }
     },
     {
@@ -205,7 +205,7 @@
       "name": "Minnesota Vikings",
       "ratings": {
         "overall": 83,
-        "offense": 85,
+        "offense": 79,
         "defense": 81,
         "special_teams": 82
       }
@@ -215,9 +215,9 @@
       "name": "New England Patriots",
       "ratings": {
         "overall": 84,
-        "offense": 82,
-        "defense": 86,
-        "special_teams": 83
+        "offense": 72,
+        "defense": 73,
+        "special_teams": 69
       }
     },
     {
@@ -225,9 +225,9 @@
       "name": "New Orleans Saints",
       "ratings": {
         "overall": 82,
-        "offense": 80,
-        "defense": 84,
-        "special_teams": 81
+        "offense": 71,
+        "defense": 69,
+        "special_teams": 69
       }
     },
     {
@@ -235,8 +235,8 @@
       "name": "New York Giants",
       "ratings": {
         "overall": 74,
-        "offense": 72,
-        "defense": 76,
+        "offense": 69,
+        "defense": 70,
         "special_teams": 75
       }
     },
@@ -255,8 +255,8 @@
       "name": "Philadelphia Eagles",
       "ratings": {
         "overall": 79,
-        "offense": 81,
-        "defense": 77,
+        "offense": 89,
+        "defense": 80,
         "special_teams": 78
       }
     },
@@ -266,7 +266,7 @@
       "ratings": {
         "overall": 85,
         "offense": 83,
-        "defense": 87,
+        "defense": 85,
         "special_teams": 84
       }
     },
@@ -275,9 +275,9 @@
       "name": "San Francisco 49ers",
       "ratings": {
         "overall": 87,
-        "offense": 86,
-        "defense": 88,
-        "special_teams": 85
+        "offense": 77,
+        "defense": 80,
+        "special_teams": 76
       }
     },
     {
@@ -285,9 +285,9 @@
       "name": "Seattle Seahawks",
       "ratings": {
         "overall": 83,
-        "offense": 84,
-        "defense": 82,
-        "special_teams": 81
+        "offense": 73,
+        "defense": 77,
+        "special_teams": 78
       }
     },
     {
@@ -295,9 +295,9 @@
       "name": "Tampa Bay Buccaneers",
       "ratings": {
         "overall": 93,
-        "offense": 94,
-        "defense": 92,
-        "special_teams": 90
+        "offense": 82,
+        "defense": 78,
+        "special_teams": 77
       }
     },
     {
@@ -305,9 +305,9 @@
       "name": "Tennessee Titans",
       "ratings": {
         "overall": 86,
-        "offense": 85,
-        "defense": 87,
-        "special_teams": 84
+        "offense": 69,
+        "defense": 75,
+        "special_teams": 71
       }
     },
     {
@@ -315,8 +315,8 @@
       "name": "Washington Commanders",
       "ratings": {
         "overall": 80,
-        "offense": 78,
-        "defense": 82,
+        "offense": 80,
+        "defense": 77,
         "special_teams": 79
       }
     }
