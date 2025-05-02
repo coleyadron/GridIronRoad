@@ -36,8 +36,8 @@
       "ratings": {
         "overall": 89,
         "offense": 87,
-        "defense": 88,
-        "special_teams": 84
+        "defense": 80,
+        "special_teams": 82
       }
     },
     {
@@ -67,7 +67,7 @@
         "overall": 79,
         "offense": 80,
         "defense": 76,
-        "special_teams": 75
+        "special_teams": 74
       }
     },
     {
@@ -86,8 +86,8 @@
       "ratings": {
         "overall": 86,
         "offense": 77,
-        "defense": 78,
-        "special_teams": 84
+        "defense": 75,
+        "special_teams": 81
       }
     },
     {
@@ -137,7 +137,7 @@
         "overall": 85,
         "offense": 71,
         "defense": 74,
-        "special_teams": 81
+        "special_teams": 75
       }
     },
     {

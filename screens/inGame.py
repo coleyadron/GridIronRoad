@@ -257,7 +257,7 @@ def byeWeek(screen):
 
     preText = "Welcome to this week's bye week practice!"
     pregameText = font.render(preText, True, (255, 255, 255))
-    screen.blit(pregameText, (screen.get_width() / 2 - pregameText.get_width() / 2, 50))
+    screen.blit(pregameText, (screen.get_width() / 2 - pregameText.get_width() / 2, 80))
 
     bottomText = font.render("Press ENTER to continue", True, (255, 255, 255))
     screen.blit(bottomText, (screen.get_width() / 2 - bottomText.get_width() / 2, screen.get_height() - 100))
