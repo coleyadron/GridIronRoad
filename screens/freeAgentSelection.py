@@ -164,7 +164,7 @@ def draw_grid(surface, playerData):
                     surface.blit(name_text, name_rect)
 
                 # Calculate and display player rating (average of characteristics)
-                rating = player["rating"]
+                rating = player["stats"]["overall"]
                 rating_text = small_font.render(f"Rating: {rating}", True, BLACK)
                 rating_rect = rating_text.get_rect(center=(x + BOX_WIDTH // 2, start_y + total_text_height + 10))
                 surface.blit(rating_text, rating_rect)
@@ -250,10 +250,10 @@ def handle_click(mouse_pos, playerData):
                     contract_text = font.render(f"Contract: {format(player['salary'])}", True, BLACK)
                     contract_len_text = font.render(f"Contract Length: {player['contract']}", True, BLACK)
                     characteristics_text = font.render("Characteristics:", True, BLACK)
-                    rating_text = font.render(f"Rating: {player["rating"]}", True, BLACK)
-                    speed_text = font.render(f"Speed: {player['speed']}", True, BLACK)
-                    strength_text = font.render(f"Strength: {player['strength']}", True, BLACK)
-                    athleticism_text = font.render(f"Athleticism: {player['athleticism']}", True, BLACK)
+                    rating_text = font.render(f"Rating: {player["stats"]["overall"]}", True, BLACK)
+                    speed_text = font.render(f"Speed: {player["stats"]['speed']}", True, BLACK)
+                    strength_text = font.render(f"Strength: {player["stats"]['strength']}", True, BLACK)
+                    athleticism_text = font.render(f"Athleticism: {player["stats"]['athleticism']}", True, BLACK)
 
                     screen.blit(name_text, (popup_x + 20, popup_y + 20))
                     screen.blit(position_text, (popup_x + 20, popup_y + 60))
