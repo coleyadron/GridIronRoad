@@ -29,6 +29,7 @@ PERFORMANCE_TOTAL = 0
 
 preImage = pygame.image.load("assets/images/pregames.png")
 postImage = pygame.image.load("assets/images/postgame.png")
+scoreBoard = pygame.image.load("assets/images/scoreBoard.png")
 
 def killgame():
     pygame.quit()
@@ -111,35 +112,70 @@ def updateScoreboard(screen):
     global TEAM_SCORE, OPPONENT_SCORE, QUARTER, OPPOSING_TEAM, WEEK
 
     font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)
+    bigFont = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 50)
 
     screen.fill((0, 0, 0))
 
-    screen.blit(preImage, (0, 0))
+    screen.blit(scoreBoard, (0, 0))
 
-    preText = "Week " + str(WEEK) + " vs " + OPPOSING_TEAM + "!"
-    pregameText = font.render(preText, True, (255, 255, 255))
-    screen.blit(pregameText, (screen.get_width() / 2 - pregameText.get_width() / 2, 80))
+    quarterScoreText = ""
+    match QUARTER:
+        case 1:
+            quarterScoreText = "1st"
+        case 2:
+            quarterScoreText = "2nd"
+        case 3:
+            quarterScoreText = "3rd"
+        case 4:
+            quarterScoreText = "4th"
+
+
+    teamText = font.render(MY_TEAM, True, (255, 255, 255))
+    opponentText = font.render(OPPOSING_TEAM.split()[-1], True, (255, 255, 255))
+
+    teamScoreText = bigFont.render(str(TEAM_SCORE), True, (255, 255, 255))
+    OppScoreText = bigFont.render(str(OPPONENT_SCORE), True, (255, 255, 255))
+
+    screen.blit(teamText, (screen.get_width() / 4 - teamText.get_width() / 2 + 10, screen.get_height() / 2 - 50))
+    screen.blit(opponentText, (screen.get_width() * .75 - opponentText.get_width() / 2 - 5, screen.get_height() / 2 - 50))
+
+    screen.blit(teamScoreText, (screen.get_width() / 4 - teamScoreText.get_width() / 2 + 5, screen.get_height() / 2))
+    screen.blit(OppScoreText, (screen.get_width() * .75 - OppScoreText.get_width() / 2, screen.get_height() / 2))
+
+    quarterText = bigFont.render(quarterScoreText, True, (255, 255, 255))
+
+    screen.blit(quarterText, (screen.get_width() / 2 - quarterText.get_width() / 2, screen.get_height() / 2 - quarterText.get_height() / 2 + 50))
+
+    headerText = font.render("GridIron Road", True, (255,255,255))
+    screen.blit(headerText, (screen.get_width() / 2 - headerText.get_width() / 2 + 5, screen.get_height() / 4 + headerText.get_height() / 2 + 50))
+
+    pygame.display.update()
+
+    # time.sleep(1.5)
+
+    # preText = "Week " + str(WEEK) + " vs " + OPPOSING_TEAM + "!"
+    # pregameText = font.render(preText, True, (255, 255, 255))
+    # screen.blit(pregameText, (screen.get_width() / 2 - pregameText.get_width() / 2, 80))
 
     # bottomText = font.render("Press ENTER to start the game", True, (255, 255, 255))
     # screen.blit(bottomText, (screen.get_width() / 2 - bottomText.get_width() / 2, screen.get_height() - 100))
 
-    quaterScoreText = "Quarter: %s" % QUARTER
-    teamScoreboardText = "%s: %s" % (MY_TEAM, TEAM_SCORE)
-    opponentScoreboardText = "%s: %s" % (OPPOSING_TEAM, OPPONENT_SCORE)
+    # teamScoreboardText = "%s: %s" % (MY_TEAM, TEAM_SCORE)
+    # opponentScoreboardText = "%s: %s" % (OPPOSING_TEAM, OPPONENT_SCORE)
 
-    quarterText = font.render(quaterScoreText, True, (255, 255, 255))
-    teamScoreText = font.render(teamScoreboardText, True, (255, 255, 255))
-    opponentScoreText = font.render(opponentScoreboardText, True, (255, 255, 255))
+    # quarterText = font.render(quaterScoreText, True, (255, 255, 255))
+    # teamScoreText = font.render(teamScoreboardText, True, (255, 255, 255))
+    # opponentScoreText = font.render(opponentScoreboardText, True, (255, 255, 255))
 
-    y_offset = screen.get_height() / 2 - 50
+    # y_offset = screen.get_height() / 2 - 50
 
-    screen.blit(quarterText, (screen.get_width() / 2 - quarterText.get_width() / 2, y_offset))
-    y_offset += 50
-    screen.blit(teamScoreText, (screen.get_width() / 2 - teamScoreText.get_width() / 2, y_offset))
-    y_offset += 50
-    screen.blit(opponentScoreText, (screen.get_width() / 2 - opponentScoreText.get_width() / 2, y_offset))
+    # screen.blit(quarterText, (screen.get_width() / 2 - quarterText.get_width() / 2, y_offset))
+    # y_offset += 50
+    # screen.blit(teamScoreText, (screen.get_width() / 2 - teamScoreText.get_width() / 2, y_offset))
+    # y_offset += 50
+    # screen.blit(opponentScoreText, (screen.get_width() / 2 - opponentScoreText.get_width() / 2, y_offset))
 
-    pygame.display.update()
+    # pygame.display.update()
 
     # time.sleep(2)
 

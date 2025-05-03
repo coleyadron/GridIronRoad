@@ -50,7 +50,7 @@ def display_matchup(game):
 
 def findCurrentWeek(season):
     for game in season["matchups"]:
-        if not game["played"] or (game["opponent"] == "Bye Week" and not game["played"]):
+        if not game["played"] or (game["opponent"] == "Bye" and not game["played"]):
             return game
     return None
 

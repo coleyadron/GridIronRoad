@@ -246,9 +246,8 @@ def startGame(screen):
                 return
             print(state)
             if state["started"]:
-                print("Game is already started but who cares")
-                newGame(screen)
-                # loadGame(screen, state)
+                # print("Game is already started but who cares")
+                loadGame(screen, state)
                 return
             else:
                 print("Starting new game")
