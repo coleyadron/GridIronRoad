@@ -1,15 +1,15 @@
 {
     "started": true,
     "experience": {
-        "level": "Rookie_3",
-        "displayName": "Promising Rookie",
-        "description": "Never played football, but you've been a coach at your local high school for years.",
+        "level": "Rookie_2",
+        "displayName": "Aspiring Coach",
+        "description": "Played ball in high school. Coached your son's flag football team.",
         "modifiers": {
-            "playerDevelopmentRate": 0.9,
-            "scoutingEfficiency": 0.8,
-            "contractNegotiationBonus": 0.0,
-            "fanExpectationMultiplier": 0.6,
-            "budgetMultiplier": 0.7
+            "playerDevelopmentRate": 0.8,
+            "scoutingEfficiency": 0.7,
+            "contractNegotiationBonus": -0.1,
+            "fanExpectationMultiplier": 0.5,
+            "budgetMultiplier": 0.6
         }
     },
     "team": {
@@ -23,47 +23,6 @@
             "Win 50% of games"
         ]
     },
-    "staff": [
-        "1",
-        "1",
-        "1"
-    ],
-    "draft": [
-        {
-            "name": "Travis Hunter",
-            "position": "WR/CB",
-            "contract": "4 years",
-            "salary": "$36,000,000",
-            "characteristics": {
-                "rating": 86,
-                "speed": 99,
-                "strength": 62,
-                "athleticism": 97
-            }
-        },
-        {
-            "name": "TreVeyon Henderson",
-            "position": "RB",
-            "contract": "3 years",
-            "salary": "$18,500,000",
-            "characteristics": {
-                "rating": 85,
-                "speed": 92,
-                "strength": 79,
-                "athleticism": 84
-            }
-        },
-        {
-            "name": "Marcus Mbow",
-            "position": "OG",
-            "contract": "1 year",
-            "salary": "$1,500,000",
-            "characteristics": {
-                "rating": 74,
-                "speed": 62,
-                "strength": 82,
-                "athleticism": 78
-            }
-        }
-    ]
+    "staff": null,
+    "draft": null
 }

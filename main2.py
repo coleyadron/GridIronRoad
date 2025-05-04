@@ -2,8 +2,22 @@ import pygame
 from minigames import puntReturn
 from minigames import runPlay
 from screens import inGame
+from screens import coachingStaff
 
-def main():
+
+
+def test_coaching():
+    pygame.init()
+    screen = pygame.display.set_mode((1400, 1050))
+    pygame.display.set_caption("Coaching Staff Input")
+    
+    # Call the inputStaff function
+    staff = coachingStaff.inputStaff(screen)
+    print("Coaching Staff:", staff)
+    
+    pygame.quit()
+
+def test_matchup():
     pygame.init()
     pygame.display.init()
 
@@ -29,8 +43,13 @@ def main():
         }
     }]
 
-    # Create an instance of the PuntReturn class
+    # Create a new instance of the InGame class
     inGame.inGame(screen, matchup, scenarios)
+
+
+
+def main():
+    test_coaching()
 
 if __name__ == "__main__":
     main()

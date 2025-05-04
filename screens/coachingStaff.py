@@ -8,6 +8,7 @@ def inputStaff(screen):
 
     # Text surfaces
     labels = {
+        "team_name": font.render("Team Name: ", True, (255, 255, 255)),
         "offense": font.render("Offensive Coordinator: ", True, (255, 255, 255)),
         "defense": font.render("Defensive Coordinator: ", True, (255, 255, 255)),
         "special": font.render("Special Teams Coordinator: ", True, (255, 255, 255)),
@@ -16,16 +17,17 @@ def inputStaff(screen):
 
     # Input fields
     fields = {
-        "offense": {"text": "", "rect": pygame.Rect(labels["offense"].get_width() + 85, 55, 140, 35)},
-        "defense": {"text": "", "rect": pygame.Rect(labels["defense"].get_width() + 85, 105, 140, 35)},
-        "special": {"text": "", "rect": pygame.Rect(labels["special"].get_width() + 85, 155, 140, 35)},
+        "team_name": {"text": "", "rect": pygame.Rect(labels["team_name"].get_width() + 85, 55, 140, 35)},
+        "offense": {"text": "", "rect": pygame.Rect(labels["offense"].get_width() + 85, 105, 140, 35)},
+        "defense": {"text": "", "rect": pygame.Rect(labels["defense"].get_width() + 85, 155, 140, 35)},
+        "special": {"text": "", "rect": pygame.Rect(labels["special"].get_width() + 85, 205, 140, 35)},
         "confirm": {"text": "", "rect": pygame.Rect(labels["confirm"].get_width() + 80, 
                                                   screen.get_height() - labels["confirm"].get_height() - 30, 
                                                   140, 35)}
     }
 
     # Field order and current field
-    field_order = ["offense", "defense", "special", "confirm"]
+    field_order = ["team_name", "offense", "defense", "special", "confirm"]
     current_field = 0
     cursor = TextCursor(fields[field_order[current_field]]["rect"].x, 
                        fields[field_order[current_field]]["rect"].y, 
@@ -71,7 +73,11 @@ def inputStaff(screen):
                 
                 else:  # Regular character input
                     if event.unicode.isprintable() and len(fields[field_order[current_field]]["text"]) < 20:
-                        fields[field_order[current_field]]["text"] += event.unicode
+                        # smaller limit for team name
+                        if current_field == 0 and len(fields[field_order[current_field]]["text"]) < 10:
+                            fields[field_order[current_field]]["text"] += event.unicode
+                        elif current_field != 0:
+                            fields[field_order[current_field]]["text"] += event.unicode
 
         # Update cursor position
         text_width = font.size(fields[field_order[current_field]]["text"])[0]
@@ -87,15 +93,18 @@ def inputStaff(screen):
         screen.blit(bgi, (0, 0))
         
         # Draw labels and fields
-        screen.blit(labels["offense"], (85, 55))
-        screen.blit(labels["defense"], (85, 105))
-        screen.blit(labels["special"], (85, 155))
+        screen.blit(labels["team_name"], (85, 55))
+        screen.blit(labels["offense"], (85, 105))
+        screen.blit(labels["defense"], (85, 155))
+        screen.blit(labels["special"], (85, 205))
         
         # Draw input boxes
         for field in fields.values():
             pygame.draw.rect(screen, pygame.Color('black'), field["rect"])
         
         # Draw text
+        screen.blit(font.render(fields["team_name"]["text"], True, (255, 255, 255)),
+                    (fields["team_name"]["rect"].x, fields["team_name"]["rect"].y))
         screen.blit(font.render(fields["offense"]["text"], True, (255, 255, 255)), 
                     (fields["offense"]["rect"].x, fields["offense"]["rect"].y))
         screen.blit(font.render(fields["defense"]["text"], True, (255, 255, 255)), 
@@ -104,7 +113,7 @@ def inputStaff(screen):
                     (fields["special"]["rect"].x, fields["special"]["rect"].y))
         
         # Confirmation
-        if current_field == 3:
+        if current_field == 4:
             screen.blit(labels["confirm"], (80, screen.get_height() - labels["confirm"].get_height() - 30))
             screen.blit(font.render(fields["confirm"]["text"], True, (255, 255, 255)), 
                         (fields["confirm"]["rect"].x, fields["confirm"]["rect"].y))
@@ -113,3 +122,4 @@ def inputStaff(screen):
         cursor.draw(screen)
         
         pygame.display.flip()
+
