@@ -8,6 +8,26 @@ STAFF = None
 DRAFT = None
 TEAM_NAME = None
 
+def resetJsons():
+    try:
+        with open("json/COPY_userTeam.json", "r") as copy_file:
+            data = json.load(copy_file)
+        with open("json/userTeam.json", "w") as target_file:
+            json.dump(data, target_file, indent=4)
+
+        with open("json/COPY_freeAgents.json", "r") as copy_file:
+            data = json.load(copy_file)
+        with open("json/freeAgents.json", "w") as target_file:
+            json.dump(data, target_file, indent=4)
+
+        print("JSON files reset successfully.")
+    except FileNotFoundError as e:
+        print(f"Error: {e}. Ensure the COPY_ files exist.")
+    except json.JSONDecodeError:
+        print("Error decoding JSON file.")
+    except Exception as e:
+        print(f"Unexpected error resetting JSON files: {e}")
+
 def loadTeam():
     try:
         with open("json/userTeam.json", "r") as file:

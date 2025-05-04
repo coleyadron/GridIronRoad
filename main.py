@@ -160,6 +160,9 @@ def playGame(screen):
 
 
 def  newGame(screen):
+    #reset user team and free agents
+    gridironRoad.resetJsons()
+
     # print("SPACE action, next screen")
     EXPERIENCE = experienceSelection.selectExperience(screen)
     # print(EXPERIENCE)

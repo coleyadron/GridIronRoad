@@ -1,0 +1,245 @@
+{
+    "team_name": "1",
+    "players": [
+        {
+            "name": "John Smith",
+            "position": "QB",
+            "contract": "5 years",
+            "stats": {
+                "speed": 85,
+                "strength": 70,
+                "athleticism": 80,
+                "overall": 78
+            },
+            "salary": 12500000
+        },
+        {
+            "name": "Mike Johnson",
+            "position": "RB",
+            "contract": "4 years",
+            "stats": {
+                "speed": 92,
+                "strength": 85,
+                "athleticism": 90,
+                "overall": 89
+            },
+            "salary": 4800000
+        },
+        {
+            "name": "David Wilson",
+            "position": "WR",
+            "contract": "4 years",
+            "stats": {
+                "speed": 94,
+                "strength": 68,
+                "athleticism": 88,
+                "overall": 86
+            },
+            "salary": 7500000
+        },
+        {
+            "name": "Chris Thompson",
+            "position": "OT",
+            "contract": "3 years",
+            "stats": {
+                "speed": 72,
+                "strength": 93,
+                "athleticism": 75,
+                "overall": 82
+            },
+            "salary": 6500000
+        },
+        {
+            "name": "Marcus Williams",
+            "position": "CB",
+            "contract": "4 years",
+            "stats": {
+                "speed": 93,
+                "strength": 65,
+                "athleticism": 91,
+                "overall": 87
+            },
+            "salary": 9000000
+        },
+        {
+            "name": "Ryan Clark",
+            "position": "S",
+            "contract": "3 years",
+            "stats": {
+                "speed": 89,
+                "strength": 70,
+                "athleticism": 88,
+                "overall": 84
+            },
+            "salary": 7000000
+        },
+        {
+            "name": "James Miller",
+            "position": "DE",
+            "contract": "4 years",
+            "stats": {
+                "speed": 83,
+                "strength": 88,
+                "athleticism": 80,
+                "overall": 85
+            },
+            "salary": 8500000
+        },
+        {
+            "name": "Thomas Brown",
+            "position": "DT",
+            "contract": "3 years",
+            "stats": {
+                "speed": 70,
+                "strength": 95,
+                "athleticism": 75,
+                "overall": 83
+            },
+            "salary": 6000000
+        },
+        {
+            "name": "Kevin White",
+            "position": "TE",
+            "contract": "3 years",
+            "stats": {
+                "speed": 84,
+                "strength": 82,
+                "athleticism": 83,
+                "overall": 83
+            },
+            "salary": 5000000
+        },
+        {
+            "name": "Robert Jones",
+            "position": "LB",
+            "contract": "4 years",
+            "stats": {
+                "speed": 86,
+                "strength": 80,
+                "athleticism": 84,
+                "overall": 84
+            },
+            "salary": 7500000
+        },
+        {
+            "name": "Daniel Harris",
+            "position": "WR",
+            "contract": "2 years",
+            "stats": {
+                "speed": 91,
+                "strength": 65,
+                "athleticism": 89,
+                "overall": 83
+            },
+            "salary": 4000000
+        },
+        {
+            "name": "Jason Taylor",
+            "position": "OG",
+            "contract": "3 years",
+            "stats": {
+                "speed": 70,
+                "strength": 92,
+                "athleticism": 74,
+                "overall": 81
+            },
+            "salary": 5500000
+        },
+        {
+            "name": "Anthony Carter",
+            "position": "C",
+            "contract": "3 years",
+            "stats": {
+                "speed": 68,
+                "strength": 90,
+                "athleticism": 72,
+                "overall": 80
+            },
+            "salary": 5000000
+        },
+        {
+            "name": "Eric Green",
+            "position": "RB",
+            "contract": "2 years",
+            "stats": {
+                "speed": 89,
+                "strength": 80,
+                "athleticism": 86,
+                "overall": 85
+            },
+            "salary": 3500000
+        },
+        {
+            "name": "Michael Bennett",
+            "position": "WR",
+            "contract": "2 years",
+            "stats": {
+                "speed": 90,
+                "strength": 67,
+                "athleticism": 87,
+                "overall": 82
+            },
+            "salary": 3800000
+        },
+        {
+            "name": "Charles Woodson",
+            "position": "CB",
+            "contract": "1 year",
+            "stats": {
+                "speed": 87,
+                "strength": 70,
+                "athleticism": 85,
+                "overall": 82
+            },
+            "salary": 2500000
+        },
+        {
+            "name": "Paul Dawson",
+            "position": "LB",
+            "contract": "2 years",
+            "stats": {
+                "speed": 84,
+                "strength": 78,
+                "athleticism": 82,
+                "overall": 82
+            },
+            "salary": 3000000
+        },
+        {
+            "name": "Steve Smith",
+            "position": "S",
+            "contract": "1 year",
+            "stats": {
+                "speed": 86,
+                "strength": 72,
+                "athleticism": 84,
+                "overall": 81
+            },
+            "salary": 2200000
+        },
+        {
+            "name": "Adam Vinatieri",
+            "position": "K",
+            "contract": "1 year",
+            "stats": {
+                "speed": 65,
+                "strength": 60,
+                "athleticism": 70,
+                "overall": 78
+            },
+            "salary": 1500000
+        },
+        {
+            "name": "Johnny Hekker",
+            "position": "P",
+            "contract": "1 year",
+            "stats": {
+                "speed": 60,
+                "strength": 65,
+                "athleticism": 68,
+                "overall": 75
+            },
+            "salary": 1200000
+        }
+    ]
+}
