@@ -6,6 +6,7 @@ EXPERIENCE = None
 TEAM = None
 STAFF = None
 DRAFT = None
+TEAM_NAME = None
 
 def loadTeam():
     try:
@@ -172,13 +173,14 @@ def getOpponent(opponentName):
         return None
 
 def updateGlobalState(variable, value):
-    global EXPERIENCE, TEAM, STAFF, DRAFT
+    global EXPERIENCE, TEAM, STAFF, DRAFT, TEAM_NAME
     if variable == "experience":
         EXPERIENCE = value
     elif variable == "team":
         TEAM = value
     elif variable == "staff":
-        STAFF = value
+        TEAM_NAME = value[0]
+        STAFF = value[1:]
     elif variable == "draft":
         DRAFT = value
     else:
@@ -255,12 +257,13 @@ def updateSeason(matchup, game_result, postSeason=False):
 
 def saveGameState():
     try:
-        if EXPERIENCE is None and TEAM is None and STAFF is None and DRAFT is None:
+        if EXPERIENCE is None and TEAM is None and STAFF is None and DRAFT is None and TEAM_NAME is None:
             print("No game data to save")
             return
         with open("json/userState.json", "w") as f:
             state = {
                 "started": True,
+                "team_name": TEAM_NAME,
                 "experience": EXPERIENCE,
                 "team": TEAM,
                 "staff": STAFF,
@@ -270,6 +273,17 @@ def saveGameState():
     except Exception as e:
         print("Error saving game state: ", e)
     print("Game is saved")
+
+def updateUserTeam(team_name):
+    try:
+        with open("json/userTeam.json", "r") as file:
+            data = json.load(file)
+            data["team_name"] = team_name
+
+        with open("json/userTeam.json", "w") as file:
+            json.dump(data, file, indent=4)
+    except Exception as e:
+        print("Error updating team name: ", e)
 
 def killgame(screen):
     font = pygame.font.Font("assets/Fonts/MinecraftRegular-Bmg3.otf", 35)

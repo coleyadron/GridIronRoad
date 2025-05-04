@@ -1,15 +1,16 @@
 {
     "started": true,
+    "team_name": "1",
     "experience": {
-        "level": "Rookie_2",
-        "displayName": "Aspiring Coach",
-        "description": "Played ball in high school. Coached your son's flag football team.",
+        "level": "Rookie_3",
+        "displayName": "Promising Rookie",
+        "description": "Never played football, but you've been a coach at your local high school for years.",
         "modifiers": {
-            "playerDevelopmentRate": 0.8,
-            "scoutingEfficiency": 0.7,
-            "contractNegotiationBonus": -0.1,
-            "fanExpectationMultiplier": 0.5,
-            "budgetMultiplier": 0.6
+            "playerDevelopmentRate": 0.9,
+            "scoutingEfficiency": 0.8,
+            "contractNegotiationBonus": 0.0,
+            "fanExpectationMultiplier": 0.6,
+            "budgetMultiplier": 0.7
         }
     },
     "team": {
@@ -23,6 +24,10 @@
             "Win 50% of games"
         ]
     },
-    "staff": null,
+    "staff": [
+        "1",
+        "1",
+        "1"
+    ],
     "draft": null
 }

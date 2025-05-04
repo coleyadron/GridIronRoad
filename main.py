@@ -173,6 +173,8 @@ def  newGame(screen):
     # print(STAFF)
     gridironRoad.updateGlobalState("staff", STAFF)
 
+    gridironRoad.updateUserTeam(STAFF[0])
+
     DRAFT = draft.draft(screen)
     # print(DRAFT)
     gridironRoad.updateGlobalState("draft", DRAFT)

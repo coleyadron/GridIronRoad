@@ -56,7 +56,8 @@ def inputStaff(screen):
                             confirmation = fields["confirm"]["text"].strip().upper()
                             if confirmation in ("YES", "Y"):
                                 staffOpen = False
-                                return [fields["offense"]["text"], 
+                                return [fields["team_name"]["text"],
+                                        fields["offense"]["text"], 
                                         fields["defense"]["text"], 
                                         fields["special"]["text"]]
                             elif confirmation in ("NO", "N"):
