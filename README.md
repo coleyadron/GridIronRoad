@@ -118,4 +118,4 @@ GridIron Road is an interactive football management game inspired by the classic
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the MIT License.
