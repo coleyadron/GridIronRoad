@@ -4,7 +4,7 @@ from screens import teamOverview
 import gridironRoad
 
 WIDTH, HEIGHT = 1400, 1050
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
+# screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Football Draft Grid")
 
 PLAYERS_SELECTED = []
@@ -175,7 +175,7 @@ def draw_grid(surface, playerData):
                 surface.blit(pick_text, pick_rect)
 
 
-def handle_click(mouse_pos, playerData):
+def handle_click(screen, mouse_pos, playerData):
     """Handles mouse clicks"""
     global PLAYERS_SELECTED
     for row in range(GRID_ROWS):
@@ -332,7 +332,7 @@ def free_agents(screen):
                     pygame.display.update()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = pygame.mouse.get_pos()
-                player = handle_click(mouse_pos, free_agents)
+                player = handle_click(screen, mouse_pos, free_agents)
                 return
                 # pygame.display.update()
 

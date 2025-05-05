@@ -8,7 +8,7 @@ from screens import teamOverview
 #     quit()
 
 WIDTH, HEIGHT = 1400, 1050
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
+# screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Football Draft Grid")
 
 # Colors
@@ -121,7 +121,7 @@ def draw_grid(surface, playerData):
                 surface.blit(pick_text, pick_rect)
 
 
-def handle_click(mouse_pos, playerData, ROUND):
+def handle_click(screen, mouse_pos, playerData, ROUND):
     """Handles mouse clicks"""
     global PLAYERS_SELECTED
     currentRoundIndex = ROUND - 1
@@ -242,7 +242,7 @@ def draft(screen):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = pygame.mouse.get_pos()
                 # prevRound = ROUND
-                ROUND = handle_click(mouse_pos, playerData, ROUND)
+                ROUND = handle_click(screen, mouse_pos, playerData, ROUND)
                 # if ROUND > prevRound:
                 if ROUND > 3:
                     draftOpen = False
