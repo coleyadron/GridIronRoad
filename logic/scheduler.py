@@ -10,6 +10,91 @@ def scheduler():
     except Exception as e:
         print("Error updating season: ", e)
 
+def makePostSeason():
+    try:
+        with open("json/leagueTeams.json", "r") as file:
+            teams = json.load(file)
+    except FileNotFoundError:
+        print("Error finding schedule file")
+        return None
+    except json.JSONDecodeError:
+        print("Error decoding schedule file")
+        return None
+    except Exception as e:
+        print("Error reading schedule file: ", e)
+        return None
+
+    postSeasonSchedule = {
+        "postSeason": {
+        "matchups": [
+            {
+                "game_name": "Wild Card",
+                "opponent": "Filler",
+                "played": False,
+                "user_score": None,
+                "opponent_score": None,
+                "result": None
+            },
+            {
+                "game_name": "Divisional",
+                "opponent": "Filler",
+                "played": False,
+                "user_score": None,
+                "opponent_score": None,
+                "result": None
+            },
+            {
+                "game_name": "Conference",
+                "opponent": "Filler",
+                "played": False,
+                "user_score": None,
+                "opponent_score": None,
+                "result": None
+            },
+            {
+                "game_name": "Hyper Plate",
+                "opponent": "Filler",
+                "played": False,
+                "user_score": None,
+                "opponent_score": None,
+                "result": None
+            }
+        ]
+    }
+    }
+
+    #pick 4 random teams
+    selections = random.choice(teams["teams"])
+    selectedTeams = []
+    for i in range(4):
+        selectedTeams.append(selections)
+        teams["teams"].remove(selections)
+        selections = random.choice(teams["teams"])
+
+    for i in range(4):
+        postSeasonSchedule["postSeason"]["matchups"][i]["opponent"] = selectedTeams[i]["name"]
+
+    #add the post season to the existing schedule
+    try:
+        with open("json/userSeason.json", "r") as file:
+            schedule = json.load(file)
+    except FileNotFoundError:
+        print("Error finding schedule file")
+        return None
+    except json.JSONDecodeError:
+        print("Error decoding schedule file")
+        return None
+    except Exception as e:
+        print("Error reading schedule file: ", e)
+        return None
+    schedule["postSeason"] = postSeasonSchedule["postSeason"]
+    try:
+        with open("json/userSeason.json", "w") as file:
+            json.dump(schedule, file, indent=4)
+    except Exception as e:
+        print("Error updating season: ", e)
+
+
 def updateSchedule():
     try:
         with open("json/leagueTeams.json", "r") as file:
@@ -47,7 +132,7 @@ def updateSchedule():
             week += 1
             randomOpponent = random.choice(possibleOpponents)
             possibleOpponents.remove(randomOpponent)
-            if randomOpponent == 33:
+            if randomOpponent == 33 and week > 6 and week < 17:
                 updatedWeek['opponent'] = "Bye"
                 print(week)
             for team in teams["teams"]:
@@ -83,5 +168,3 @@ def cleanSchedule():
         game["opponent"] = ""
 
 # scheduler()
-
-    

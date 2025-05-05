@@ -148,6 +148,39 @@
         ]
     },
     "postSeason": {
-        "matchups": []
+        "matchups": [
+            {
+                "game_name": "Wild Card",
+                "opponent": "Los Angeles Rams",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "game_name": "Divisional",
+                "opponent": "New Orleans Saints",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "game_name": "Conference",
+                "opponent": "Los Angeles Chargers",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            },
+            {
+                "game_name": "Hyper Plate",
+                "opponent": "Buffalo Bills",
+                "played": false,
+                "user_score": null,
+                "opponent_score": null,
+                "result": null
+            }
+        ]
     }
 }
