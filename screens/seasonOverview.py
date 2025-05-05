@@ -1,5 +1,5 @@
 import pygame
-# import gridironRoad
+import gridironRoad
 import json
 # import pregameDecisions
 from screens import teamOverview
@@ -62,6 +62,13 @@ def seasonOverview(screen):
     screen.blit(BGI, (0, 0))
     overviewText = font.render("Season Overview", True, (255, 255, 255))
     screen.blit(overviewText, (550,50))
+    record = gridironRoad.getRecord()
+    if record['ties'] == 0:
+        formattedRecord = f"{record['wins']} - {record['losses']}"
+    else:
+        formattedRecord = f"{record['wins']}-{record['losses']}-{record['ties']}"
+    recordText = font.render(f"Record: {formattedRecord}", True, (255, 255, 255))
+    screen.blit(recordText, (550, 100))
 
     season = loadSeason('regularSeason')
 

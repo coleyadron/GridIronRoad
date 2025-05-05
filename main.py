@@ -109,12 +109,14 @@ def playGame(screen):
         wins_for_playoffs = random.randint(8, 10)
         first_round_bye = 14
 
+        scheduler.makePostSeason()
+
         if record["wins"] >= first_round_bye:
             # print("First round bye playoffs")
             if currentMatchup["game_name"] == "Wild Card":
                 game_result = {
                     "game_name": "Wild Card - Bye Week",
-                    "opponent": "Bye Week",
+                    "opponent": "Bye",
                     "played": True,
                     "score": None,
                     "opponent_score": None,
